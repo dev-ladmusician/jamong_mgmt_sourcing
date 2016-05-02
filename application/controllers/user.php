@@ -5,14 +5,23 @@ class User extends CORE_Controller
     function __construct()
     {
         parent::__construct();
-        $this->__require_admin_login();
+        //$this->__require_admin_login();
         $this->load->model('user_model');
+    }
+
+    function test() {
+//        $user_num = $this->input->get('userId');
+//        $rtv = $this->user_model->test($user_num);
+//        var_dump($rtv);
+        $users = $this->user_model->gets();
+        var_dump($users);
+        //json_encode($users, JSON_PRETTY_PRINT);
     }
 
     function index()
     {
-        $users = $this->user_model->gets();
-        $this->__get_views('_USER/index.php', array('items' => $users));
+        //$users = $this->user_model->gets();
+        $this->__get_views('_USER/index.php', array());
     }
 
     function create()
@@ -26,10 +35,10 @@ class User extends CORE_Controller
 
     function detail()
     {
-        $userid = $this->input->get('userid');
+        $userid = $this->input->get('userId');
         $user = $this->user_model->get_user_by_id($userid);
-        if ($user != null) {
-            $this->__get_views('_USER/detail.php', array('item' => $user));
+        if ($user != null && count($user) > 0) {
+            $this->__get_views('_USER/detail.php', array('item' => $user[0]));
 
         } else {
             $this->session->set_flashdata('message', '해당 유저가 없습니다.');

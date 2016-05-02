@@ -3,6 +3,16 @@
         <ul class="sidebar-menu">
             <li class="header">MANAGEMENT</li>
             <li><a href="<?= site_url('home/index') ?>"><i class="fa fa-database"></i> <span>DASHBOARD</span></a></li>
+            <li>
+                <a href="<?= site_url('user/index') ?>">
+                    <i class="fa fa-users"></i> <span>USER</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= site_url('channel/index') ?>">
+                    <i class="fa fa-book"></i> <span>CHANNEL</span>
+                </a>
+            </li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-book"></i> <span>공지사항</span>
@@ -23,11 +33,7 @@
                     <li><a href="<?= site_url('recruit_category/index') ?>"><i class="fa fa-circle-o"></i>카테고리</a></li>
                 </ul>
             </li>
-            <li>
-                <a href="<?= site_url('user/index') ?>">
-                    <i class="fa fa-users"></i> <span>USER</span>
-                </a>
-            </li>
+
         </ul>
     </section>
 </aside>

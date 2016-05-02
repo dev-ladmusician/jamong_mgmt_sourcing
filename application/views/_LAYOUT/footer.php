@@ -7,8 +7,10 @@
 
 </div>
 <script src="/static/lib/admin/plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
+<script src="/static/js/angular.min.js" type="text/javascript"></script>
 <script src="/static/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
+<script src="<?=site_url()?>static/lib/ngTable.min.js"></script>
 <script src="/static/lib/admin/plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
 <script src="/static/lib/admin/plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
 

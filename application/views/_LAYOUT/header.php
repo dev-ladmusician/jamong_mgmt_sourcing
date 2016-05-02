@@ -11,6 +11,7 @@
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css"/>
 
     <link href="/static/lib/admin/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="<?=site_url()?>static/lib/ngTable.css" rel="stylesheet" type="text/css"/>
     <link href="/static/lib/admin/plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
     <link href="/static/lib/admin/css/AdminLTE.min.css" rel="stylesheet" type="text/css"/>
     <link href="/static/lib/admin/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css"/>
@@ -58,7 +59,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="skin-blue sidebar-mini">
+<body ng-App="myApp" class="skin-blue sidebar-mini">
 <?php ini_set('display_errors', "1") ?>
 <div class="wrapper">
     <?php

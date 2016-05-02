@@ -1,11 +1,179 @@
-<div class="content-wrapper">
+<div class="content-wrapper" ng-controller="DetailCtrl">
     <section class="content-header">
-        <h1>
-            유저
+        <h1>사용자</h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-4 jamong-pannel">
+                <div class="box box-info">
+                    <div class="form-horizontal">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">기본정보</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">id</label>
+                                <div class="col-sm-9 sg-item-content">
+                                    <?php echo $item->userNumber ?>
+                                </div>
 
-        </h1>
+                            </div>
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">닉네임</label>
+                                <div class="col-sm-9 sg-item-content">
+                                    <?php echo $item->nickName ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">이메일</label>
+                                <div class="col-sm-9 sg-item-content">
+                                    <?php echo $item->email ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">가입유형</label>
+                                <div class="col-sm-9 sg-item-content">
+                                    <?php echo $item->accounttype ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">코인</label>
+                                <div class="col-sm-9 sg-item-content">
+                                    <?php echo $item->vrcoin ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">결제횟수</label>
+                                <div class="col-sm-9 sg-item-content">
+                                    <?php echo $item->Purchase_Cnt ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">비밀번호</label>
+                                <div class="col-sm-9 sg-item-content">
+                                    <input type="password" class="jamong-password-input form-control my-colorpicker1"
+                                           value="" ng-model="user.password"/>
+                                    <a class="btn btn-success jamong-password-change-submit" href=""
+                                       style="margin-left: 3px; margin-bottom: 3px;">
+                                        비밀번호 변경
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 jamong-pannel">
+                <div class="box box-danger">
+                    <div class="form-horizontal">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">인증정보</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">계정상태</label>
+                                <div class="col-sm-9 sg-item-content">
+                                    <?php if ($item->state == "active") { ?>
+                                        정상
+                                    <?php } else if ($item->state == "out") { ?>
+                                        탈퇴
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">승인일자</label>
+                                <div class="col-sm-9 sg-item-content">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">성인인증</label>
+                                <div class="col-sm-9 sg-item-content">
+                                    <?php if ($item->adult == "ACTIVE") { ?>
+                                        <span style="color: red">인증</span>
+                                    <?php } else { ?>
+                                        <span>미인증</span>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">정지/탈퇴일자</label>
+                                <div class="col-sm-4 sg-item-content">
+                                    <?php if ($item->blockday != 0) echo $item->blockday ?>
+                                </div>
+                                <a class="btn btn-danger"
+                                   href="<?= site_url('api/user/change_isadmin?userId=' . $item->userNumber . '&isadmin=false') ?>"
+                                   style="margin-left: 10px; margin-bottom: 3px; width: 105px;">
+                                    계정 정지 설정
+                                </a>
+                            </div>
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">관리자여부</label>
+                                <div class="col-sm-4 sg-item-content">
+                                    <?php if ($item->isadmin) { ?>
+                                        <span style="color: red">관리자</span>
+                                    <?php } else { ?>
+                                        <span>일반회원</span>
+                                    <?php } ?>
+                                </div>
+                                <?php if ($item->isadmin) { ?>
+                                    <a class="btn btn-default"
+                                       href="<?= site_url('api/user/change_isadmin?userId=' . $item->userNumber . '&isadmin=false') ?>"
+                                       style="margin-left: 10px; margin-bottom: 3px; width: 105px;">
+                                        관리자박탈
+                                    </a>
+                                <?php } else { ?>
+                                    <a class="btn btn-success"
+                                       href="<?= site_url('api/user/change_isadmin?userId=' . $item->userNumber . '&isadmin=true') ?>"
+                                       style="margin-left: 10px; margin-bottom: 3px; width: 105px;">
+                                        관리자부여
+                                    </a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 jamong-pannel">
+                <div class="box box-success">
+                    <div class="form-horizontal">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">프로필</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">사진</label>
+                                <div class="col-sm-9 sg-item-content">
+                                    <?php if ($item->picture == "") { ?>
+                                        <img class="jamong_profile"
+                                             src="<?= site_url('static/img/profile_default.png') ?>">
+                                    <?php } else { ?>
+                                        <?php echo $item->picture ?>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">이미지 변경</label>
+                                <div class="col-sm-9 sg-item-content">
+                                    <input type="file" class="jamong-password-input form-control my-colorpicker1"
+                                           value=""/>
+                                    <a class="btn btn-success"
+                                       href="<?= site_url('api/user/change_isadmin?userId=' . $item->userNumber . '&isadmin=false') ?>"
+                                       style="margin-left: 3px; margin-bottom: 3px;">
+                                        프로필 변경
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <section class="content-header">
+        <h1>결제정보</h1>
+    </section>
     <section class="content">
         <div class="row">
             <div class="col-md-12">
@@ -13,137 +181,23 @@
                     <div class="form-horizontal">
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="title" class="col-sm-1 control-label">id</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php echo $item->_userid ?>
+                                <label for="summary" class="col-sm-1 control-label">결제횟수</label>
+                                <div class="col-sm-5 sg-item-content">
+                                    <?php echo $item->paycount ?>
+                                </div>
+                                <label for="summary" class="col-sm-1 control-label">마지막 결제일</label>
+                                <div class="col-sm-5 sg-item-content">
+                                    <?php echo $item->lastpayday ?>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">이름</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php echo $item->username ?>
+                                <label for="summary" class="col-sm-1 control-label">VR코인</label>
+                                <div class="col-sm-5 sg-item-content">
+                                    <?php echo $item->vrcoin ?>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">메일</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php echo $item->email ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">프로필(URL)</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php echo $item->profile_url ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">관리자</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php
-                                    if ($item->is_admin) {
-                                        ?>
-                                            O
-                                        <?php
-                                    } else {
-                                        ?>
-                                            X
-                                        <?php
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">로그인</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php echo $item->logined ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">수정일</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php echo $item->updated ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">생성일</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php echo $item->created ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">페이스북</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php
-                                    if(isset($item->facebook) && strlen($item->facebook) > 0) {
-                                        ?>
-                                            <a target="_blank" href="<?php echo $item->facebook;?>">
-                                                <?php echo $item->facebook ?>
-                                            </a>
-                                    <?php
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">인스타그램</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php
-                                    if(isset($item->instagram) && strlen($item->instagram) > 0) {
-                                        ?>
-                                        <a target="_blank" href="<?php echo $item->instagram;?>">
-                                            <?php echo $item->instagram; ?>
-                                        </a>
-                                        <?php
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">블로그</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php
-                                    if(isset($item->blog) && strlen($item->blog) > 0) {
-                                        ?>
-                                        <a target="_blank" href="<?php echo $item->blog;?>">
-                                            <?php echo $item->blog; ?>
-                                        </a>
-                                        <?php
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">핀터레스트</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <?php
-                                    if(isset($item->pinterest) && strlen($item->pinterest) > 0) {
-                                        ?>
-                                        <a target="_blank" href="<?php echo $item->pinterest;?>">
-                                            <?php echo $item->pinterest; ?>
-                                        </a>
-                                        <?php
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-1 control-label">주소</label>
-
-                                <div class="col-sm-11 sg-item-content">
-                                    <input type="hidden" id="sg-seller-map-address" value="<?php if(isset($item->address)) { echo $item->address; } ?>">
-                                    <div id="sg-seller-map" style="width: 100%; height: 340px" title="작가 위치"></div>
+                                <label for="summary" class="col-sm-1 control-label">키스토어</label>
+                                <div class="col-sm-5 sg-item-content">
+                                    <?php echo $item->keystore ?>
                                 </div>
                             </div>
                         </div>
@@ -151,47 +205,22 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <a href="<?= site_url('user/update?userid='.$item->_userid)?>" id="ng-submit" class="btn btn-primary pull-right">수정하기</a>
-                        <?php
-                        if ($item->isdeprecated) {
-                            ?>
-                            <a class="btn btn-danger pull-right" style="margin-right: 5px;"
-                               href="<?= site_url('user/change_isdeprecated?userid=' . $item->_userid) . '&isdeprecated=false' ?>">
-                                <i class="fa fa-credit-card"></i> 살리기
+                        <?php if ($item->isadmin == "0") { ?>
+                            <a class="btn btn-success pull-right"
+                               href="<?= site_url('api/user/change_isadmin?userId=' . $item->userNumber . '&isadmin=true') ?>"
+                               style="margin-right: 5px;">
+                                관리자부여
                             </a>
-                            <?php
-                        } else {
-                            ?>
-                            <a class="btn btn-success pull-right" style="margin-right: 5px;"
-                               href="<?= site_url('user/change_isdeprecated?userid=' . $item->_userid) . '&isdeprecated=true' ?>">
-                                <i class="fa fa-credit-card"></i> 삭제하기
+                        <?php } else { ?>
+                            <a class="btn btn-danger pull-right"
+                               href="<?= site_url('api/user/change_isadmin?userId=' . $item->userNumber . '&isadmin=false') ?>"
+                               style="margin-right: 5px;">
+                                관리자박탈
                             </a>
-
-                            <?php
-                        }
-                        ?>
-
-                        <?php
-                        if ($item->is_admin) {
-                            ?>
-                            <a class="btn btn-warning pull-right" style="margin-right: 5px;"
-                               href="<?= site_url('user/change_admin?userid='.$item->_userid).'&isadmin=false' ?>">
-                                <i class="fa fa-file-excel-o"></i> 관리자 박탈
-                            </a>
-                            <?php
-                        } else {
-                            ?>
-                            <a class="btn btn-warning pull-right" style="margin-right: 5px;"
-                               href="<?= site_url('user/change_admin?userid='.$item->_userid).'&isadmin=true' ?>">
-                                <i class="fa fa-file-excel-o"></i> 관리자 부여
-                            </a>
-
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                         <a class="btn btn-primary pull-right" style="margin-right: 5px;"
                            href="<?= site_url('user/index') ?>">
-                            <i class="fa fa-download"></i>목록보기
+                            목록보기
                         </a>
                     </div>
                 </div>

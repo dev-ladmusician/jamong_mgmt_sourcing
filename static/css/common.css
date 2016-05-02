@@ -1,6 +1,15 @@
 .body-container {
     padding-top: 81px;
 }
+.sg-item-content {
+    margin-top: 7px;
+}
+.ng-table th.filter .input-filter {
+    border-radius: 5px !important;
+}
+.table-container > div {
+    margin-top: 11px;
+}
 
 /* mobile */
 @media only screen and (max-width: 480px){
