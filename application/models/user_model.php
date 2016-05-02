@@ -133,7 +133,23 @@ class User_model extends CI_Model
                 'is_admin' => $is_admin
             );
 
-            $this->db->where('_userid', $user_id);
+            $this->db->where('userNumber', $user_id);
+            $this->db->update($this->table, $data);
+
+            return $this->db->affected_rows();
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+    function change_password($user_id, $password)
+    {
+        try {
+            $data = array(
+                'password' => $password
+            );
+
+            $this->db->where('userNumber', $user_id);
             $this->db->update($this->table, $data);
 
             return $this->db->affected_rows();
@@ -149,7 +165,7 @@ class User_model extends CI_Model
                 'isdeprecated' => $isdeprecated
             );
 
-            $this->db->where('_userid', $user_id);
+            $this->db->where('userNumber', $user_id);
             $this->db->update($this->table, $data);
 
             return true;
@@ -203,7 +219,7 @@ class User_model extends CI_Model
                 'isdeprecated'=>$data['isdeprecated']
             );
 
-            $this->db->where('_userid', $data['userid']);
+            $this->db->where('userNumber', $data['userid']);
             $this->db->update($this->table, $input_data);
 
             return true;

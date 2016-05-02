@@ -8,7 +8,8 @@ class User extends CORE_Controller
         $this->load->model('user_model');
     }
 
-    function test() {
+    function test()
+    {
         var_dump($_POST);
         $test = json_decode($_POST['test']);
         echo json_encode($test, JSON_PRETTY_PRINT);
@@ -56,7 +57,7 @@ class User extends CORE_Controller
                 $this->session->set_flashdata('message', '관리자 권한을 박탈하였습니다.');
             }
 
-            redirect('user/detail?userId='.$user_id);
+            redirect('user/detail?userId=' . $user_id);
         } else {
             if ($is_admin) {
                 $this->session->set_flashdata('message', '관리자 권한을 부여하는데 오류가 발생했습니다.');
@@ -64,16 +65,28 @@ class User extends CORE_Controller
                 $this->session->set_flashdata('message', '관리자 권한을 박탈하는데 오류가 발생했습니다.');
             }
 
-            redirect('user/detail?userId='.$user_id);
+            redirect('user/detail?userId=' . $user_id);
         }
     }
 
-    function change_password() {
+    function change_password()
+    {
         $user_id = $this->input->post('userId');
         $password = $this->input->post('password');
 
-        $rtv = $this->user_model->change_password($user_id, $password);
+        if(strlen($password) == 0){
+            $this->session->set_flashdata('message', '비밀 번호 길이가 짧습니다.');
+            redirect('user/detail?userId=' . $user_id);
+        }else{
+            $rtv = $this->user_model->change_password($user_id, $password);
 
-        return json_encode($rtv, JSON_PRETTY_PRINT);
+            if ($rtv) {
+                $this->session->set_flashdata('message', '비밀 번호를 변경하는데 성공 했습니다.');
+                redirect('user/detail?userId=' . $user_id);
+            } else {
+                $this->session->set_flashdata('message', '비밀 번호를 변경하는데 오류가 발생했습니다.');
+                redirect('user/detail?userId=' . $user_id);
+            }
+        }
     }
 }
