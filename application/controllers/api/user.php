@@ -1,7 +1,15 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+//require(realpath($_SERVER["DOCUMENT_ROOT"]) . '/MGMT/static/aws/aws-autoloader.php') ;
+
+require('/var/www/html/MGMT/static/aws/aws-autoloader.php');
+
+use Aws\S3\S3Client;
+use Aws\S3\Exception\S3Exception;
+
 class User extends CORE_Controller
 {
+
     function __construct()
     {
         parent::__construct();
@@ -74,10 +82,10 @@ class User extends CORE_Controller
         $user_id = $this->input->post('userId');
         $password = $this->input->post('password');
 
-        if(strlen($password) == 0){
+        if (strlen($password) == 0) {
             $this->session->set_flashdata('message', '비밀 번호 길이가 짧습니다.');
             redirect('user/detail?userId=' . $user_id);
-        }else{
+        } else {
             $rtv = $this->user_model->change_password($user_id, $password);
 
             if ($rtv) {
@@ -88,5 +96,151 @@ class User extends CORE_Controller
                 redirect('user/detail?userId=' . $user_id);
             }
         }
+    }
+
+    function block_user()
+    {
+        $user_id = $this->input->get('userId');
+        $state = $this->input->get('state');
+
+        //state가 active 이면 block 가능
+        if (strcmp($state, 'active') == 0) {
+
+            $rtv = $this->user_model->change_state_block($user_id);
+
+            if ($rtv) {
+                $this->session->set_flashdata('message', '계정이 이용정지 되었습니다.');
+
+                redirect('user/detail?userId=' . $user_id);
+            } else {
+                $this->session->set_flashdata('message', '오류가 발생했습니다.');
+
+                redirect('user/detail?userId=' . $user_id);
+            }
+        } else {
+
+            if (strcmp($state, 'block') == 0) {
+
+                $this->session->set_flashdata('message', '이미 이용정지 된 계정 입니다.');
+                redirect('user/detail?userId=' . $user_id);
+
+            } else if (strcmp($state, 'out') == 0) {
+
+                $this->session->set_flashdata('message', '이미 탈퇴한 계정 입니다.');
+                redirect('user/detail?userId=' . $user_id);
+
+            }
+
+        }
+    }
+
+    function upload_profile_image()
+    {
+        error_reporting(E_ALL);
+        ini_set('display_errors','On');
+
+        $user_id = $this->input->get('userId');
+
+        $uploaddir = '/tmp/';
+        $uploadfile = $uploaddir . basename($_FILES['jamong-profile-image']['name']);
+
+        if (move_uploaded_file($_FILES['jamong-profile-image']['tmp_name'], $uploadfile)) {
+            try{
+                // Instantiate an S3 client
+                $s3 = S3Client::factory([
+                    'version'     => 'latest',
+                    'region'      => 'ap-northeast-1',
+                    'credentials' => [
+                        'key'    => 'AKIAJWWW3TRCBB2ACYBA',
+                        'secret' => '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'
+                    ]
+                ]);
+
+
+                // Upload a publicly accessible file. File size, file type, and md5 hash are automatically calculated by the SDK
+                $result = $s3->putObject(array(
+                    'Bucket' => 'dongshin.user',
+                    'Key'    => $_FILES['jamong-profile-image']['name'],
+                    'Body'   => fopen($uploadfile, 'r'),
+                    'ACL'    => 'public-read',
+                    'ContentType'=>mime_content_type($uploadfile)
+                ));
+
+                $rtv = $this->user_model->change_profile_image($result["ObjectURL"]);
+            } catch(S3Exception $e){
+                print_r($e);
+            }
+        } else {
+            $this->session->set_flashdata('message', '임시 저장에 실패 햇습니다..');
+            redirect('user/detail?userId=' . $user_id);
+        }
+
+        //["name"]=> string(13) "sdfsdfdsf.png"
+        // ["type"]=> string(9) "image/png"
+        // ["tmp_name"]=> string(14) "/tmp/phpjyycmI"
+        // ["error"]=> int(0)
+        // ["size"]=> int(212948) }
+
+//        $file = $_FILES['jamong-profile-image'];
+//        var_dump($file);
+//        $fileName = $user_id . date(" Y-m-d H:i:m ");
+//        $bucket = 'dongshin.user';
+//
+//        $keyname = 'sample';
+//        // $filepath should be absolute path to a file on disk
+//        $filepath = site_url('static/img/profile_default.png');
+
+        // Instantiate the client.
+//        $s3 = S3Client::factory(array(
+//            'key' => 'AKIAJWWW3TRCBB2ACYBA',
+//            'secret' => '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',
+//            'region' => 'ap-northeast-1	'
+//        ));
+
+//        try {
+//            // Upload data.
+//            $result = $s3->putObject(array(
+//                'Bucket' => $bucket,
+//                'Key' => $keyname,
+//                'SourceFile' => $filepath,
+//                'ACL' => 'public-read'
+//            ));
+//
+//
+//            // Print the URL to the object.
+//            echo $result['ObjectURL'] . "\n";
+//        } catch (S3Exception $e) {
+//            echo $e->getMessage() . "\n";
+//        }
+
+
+//        if ($file["error"] == UPLOAD_ERR_OK) {
+//                  $this->session->set_flashdata('message', '파일이 성공적으로 업로드 되었습니다.');
+//                redirect('user/detail?userId=' . $user_id);
+//        } else {
+//            if ($file["error"] == UPLOAD_ERR_INI_SIZE) {
+//                $this->session->set_flashdata('message', '업로드한 파일이 php.ini upload_max_filesize 지시어보다 큽니다.');
+//                redirect('user/detail?userId=' . $user_id);
+//            } elseif ($file["error"] == UPLOAD_ERR_FORM_SIZE) {
+//                $this->session->set_flashdata('message', '업로드한 파일이 HTML 폼에서 지정한 MAX_FILE_SIZE 지시어보다 큽니다.');
+//                redirect('user/detail?userId=' . $user_id);
+//            } elseif ($file["error"] == UPLOAD_ERR_PARTIAL) {
+//                $this->session->set_flashdata('message', '파일이 일부분만 전송되었습니다.');
+//                redirect('user/detail?userId=' . $user_id);
+//            } elseif ($file["error"] == UPLOAD_ERR_NO_FILE) {
+//                $this->session->set_flashdata('message', '파일이 전송되지 않았습니다.');
+//                redirect('user/detail?userId=' . $user_id);
+//            } elseif ($file["error"] == UPLOAD_ERR_NO_TMP_DIR) {
+//                $this->session->set_flashdata('message', '임시 폴더가 없습니다.');
+//                redirect('user/detail?userId=' . $user_id);
+//            } elseif ($file["error"] == UPLOAD_ERR_CANT_WRITE) {
+//                $this->session->set_flashdata('message', '디스크에 파일 쓰기를 실패했습니다.');
+//                redirect('user/detail?userId=' . $user_id);
+//            } elseif ($file["error"] == UPLOAD_ERR_EXTENSION) {
+//                $this->session->set_flashdata('message', '확장에 의해 파일 업로드가 중지되었습니다.');
+//                redirect('user/detail?userId=' . $user_id);
+//            }
+//        }
+
     }
 }

@@ -158,6 +158,26 @@ class User_model extends CI_Model
         }
     }
 
+    function change_state_block($user_id)
+    {
+        date_default_timezone_set('UTC');
+        try {
+            $data = array(
+                'blockdate' => date('Y-m-d H:i:s'),
+                'state' => 'block'
+            );
+
+            $this->db->where('userNumber', $user_id);
+            $this->db->update($this->table, $data);
+
+            return $this->db->affected_rows();
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+
+
     function change_isdeprecated($user_id, $isdeprecated)
     {
         try {
