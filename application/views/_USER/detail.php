@@ -6,11 +6,14 @@
         <div class="row">
             <div class="col-md-4 jamong-pannel">
                 <div class="box box-info">
-                    <div class="form-horizontal">
+                    <form class="form-horizontal" action="<?= site_url('/api/user/change_password/')?>"
+                    method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="userId" value="<?php if($item!=null) echo $item->userNumber ?>">
                         <div class="box-header with-border">
                             <h3 class="box-title">기본정보</h3>
                         </div>
                         <div class="box-body">
+
                             <div class="form-group">
                                 <label for="title" class="col-sm-3 control-label">id</label>
                                 <div class="col-sm-9 sg-item-content">
@@ -52,15 +55,13 @@
                                 <label for="title" class="col-sm-3 control-label">비밀번호</label>
                                 <div class="col-sm-9 sg-item-content">
                                     <input type="password" class="jamong-password-input form-control my-colorpicker1"
-                                           value="" ng-model="user.password"/>
-                                    <a class="btn btn-success jamong-password-change-submit" href=""
-                                       style="margin-left: 3px; margin-bottom: 3px;">
-                                        비밀번호 변경
-                                    </a>
+                                           name="password" ng-model="user.password"/>
+                                    <input type="submit" value="비밀번호 변경" class="btn btn-success jamong-password-change-submit"
+                                       style="margin-left: 3px; margin-bottom: 3px;"/>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="col-md-4 jamong-pannel">
@@ -205,19 +206,6 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <?php if ($item->isadmin == "0") { ?>
-                            <a class="btn btn-success pull-right"
-                               href="<?= site_url('api/user/change_isadmin?userId=' . $item->userNumber . '&isadmin=true') ?>"
-                               style="margin-right: 5px;">
-                                관리자부여
-                            </a>
-                        <?php } else { ?>
-                            <a class="btn btn-danger pull-right"
-                               href="<?= site_url('api/user/change_isadmin?userId=' . $item->userNumber . '&isadmin=false') ?>"
-                               style="margin-right: 5px;">
-                                관리자박탈
-                            </a>
-                        <?php } ?>
                         <a class="btn btn-primary pull-right" style="margin-right: 5px;"
                            href="<?= site_url('user/index') ?>">
                             목록보기
