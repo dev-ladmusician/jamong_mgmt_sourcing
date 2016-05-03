@@ -34,7 +34,6 @@ controller('ChannelCtrl', function ($scope, $timeout, ngTableParams) {
 
     $scope.page = $scope.tableParams.page();
     $scope.perpage = $scope.tableParams.count();
-
 }).directive('loadingContainer', function () {
     return {
         restrict: 'A',

@@ -175,44 +175,6 @@ class User extends CORE_Controller
             redirect('user/detail?userId=' . $user_id);
         }
 
-        //["name"]=> string(13) "sdfsdfdsf.png"
-        // ["type"]=> string(9) "image/png"
-        // ["tmp_name"]=> string(14) "/tmp/phpjyycmI"
-        // ["error"]=> int(0)
-        // ["size"]=> int(212948) }
-
-//        $file = $_FILES['jamong-profile-image'];
-//        var_dump($file);
-//        $fileName = $user_id . date(" Y-m-d H:i:m ");
-//        $bucket = 'dongshin.user';
-//
-//        $keyname = 'sample';
-//        // $filepath should be absolute path to a file on disk
-//        $filepath = site_url('static/img/profile_default.png');
-
-        // Instantiate the client.
-//        $s3 = S3Client::factory(array(
-//            'key' => 'AKIAJWWW3TRCBB2ACYBA',
-//            'secret' => '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',
-//            'region' => 'ap-northeast-1	'
-//        ));
-
-//        try {
-//            // Upload data.
-//            $result = $s3->putObject(array(
-//                'Bucket' => $bucket,
-//                'Key' => $keyname,
-//                'SourceFile' => $filepath,
-//                'ACL' => 'public-read'
-//            ));
-//
-//
-//            // Print the URL to the object.
-//            echo $result['ObjectURL'] . "\n";
-//        } catch (S3Exception $e) {
-//            echo $e->getMessage() . "\n";
-//        }
-
 
 //        if ($file["error"] == UPLOAD_ERR_OK) {
 //                  $this->session->set_flashdata('message', '파일이 성공적으로 업로드 되었습니다.');

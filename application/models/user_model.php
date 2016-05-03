@@ -84,6 +84,40 @@ class User_model extends CI_Model
         return $this->db->get()->result();
     }
 
+    function gets_manager_pagination($page, $per_page, $sort, $filter) {
+        if ($page === 1) {
+            $this->db->limit($per_page);
+
+        } else {
+            $this->db->limit($per_page, ($page - 1) * $per_page);
+        }
+        $this->db->select('jamong__tb_users.userNumber, jamong__tb_users.email, jamong__tb_users.joinday, 
+                           jamong__tb_users.accounttype, jamong__tb_users.vrcoin, jamong__tb_users.adultdate, jamong__tb_users.adult,
+                           jamong__tb_users.state, jamong__tb_users.statedate, 
+                           jumper_user.nickname,
+                           jumper__managers.channelnum');
+        $this->db->from($this->table);
+        $this->db->join('jumper_user', 'jumper_user.userNumber = jamong__tb_users.userNumber', 'left');
+        $this->db->join('jumper__managers', 'jumper__managers.userNumber = jamong__tb_users.userNumber', 'left');
+        $this->db->group_by('jamong__tb_users.userNumber');
+
+        // sorting
+        if (isset($sort['userNumber'])) $this->db->order_by("jamong__tb_users.userNumber", $sort['userNumber']);
+        if (isset($sort['email'])) $this->db->order_by("email", $sort['email']);
+        if (isset($sort['nickname'])) $this->db->order_by("nickname", $sort['nickname']);
+        if (isset($sort['adult'])) $this->db->order_by("adult", $sort['adult']);
+        if (isset($sort['manager'])) $this->db->order_by("jumper__managers.channelnum", $sort['manager']);
+
+        // filter
+        if ($filter != null && isset($filter['userNumber'])) $this->db->like('jamong__tb_users.userNumber', $filter['userNumber']);
+        if ($filter != null && isset($filter['email'])) $this->db->like('jamong__tb_users.email', $filter['email']);
+        if ($filter != null && isset($filter['accounttype'])) $this->db->like('jamong__tb_users.accounttype', $filter['accounttype']);
+        if ($filter != null && isset($filter['nickname'])) $this->db->like('jumper_user.nickname', urldecode($filter['nickname']));
+        if ($filter != null && isset($filter['manager'])) $this->db->like('jumper__managers.channelnum', urldecode($filter['manager']));
+
+        return $this->db->get()->result();
+    }
+
     function gets_admin()
     {
         $this->db->select('*');
