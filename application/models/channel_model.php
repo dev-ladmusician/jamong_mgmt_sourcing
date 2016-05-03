@@ -49,6 +49,16 @@ class Channel_model extends CI_Model
         return $query->result();
     }
 
+    function get_managers($channel_id)
+    {
+        $this->db->select('*');
+        $this->db->from("jumper__managers");
+        $this->db->join('jamong__tb_users', 'jamong__tb_users.userNumber = jumper__managers.userNumber', 'left');
+        $this->db->join('jumper_user', 'jumper_user.userNumber = jumper__managers.userNumber', 'left');
+        $this->db->where('channelnum', $channel_id);
+        return $this->db->get()->result();
+    }
+
     function change_channel_info($channel_id, $name, $nickname, $content)
     {
         $data = array(
@@ -58,7 +68,6 @@ class Channel_model extends CI_Model
         );
 
         $this->db->where('channelnum', $channel_id);
-        $this->db->update($this->table, $data);
         return $this->db->affected_rows();
     }
 

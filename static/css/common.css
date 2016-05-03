@@ -13,6 +13,12 @@
 a:hover {
     cursor: pointer;
 }
+.jamong-pannel:first-child {
+    padding-left: 15px;
+}
+.jamong-pannel {
+    padding-left: 0px;
+}
 
 /* mobile */
 @media only screen and (max-width: 480px){

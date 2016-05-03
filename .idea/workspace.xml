@@ -6,12 +6,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/channel.php" afterPath="$PROJECT_DIR$/application/controllers/api/channel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/channel.php" afterPath="$PROJECT_DIR$/application/controllers/channel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/channel_model.php" afterPath="$PROJECT_DIR$/application/models/channel_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/user_model.php" afterPath="$PROJECT_DIR$/application/models/user_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" afterPath="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_CHANNEL/index.php" afterPath="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_USER/index.php" afterPath="$PROJECT_DIR$/application/views/_USER/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/channel/detail.css" afterPath="$PROJECT_DIR$/static/css/channel/detail.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="$PROJECT_DIR$/static/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/user/detail.css" afterPath="$PROJECT_DIR$/static/css/user/detail.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/channel/detail.js" afterPath="$PROJECT_DIR$/static/js/channel/detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/channel/index.js" afterPath="$PROJECT_DIR$/static/js/channel/index.js" />
     </list>
     <ignored path="CodeIgniter-2.2.3-MGMT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,26 +32,111 @@
     <favorites_list name="CodeIgniter-2.2.3-MGMT" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.63685477">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="detail.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/detail.php">
+          <file leaf-file-name="user_model.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+                <state relative-caret-position="538">
+                  <caret line="79" column="41" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
                   <folding>
-                    <element signature="n#style#0;n#a#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <marker date="1462282385000" expanded="false" signature="209:956" placeholder="..." />
+                    <marker date="1462282385000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
+                    <marker date="1462282385000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
+                    <marker date="1462282385000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
+                    <marker date="1462282385000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
+                    <marker date="1462282385000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
+                    <marker date="1462282385000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
+                    <marker date="1462282385000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
+                    <marker date="1462282385000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
+                    <marker date="1462282385000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
+                    <marker date="1462282385000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
+                    <marker date="1462282385000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
+                    <marker date="1462282385000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
+                    <marker date="1462282385000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
+                    <marker date="1462282385000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
+                    <marker date="1462282385000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
+                    <marker date="1462282385000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
+                    <marker date="1462282385000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
+                    <marker date="1462282385000" expanded="false" signature="978:2178" placeholder="{...}" />
+                    <marker date="1462282385000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
+                    <marker date="1462282385000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                    <marker date="1462282385000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                    <marker date="1462282385000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                    <marker date="1462282385000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                    <marker date="1462282385000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
+                    <marker date="1462282385000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                    <marker date="1462282385000" expanded="true" signature="7610:8494" placeholder="Select a.* ,... jamong__tb_users" />
+                    <marker date="1462282385000" expanded="true" signature="7648:7722" placeholder="select pictu... jamong__tb_users_picture" />
+                    <marker date="1462282385000" expanded="true" signature="7763:7814" placeholder="select nickN... jumper_user" />
+                    <marker date="1462282385000" expanded="true" signature="7867:7926" placeholder="select count... jumper__channellist" />
+                    <marker date="1462282385000" expanded="true" signature="7977:8034" placeholder="select count... jumper__favorites" />
+                    <marker date="1462282385000" expanded="true" signature="8088:8145" placeholder="select count... jumper__mychannels" />
+                    <marker date="1462282385000" expanded="true" signature="8195:8251" placeholder="select follo... jumper__channellist" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="channel.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="detail.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/detail.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="134" column="20" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
+                  <folding>
+                    <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#style#0;n#a#0;n#div#6;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#0;n#div#2;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#style#0;n#a#0;n#td#5;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#1;n#td#5;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/static/js/user/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#1418#1862#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/controllers/api/user.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="282">
+                  <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+                  <folding>
+                    <element signature="n#detail#0;n#User#0;n#!!top" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="channel.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/controllers/api/channel.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="53" column="63" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="63" />
+                <state relative-caret-position="30">
+                  <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+                  <folding>
+                    <element signature="n#get_items#0;n#Channel#0;n#!!top" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="channel.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -61,29 +146,51 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="detail.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="detail.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/static/js/channel/detail.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+                <state relative-caret-position="240">
+                  <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
                   <folding>
-                    <element signature="e#261#445#0" expanded="false" />
-                    <element signature="e#510#1368#0" expanded="false" />
+                    <element signature="e#1476#2289#0" expanded="false" />
+                    <element signature="n#!!block;n#tableResetPageWhenIfNeeded#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="channel_model.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="detail.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/static/css/channel/detail.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="channel_model.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+                <state relative-caret-position="360">
+                  <caret line="61" column="73" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
                   <folding>
-                    <marker date="1462279327000" expanded="true" signature="1866:2086" placeholder="SELECT l.*, jumper__channellist" />
-                    <marker date="1462279327000" expanded="true" signature="1866:2112" placeholder="SELECT l.*, jumper__channellist" />
-                    <marker date="1462279327000" expanded="true" signature="1866:2131" placeholder="SELECT l.*, jumper__channellist" />
-                    <marker date="1462279327000" expanded="true" signature="1866:2132" placeholder="SELECT l.*, jumper__channellist" />
+                    <marker date="1462282778000" expanded="true" signature="1866:2086" placeholder="SELECT l.*, jumper__channellist" />
+                    <marker date="1462282778000" expanded="true" signature="1866:2112" placeholder="SELECT l.*, jumper__channellist" />
+                    <marker date="1462282778000" expanded="true" signature="1866:2131" placeholder="SELECT l.*, jumper__channellist" />
+                    <marker date="1462282778000" expanded="true" signature="1866:2132" placeholder="SELECT l.*, jumper__channellist" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/views/_USER/index.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+                  <folding>
+                    <element signature="n#section#1;n#div#0;n#!!top" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -117,23 +224,23 @@
         <option value="$PROJECT_DIR$/application/views/_LAYOUT/navbar.php" />
         <option value="$PROJECT_DIR$/application/controllers/user.php" />
         <option value="$PROJECT_DIR$/static/css/user/index.css" />
-        <option value="$PROJECT_DIR$/static/css/channel/detail.css" />
         <option value="$PROJECT_DIR$/application/config/config.php" />
         <option value="$PROJECT_DIR$/static/js/user/index.js" />
-        <option value="$PROJECT_DIR$/application/models/user_model.php" />
-        <option value="$PROJECT_DIR$/application/views/_USER/index.php" />
-        <option value="$PROJECT_DIR$/application/controllers/api/user.php" />
         <option value="$PROJECT_DIR$/static/js/user/detail.js" />
         <option value="$PROJECT_DIR$/application/views/_USER/detail.php" />
         <option value="$PROJECT_DIR$/static/css/user/detail.css" />
-        <option value="$PROJECT_DIR$/static/css/common.css" />
         <option value="$PROJECT_DIR$/static/js/channel/index.js" />
         <option value="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
-        <option value="$PROJECT_DIR$/application/controllers/channel.php" />
-        <option value="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" />
-        <option value="$PROJECT_DIR$/application/models/channel_model.php" />
-        <option value="$PROJECT_DIR$/application/controllers/api/channel.php" />
+        <option value="$PROJECT_DIR$/static/css/common.css" />
+        <option value="$PROJECT_DIR$/static/css/channel/detail.css" />
+        <option value="$PROJECT_DIR$/application/views/_USER/index.php" />
+        <option value="$PROJECT_DIR$/application/controllers/api/user.php" />
+        <option value="$PROJECT_DIR$/application/models/user_model.php" />
         <option value="$PROJECT_DIR$/static/js/channel/detail.js" />
+        <option value="$PROJECT_DIR$/application/controllers/api/channel.php" />
+        <option value="$PROJECT_DIR$/application/controllers/channel.php" />
+        <option value="$PROJECT_DIR$/application/models/channel_model.php" />
+        <option value="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" />
       </list>
     </option>
   </component>
@@ -565,12 +672,12 @@
       <workItem from="1461309990189" duration="15849000" />
       <workItem from="1461722141531" duration="10629000" />
       <workItem from="1461919442002" duration="4886000" />
-      <workItem from="1462255860959" duration="3705000" />
+      <workItem from="1462255860959" duration="6956000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44415000" />
+    <option name="totallyTimeSpent" value="47666000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
@@ -625,8 +732,14 @@
           <line>17</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/static/js/channel/detail.js</url>
+          <line>69</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -643,7 +756,6 @@
         <state relative-caret-position="270">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="n#get_users#0;n#User#0;n#!!top" expanded="false" />
             <element signature="n#detail#0;n#User#0;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -672,39 +784,39 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#test#0;n#User_model#0;n#!!top" expanded="false" />
-            <element signature="n#gets#0;n#User_model#0;n#!!top" expanded="false" />
-            <marker date="1461920042000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="5415:6299" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="5453:5527" placeholder="select pictu... jamong__tb_users_picture" />
-            <marker date="1461920042000" expanded="true" signature="5568:5619" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="5672:5731" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="5782:5839" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="5893:5950" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="6000:6056" placeholder="select follo... jumper__channellist" />
+            <marker date="1462282385000" expanded="false" signature="209:956" placeholder="..." />
+            <marker date="1462282385000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
+            <marker date="1462282385000" expanded="false" signature="978:2178" placeholder="{...}" />
+            <marker date="1462282385000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="7610:8494" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="7648:7722" placeholder="select pictu... jamong__tb_users_picture" />
+            <marker date="1462282385000" expanded="true" signature="7763:7814" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="7867:7926" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="7977:8034" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="8088:8145" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="8195:8251" placeholder="select follo... jumper__channellist" />
           </folding>
         </state>
       </provider>
@@ -721,39 +833,39 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#test#0;n#User_model#0;n#!!top" expanded="false" />
-            <element signature="n#gets#0;n#User_model#0;n#!!top" expanded="false" />
-            <marker date="1461920042000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="5415:6299" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="5453:5527" placeholder="select pictu... jamong__tb_users_picture" />
-            <marker date="1461920042000" expanded="true" signature="5568:5619" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="5672:5731" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="5782:5839" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="5893:5950" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="6000:6056" placeholder="select follo... jumper__channellist" />
+            <marker date="1462282385000" expanded="false" signature="209:956" placeholder="..." />
+            <marker date="1462282385000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
+            <marker date="1462282385000" expanded="false" signature="978:2178" placeholder="{...}" />
+            <marker date="1462282385000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="7610:8494" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="7648:7722" placeholder="select pictu... jamong__tb_users_picture" />
+            <marker date="1462282385000" expanded="true" signature="7763:7814" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="7867:7926" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="7977:8034" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="8088:8145" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="8195:8251" placeholder="select follo... jumper__channellist" />
           </folding>
         </state>
       </provider>
@@ -840,39 +952,39 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#test#0;n#User_model#0;n#!!top" expanded="false" />
-            <element signature="n#gets#0;n#User_model#0;n#!!top" expanded="false" />
-            <marker date="1461920042000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="5415:6299" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="5453:5527" placeholder="select pictu... jamong__tb_users_picture" />
-            <marker date="1461920042000" expanded="true" signature="5568:5619" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="5672:5731" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="5782:5839" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="5893:5950" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="6000:6056" placeholder="select follo... jumper__channellist" />
+            <marker date="1462282385000" expanded="false" signature="209:956" placeholder="..." />
+            <marker date="1462282385000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
+            <marker date="1462282385000" expanded="false" signature="978:2178" placeholder="{...}" />
+            <marker date="1462282385000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="7610:8494" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="7648:7722" placeholder="select pictu... jamong__tb_users_picture" />
+            <marker date="1462282385000" expanded="true" signature="7763:7814" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="7867:7926" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="7977:8034" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="8088:8145" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="8195:8251" placeholder="select follo... jumper__channellist" />
           </folding>
         </state>
       </provider>
@@ -965,14 +1077,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/channel/detail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_LAYOUT/navbar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -994,38 +1098,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/user/detail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/user/detail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-          <folding>
-            <element signature="e#243#687#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/user/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <element signature="e#1418#1862#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_USER/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
           <folding />
         </state>
       </provider>
@@ -1034,14 +1110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1056,17 +1124,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/api/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
-          <folding>
-            <element signature="n#get_users#0;n#User#0;n#!!top" expanded="false" />
-            <element signature="n#detail#0;n#User#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/channel/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="471">
@@ -1075,103 +1132,164 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/user/detail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/channel/detail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_USER/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding>
+            <element signature="n#section#1;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_USER/detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="155" column="72" selection-start-line="155" selection-start-column="72" selection-end-line="155" selection-end-column="72" />
+        <state relative-caret-position="0">
+          <caret line="0" column="55" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/api/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="138" column="12" selection-start-line="138" selection-start-column="12" selection-end-line="138" selection-end-column="46" />
+        <state relative-caret-position="282">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding>
-            <element signature="n#test#0;n#User_model#0;n#!!top" expanded="false" />
-            <element signature="n#gets#0;n#User_model#0;n#!!top" expanded="false" />
-            <marker date="1461920042000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
-            <marker date="1461920042000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1461920042000" expanded="true" signature="5415:6299" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1461920042000" expanded="true" signature="5453:5527" placeholder="select pictu... jamong__tb_users_picture" />
-            <marker date="1461920042000" expanded="true" signature="5568:5619" placeholder="select nickN... jumper_user" />
-            <marker date="1461920042000" expanded="true" signature="5672:5731" placeholder="select count... jumper__channellist" />
-            <marker date="1461920042000" expanded="true" signature="5782:5839" placeholder="select count... jumper__favorites" />
-            <marker date="1461920042000" expanded="true" signature="5893:5950" placeholder="select count... jumper__mychannels" />
-            <marker date="1461920042000" expanded="true" signature="6000:6056" placeholder="select follo... jumper__channellist" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding>
-            <marker date="1462279327000" expanded="true" signature="1866:2086" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462279327000" expanded="true" signature="1866:2112" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462279327000" expanded="true" signature="1866:2131" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462279327000" expanded="true" signature="1866:2132" placeholder="SELECT l.*, jumper__channellist" />
+            <element signature="n#detail#0;n#User#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/channel/detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#261#445#0" expanded="false" />
-            <element signature="e#510#1368#0" expanded="false" />
+            <element signature="e#1476#2289#0" expanded="false" />
+            <element signature="n#!!block;n#tableResetPageWhenIfNeeded#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/user/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="e#1418#1862#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/api/channel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="53" column="63" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="63" />
+        <state relative-caret-position="30">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+          <folding>
+            <element signature="n#get_items#0;n#Channel#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="61" column="73" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
+          <folding>
+            <marker date="1462282778000" expanded="true" signature="1866:2086" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462282778000" expanded="true" signature="1866:2112" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462282778000" expanded="true" signature="1866:2131" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462282778000" expanded="true" signature="1866:2132" placeholder="SELECT l.*, jumper__channellist" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="79" column="41" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
+          <folding>
+            <marker date="1462282385000" expanded="false" signature="209:956" placeholder="..." />
+            <marker date="1462282385000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
+            <marker date="1462282385000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
+            <marker date="1462282385000" expanded="false" signature="978:2178" placeholder="{...}" />
+            <marker date="1462282385000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462282385000" expanded="true" signature="7610:8494" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462282385000" expanded="true" signature="7648:7722" placeholder="select pictu... jamong__tb_users_picture" />
+            <marker date="1462282385000" expanded="true" signature="7763:7814" placeholder="select nickN... jumper_user" />
+            <marker date="1462282385000" expanded="true" signature="7867:7926" placeholder="select count... jumper__channellist" />
+            <marker date="1462282385000" expanded="true" signature="7977:8034" placeholder="select count... jumper__favorites" />
+            <marker date="1462282385000" expanded="true" signature="8088:8145" placeholder="select count... jumper__mychannels" />
+            <marker date="1462282385000" expanded="true" signature="8195:8251" placeholder="select follo... jumper__channellist" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="134" column="20" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
+          <folding>
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#a#0;n#div#6;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#a#0;n#td#5;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#td#5;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

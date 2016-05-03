@@ -6,6 +6,7 @@ class Channel extends CORE_Controller
     {
         parent::__construct();
         $this->load->model('channel_model');
+        $this->load->model('user_model');
     }
 
     function get_items()
@@ -26,6 +27,27 @@ class Channel extends CORE_Controller
             'items' => $users,
             'sort' => $sort,
             'filter' => $filter
+        );
+        echo json_encode($rtv, JSON_PRETTY_PRINT);
+    }
+
+    function get_managers()
+    {
+        $page = $this->input->get('page');
+        $per_page = $this->input->get('count');
+        $sort = $this->input->get('sorting');
+        $filter = $this->input->get('filter');
+
+        if ($page === false || $per_page === false) {
+            $page = 1;
+            $per_page = 10;
+        }
+
+        $users = $this->user_model->gets_manager_pagination($page, $per_page, $sort, $filter);
+        $rtv = array(
+            'row_count' => $per_page,
+            'items' => $users,
+            'sorting' => $sort
         );
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }

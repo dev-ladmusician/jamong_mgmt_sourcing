@@ -7,19 +7,18 @@ controller('DetailCtrl', function ($scope, $timeout, ngTableParams) {
     $scope.totalLength = null;
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
-        count: 11,          // count per page
+        count: 10,          // count per page
         sorting: {
-            channelNum: 'desc',     // initial sorting
+            userNumber: 'desc',     // initial sorting
         }
     }, {
         total: 0,
         getData: function ($defer, params) {
             tableResetPageWhenIfNeeded($scope.resetCacheData, $scope.tableParams, function () {
                 $.ajax({
-                    url: '/MGMT/api/channel/get_items',
-                    type: 'GET',
+                    url: '/MGMT/api/channel/get_managers',
+                    type: "GET",
                     contentType: 'application/json',
-                    //data: JSON.stringify(params.url()),
                     data: params.url(),
                     dataType: 'json',
                     success: function (data) {
@@ -37,8 +36,6 @@ controller('DetailCtrl', function ($scope, $timeout, ngTableParams) {
 
     $scope.page = $scope.tableParams.page();
     $scope.perpage = $scope.tableParams.count();
-
-
 
     // 정보 업데이트
     $scope.changeChannelInfo = function () {
@@ -62,7 +59,7 @@ controller('DetailCtrl', function ($scope, $timeout, ngTableParams) {
                 if (data.rtv > 0) {
                     alert('성공적으로 업데이트 되었습니다.');
                 } else {
-                    alert('업데이트 하는데 오류가 발생했습니다.');
+                    alert('정보가 변경되지 않았거나, 업데이트 하는데 오류가 발생했습니다.');
                 }
             }
         })
