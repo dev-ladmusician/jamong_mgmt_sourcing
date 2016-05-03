@@ -14,6 +14,7 @@ class User extends CORE_Controller
     {
         parent::__construct();
         $this->load->model('user_model');
+        $this->load->model('user_picture_model');
     }
 
     function test()
@@ -157,16 +158,33 @@ class User extends CORE_Controller
                 ]);
 
 
+
+                $fileType = explode (".", $_FILES['jamong-profile-image']['name']);
+                $fileName = $user_id . date( ' Y-m-d H:i:s.') .$fileType[1];
                 // Upload a publicly accessible file. File size, file type, and md5 hash are automatically calculated by the SDK
                 $result = $s3->putObject(array(
                     'Bucket' => 'dongshin.user',
-                    'Key'    => $_FILES['jamong-profile-image']['name'],
+                    'Key'    => $fileName,
                     'Body'   => fopen($uploadfile, 'r'),
                     'ACL'    => 'public-read',
                     'ContentType'=>mime_content_type($uploadfile)
                 ));
 
-                $rtv = $this->user_model->change_profile_image($result["ObjectURL"]);
+//                $rtv = $this->user_model->change_profile_image($result["ObjectURL"]);
+                $rtv = $this->user_picture_model->get_id_by_user($user_id);
+
+                //user_picture table에 user가 존재하지 않을 경우 추가
+                if($rtv == null){
+                    $this->user_picture_model->add($user_id,$result["ObjectURL"]);
+                    $this->session->set_flashdata('message', '프로필 사진을 성공적으로 변경 했습니다.');
+                    redirect('user/detail?userId=' . $user_id);
+                }else{
+                    //user_picture table에 user가 이미 존재할 경우 업데이트
+                    $this->user_picture_model->update($user_id,$result["ObjectURL"]);
+                    $this->session->set_flashdata('message', '프로필 사진을 성공적으로 변경 했습니다.');
+                    redirect('user/detail?userId=' . $user_id);
+                }
+
             } catch(S3Exception $e){
                 print_r($e);
             }
@@ -204,5 +222,8 @@ class User extends CORE_Controller
 //            }
 //        }
 
+
     }
 }
+
+

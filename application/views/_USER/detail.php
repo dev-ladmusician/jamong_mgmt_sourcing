@@ -167,7 +167,8 @@
                                         <img class="jamong_profile"
                                              src="<?= site_url('static/img/profile_default.png') ?>">
                                     <?php } else { ?>
-                                        <?php echo $item->picture ?>
+                                        <img class="jamong_profile"
+                                             src="<?=$item->picture?>">
                                     <?php } ?>
                                 </div>
                             </div>
