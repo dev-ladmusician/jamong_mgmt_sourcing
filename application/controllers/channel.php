@@ -14,8 +14,8 @@ class Channel extends CORE_Controller
     }
 
     function detail() {
-        $channel_num = $this->input->get('channelNum');
+        $channel_num = $this->input->get('channelId');
         $channel = $this->channel_model->get_by_id($channel_num);
-        $this->__get_views('_CHANNEL/detail.php', array('channel' => $channel));
+        $this->__get_views('_CHANNEL/detail.php', array('channel' => $channel[0]));
     }
 }

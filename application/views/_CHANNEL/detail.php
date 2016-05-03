@@ -16,17 +16,32 @@
                             <h3 class="box-title">채널 정보</h3>
                         </div>
                         <div class="box-body">
+                            <input type="hidden" id="jamong-channel-id" value="<?php echo $channel->channelnum?>">
                             <div class="form-group">
                                 <label>생성일:</label>
                                 <small>2015-03-15</small>
                             </div>
                             <div class="form-group">
                                 <label>채널 이름:</label>
-                                <input type="text" class="form-control" />
+                                <input id="jamong-channel-name" type="text" class="form-control" value="<?php echo $channel->channelname ?>" />
+                            </div>
+                            <div class="form-group">
+                                <label>채널 닉네임:</label>
+                                <input id="jamong-channel-nickname" type="text" class="form-control" value="<?php echo $channel->nickName ?>" />
                             </div>
                             <div class="form-group">
                                 <label>채널 내용:</label>
-                                <textarea class="form-control"></textarea>
+                                <textarea id="jamong-channel-desc" class="form-control">
+                                    <?php echo $channel->chdesc ?>
+                                </textarea>
+                            </div>
+                            <div class="form-group pull-right">
+                                <a class="btn btn-default"
+                                   href=""
+                                   ng-click="changeChannelInfo()"
+                                   style="margin-left: 3px; margin-bottom: 3px;">
+                                    정보 변경
+                                </a>
                             </div>
                         </div>
                     </div>

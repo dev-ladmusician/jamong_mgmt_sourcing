@@ -10,6 +10,9 @@
 .table-container > div {
     margin-top: 11px;
 }
+a:hover {
+    cursor: pointer;
+}
 
 /* mobile */
 @media only screen and (max-width: 480px){
