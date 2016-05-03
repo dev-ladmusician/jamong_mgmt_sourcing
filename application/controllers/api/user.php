@@ -137,9 +137,6 @@ class User extends CORE_Controller
 
     function upload_profile_image()
     {
-        error_reporting(E_ALL);
-        ini_set('display_errors','On');
-
         $user_id = $this->input->get('userId');
 
         $uploaddir = '/tmp/';
@@ -157,8 +154,6 @@ class User extends CORE_Controller
                     ]
                 ]);
 
-
-
                 $fileType = explode (".", $_FILES['jamong-profile-image']['name']);
                 $fileName = $user_id . date( ' Y-m-d H:i:s.') .$fileType[1];
                 // Upload a publicly accessible file. File size, file type, and md5 hash are automatically calculated by the SDK
@@ -170,7 +165,6 @@ class User extends CORE_Controller
                     'ContentType'=>mime_content_type($uploadfile)
                 ));
 
-//                $rtv = $this->user_model->change_profile_image($result["ObjectURL"]);
                 $rtv = $this->user_picture_model->get_id_by_user($user_id);
 
                 //user_picture table에 user가 존재하지 않을 경우 추가
