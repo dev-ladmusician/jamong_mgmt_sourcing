@@ -28,8 +28,9 @@ class Channel extends CORE_Controller
         }
 
         $users = $this->channel_model->gets_pagination($page, $per_page, $sort, $filter);
+        $total_count = $this->channel_model->get_total_count();
         $rtv = array(
-            'row_count' => $page,
+            'row_count' => $total_count,
             'items' => $users,
             'sort' => $sort,
             'filter' => $filter

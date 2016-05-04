@@ -21,10 +21,12 @@ class Type extends CORE_Controller
             $per_page = 10;
         }
 
-        $users = $this->type_model->gets_pagination($page, $per_page, $sort, $filter);
+        $types = $this->type_model->gets_pagination($page, $per_page, $sort, $filter);
+        $total_count = $this->type_model->get_total_count();
+
         $rtv = array(
-            'row_count' => $page,
-            'items' => $users,
+            'row_count' => $total_count,
+            'items' => $types,
             'sort' => $sort,
             'filter' => $filter
         );

@@ -84,6 +84,11 @@ class User_model extends CI_Model
         return $this->db->get()->result();
     }
 
+    function get_total_count()
+    {
+        return $this->db->count_all($this->table);
+    }
+
     function gets_manager_pagination($page, $per_page, $sort, $filter) {
         if ($page === 1) {
             $this->db->limit($per_page);

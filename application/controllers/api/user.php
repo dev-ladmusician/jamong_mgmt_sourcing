@@ -37,8 +37,10 @@ class User extends CORE_Controller
         }
 
         $users = $this->user_model->gets_pagination($page, $per_page, $sort, $filter);
+        $total_count = $this->user_model->get_total_count();
+
         $rtv = array(
-            'row_count' => $per_page,
+            'row_count' => $total_count,
             'items' => $users,
         );
         echo json_encode($rtv, JSON_PRETTY_PRINT);

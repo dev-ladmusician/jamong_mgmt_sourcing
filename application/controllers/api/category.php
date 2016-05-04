@@ -21,10 +21,12 @@ class Category extends CORE_Controller
             $per_page = 10;
         }
 
-        $users = $this->category_model->gets_pagination($page, $per_page, $sort, $filter);
+        $categories = $this->category_model->gets_pagination($page, $per_page, $sort, $filter);
+        $total_count = $this->category_model->get_total_count();
+
         $rtv = array(
-            'row_count' => $page,
-            'items' => $users,
+            'row_count' => $total_count,
+            'items' => $categories,
             'sort' => $sort,
             'filter' => $filter
         );
