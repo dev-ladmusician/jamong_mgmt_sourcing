@@ -20,6 +20,7 @@
 <script src="/static/lib/admin/js/app.min.js" type="text/javascript"></script>
 <script src="/static/lib/admin/js/demo.js" type="text/javascript"></script>
 <script src="/static/js/ajaxBody.js"></script>
+<script src="<?=site_url('static/js/common.js')?>"></script>
 
 <?php
 $total_url = $_SERVER['PHP_SELF'];
