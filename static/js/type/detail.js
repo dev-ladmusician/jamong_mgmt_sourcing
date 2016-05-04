@@ -20,17 +20,17 @@ controller('DetailCtrl', function ($scope, $timeout, ngTableParams) {
 
     // 정보 업데이트
     $scope.changeTypeInfo = function () {
-        var id = $('#jamong-type-id').val();
+        var id = $('#jamong-type-table-id').val();
+        var type_id = $('#jamong-type-id').val();
         var name_kr = $('#jamong-type-name-kr').val();
-        var name_en = $('#jamong-type-name-en').val();
 
         $.ajax({
-            url: '/MGMT/api/type/change_category_info',
+            url: '/MGMT/api/type/change_type_info',
             type: 'POST',
             data: {
-                categoryId: id,
+                tableId: id,
                 name_kr: name_kr,
-                name_en: name_en
+                type: type_id
             },
             dataType: 'json',
             success: function (data) {

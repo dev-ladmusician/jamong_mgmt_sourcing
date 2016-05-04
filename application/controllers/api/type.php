@@ -38,7 +38,7 @@ class Type extends CORE_Controller
         $table_id = $this->input->get('tableId');
         $isdeprecated = $this->input->get('isdeprecated') == 'true' ? true : false;
 
-        $rtv = $this->category_model->change_isdeprecated($table_id, $isdeprecated);
+        $rtv = $this->type_model->change_isdeprecated($table_id, $isdeprecated);
         if ($rtv) {
             if ($isdeprecated) {
                 $this->session->set_flashdata('message', '타입을 성공적으로 삭제하였습니다.');
@@ -66,7 +66,7 @@ class Type extends CORE_Controller
         $rtv = array(
             'name_kr' => $name_kr,
             'type' => $type,
-            'rtv' => $this->category_model->change_category_info($table_id, $type, $name_kr)
+            'rtv' => $this->type_model->change_type_info($table_id, $type, $name_kr)
         );
         echo json_encode(
             $rtv, JSON_PRETTY_PRINT);
