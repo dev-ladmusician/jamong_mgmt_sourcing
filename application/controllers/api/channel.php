@@ -78,6 +78,7 @@ class Channel extends CORE_Controller
         $channel_id = $this->input->get('channelId');
         $user_id = $this->input->get('userId');
 
+
         $rtv = $this->channel_model->delete_manager($channel_id, $user_id);
 
         if ($rtv) {
