@@ -63,16 +63,22 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">채널 사진</h3>
                         </div>
-                        <div class="box-body">
+                        <form class="box-body" action="<?= site_url('api/channel/upload_channel_picture?channelId=' . $channel->channelnum) ?>"
+                              method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>적용중인 사진</label>
+                                <img class="" src="<?php if(isset($profile->ch_picture)){
+                                    echo $profile->ch_picture; }else{ echo 'http://14.49.36.93/jdisk/jamong/ch_rep/2016042617416.jpg';}?>
+                                   "/>
+                            </div>
                             <div class="form-group">
                                 <label>채널 사진</label>
-                                <input type="file" class="form-control my-colorpicker1" />
+                                <input type="file" accept="image/*" name="jamong-channel-image" class="form-control my-colorpicker1" />
                             </div>
-                            <div class="form-group">
-                                <label>미리 보기</label>
-                                <img class="" src="http://14.49.36.93/jdisk/jamong/ch_rep/2016042617416.jpg">
+                            <div class="form-group pull-right">
+                                <input type="submit" value="정보 변경" class="btn btn-default" style="margin-left: 3px; margin-bottom: 3px;">
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-4 jamong-pannel">
@@ -80,16 +86,22 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">배경 사진</h3>
                         </div>
-                        <div class="box-body">
+                        <form class="box-body" action="<?= site_url('api/channel/upload_channel_background?channelId=' . $channel->channelnum) ?>"
+                              method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label>채널 사진</label>
-                                <input type="file" class="form-control my-colorpicker1" />
+                                <label>적용중인 사진</label>
+                                <img class="" src="<?php if(isset($profile->bg_picture)){
+                                    echo $profile->bg_picture; }else{ echo 'http://14.49.36.93/jdisk/jamong/ch_rep/2016040113526.jpg';}?>
+                                   "/>
                             </div>
                             <div class="form-group">
-                                <label>미리 보기</label>
-                                <img class="" src="http://14.49.36.93/jdisk/jamong/ch_rep/2016040113526.jpg">
+                                <label>배경 사진</label>
+                                <input type="file" accept="image/*" name="jamong-channel-background" class="form-control my-colorpicker1" />
                             </div>
-                        </div>
+                            <div class="form-group pull-right">
+                                <input type="submit" value="정보 변경" class="btn btn-default" style="margin-left: 3px; margin-bottom: 3px;">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ class Channel extends CORE_Controller
         parent::__construct();
         //$this->__require_admin_login();
         $this->load->model('channel_model');
+        $this->load->model('channel_profile_model');
     }
 
     function index() {
@@ -16,7 +17,8 @@ class Channel extends CORE_Controller
     function detail() {
         $channel_num = $this->input->get('channelId');
         $channel = $this->channel_model->get_by_id($channel_num);
+        $profile = $this->channel_profile_model->get_by_id($channel_num);
         $managers = $this->channel_model->get_managers($channel_num);
-        $this->__get_views('_CHANNEL/detail.php', array('channel' => $channel[0], 'managers' => $managers));
+        $this->__get_views('_CHANNEL/detail.php', array('channel' => $channel[0], 'managers' => $managers , 'profile' => $profile[0]));
     }
 }
