@@ -133,7 +133,8 @@
                                         <td><?php echo $each->email; ?></td>
                                         <td><?php echo $each->nickName; ?></td>
                                         <td>
-                                            <a>삭제</a>
+                                            <a style="color: red"
+                                               href="<?=site_url('api/channel/delete_manager?channelId='.$channel->channelnum.'&userId='.$each->userNumber)?>">삭제</a>
                                         </td>
                                     </tr>
                                 <?php
@@ -166,8 +167,10 @@
                                         <span ng-if="item.state == 'block'">차단</span>
                                     </td>
                                     <td data-title="'관리자'" sortable="'manager'" filter="{manager: 'text'}">
-                                        <a style="color: red" ng-if="item.channelnum == <?php echo $channel->channelnum?>">삭제</a>
-                                        <a style="color: #0D65F1" ng-if="item.channelnum != <?php echo $channel->channelnum?>">관리자부여</a>
+                                        <a href="<?=site_url('api/channel/delete_manager?channelId='.$channel->channelnum.'&userId=')?>{{item.userNumber}}"
+                                            style="color: red" ng-if="item.channelnum == <?php echo $channel->channelnum?>">삭제</a>
+                                        <a href="<?=site_url('api/channel/add_manager?channelId='.$channel->channelnum.'&userId=')?>{{item.userNumber}}"
+                                            style="color: #0D65F1" ng-if="item.channelnum != <?php echo $channel->channelnum?>">관리자부여</a>
                                     </td>
                                 </tr>
                             </table>
