@@ -68,6 +68,8 @@ class Channel_model extends CI_Model
         );
 
         $this->db->where('channelnum', $channel_id);
+        $this->db->update($this->table, $data);
+
         return $this->db->affected_rows();
     }
 

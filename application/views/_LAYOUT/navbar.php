@@ -9,10 +9,17 @@
                 </a>
             </li>
             <li>
+                <a href="<?= site_url('category/index') ?>">
+                    <i class="fa fa-book"></i> <span>CATEGORY</span>
+                </a>
+            </li>
+
+            <li>
                 <a href="<?= site_url('channel/index') ?>">
                     <i class="fa fa-book"></i> <span>CHANNEL</span>
                 </a>
             </li>
+
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-book"></i> <span>공지사항</span>
