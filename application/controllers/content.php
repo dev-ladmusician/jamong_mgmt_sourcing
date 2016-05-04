@@ -8,7 +8,7 @@ class Content extends CORE_Controller
         //$this->__require_admin_login();
         $this->load->model('content_model');
         $this->load->model('category_model');
-        $this->load->model('content_model');
+        $this->load->model('type_model');
     }
 
     function index() {
@@ -19,5 +19,10 @@ class Content extends CORE_Controller
         $content_id = $this->input->get('contentId');
         $content = $this->content_model->get_by_id($content_id);
         $this->__get_views('_CONTENT/detail.php', array('content' => $content[0]));
+    }
+
+    function create() {
+        $types = $this->type_model->get_items();
+        $this->__get_views('_CONTENT/create.php', array());
     }
 }

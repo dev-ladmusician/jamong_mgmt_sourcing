@@ -40,5 +40,6 @@
                 </div>
             </div>
         </div>
+        <a class="btn btn-success pull-right" href="<?=site_url('content/create')?>">영상 추가</a>
     </section>
 </div>
