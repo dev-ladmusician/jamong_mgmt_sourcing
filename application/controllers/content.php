@@ -22,7 +22,6 @@ class Content extends CORE_Controller
     }
 
     function create() {
-        $types = $this->type_model->get_items();
         $this->__get_views('_CONTENT/create.php', array());
     }
 }

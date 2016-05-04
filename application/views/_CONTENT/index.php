@@ -2,7 +2,7 @@
 <div class="content-wrapper" ng-controller="UserCtrl">
     <section class="content-header">
         <h1>
-            회원
+            영상
         </h1>
     </section>
     <section class="content">

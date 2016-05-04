@@ -14,38 +14,17 @@
                             <h3 class="box-title">영상 정보</h3>
                         </div>
                         <div class="box-body">
-                            <input id="jamong-content-id" type="hidden" value="<?php echo $content->inum?>" >
-                            <div class="form-group">
-                                <label>업로드:</label>
-                                <small>
-                                    <?php echo $content->datetime; ?>
-                                </small>
-                            </div>
-                            <div class="form-group">
-                                <label>조회수:</label>
-                                <small>
-                                    <?php echo $content->view; ?>
-                                </small>
-                            </div>
-                            <div class="form-group">
-                                <label>좋아요:</label>
-                                <small>
-                                    <?php echo $content->likes; ?>
-                                </small>
-                            </div>
                             <div class="form-group">
                                 <label>가격:</label>
-                                <input id="jamong-content-price" type="text" class="form-control" value="<?php echo $content->price ?>" />
+                                <input id="jamong-content-price" type="text" class="form-control" value="" />
                             </div>
                             <div class="form-group">
                                 <label>닉네임:</label>
-                                <input id="jamong-content-nickname" type="text" class="form-control" value="<?php echo $content->nickName ?>" />
+                                <input id="jamong-content-nickname" type="text" class="form-control" value="" />
                             </div>
                             <div class="form-group">
                                 <label>설명:</label>
-                                <textarea id="jamong-content-content" class="form-control">
-                                    <?php echo $content->talk ?>
-                                </textarea>
+                                <textarea id="jamong-content-content" class="form-control"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>채널:</label>
@@ -99,20 +78,8 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">영상 썸네일</h3>
                         </div>
-                        <form class="box-body" action="<?= site_url('api/content/upload_content_image?contentId=' . $content->inum) ?>"
+                        <form class="box-body" action=""
                               method="post" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label>적용중인 사진</label>
-                                <img style="display: block" class=""
-                                     src="<?php
-                                     if(strlen($content->picture) > 0){
-                                         echo $content->picture;
-                                     } else {
-                                         echo '/MGMT/static/img/profile_default.png';
-                                     }
-                                     ?>
-                                   "/>
-                            </div>
                             <div class="form-group">
                                 <label>영상 썸네일 사진</label>
                                 <input type="file" accept="image/*" name="jamong-content-image" class="form-control my-colorpicker1" />
