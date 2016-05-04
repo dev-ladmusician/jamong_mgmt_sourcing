@@ -17,13 +17,6 @@ class User extends CORE_Controller
         $this->load->model('user_picture_model');
     }
 
-    function test()
-    {
-        var_dump($_POST);
-        $test = json_decode($_POST['test']);
-        echo json_encode($test, JSON_PRETTY_PRINT);
-    }
-
     function get_users()
     {
         $page = $this->input->get('page');

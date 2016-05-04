@@ -2,7 +2,7 @@
 <div class="content-wrapper" ng-controller="UserCtrl">
     <section class="content-header">
         <h1>
-            회원
+            영상
         </h1>
     </section>
     <section class="content">
@@ -40,5 +40,6 @@
                 </div>
             </div>
         </div>
+        <a class="btn btn-success pull-right" href="<?=site_url('content/create')?>">영상 추가</a>
     </section>
 </div>
