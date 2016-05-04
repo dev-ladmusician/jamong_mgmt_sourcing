@@ -123,7 +123,7 @@ class Channel extends CORE_Controller
                 ]);
 
                 $fileType = explode (".", $_FILES['jamong-channel-image']['name']);
-                $fileName = $channel_id. date( ' Y-m-d H:i:s.') .$fileType[1];
+                $fileName = 'ch_' . $channel_id. date( ' Y-m-d H:i:s.') .$fileType[1];
                 // Upload a publicly accessible file. File size, file type, and md5 hash are automatically calculated by the SDK
                 $result = $s3->putObject(array(
                     'Bucket' => 'dongshin.channel',
@@ -176,7 +176,7 @@ class Channel extends CORE_Controller
                 ]);
 
                 $fileType = explode (".", $_FILES['jamong-channel-background']['name']);
-                $fileName = $channel_id. date( ' Y-m-d H:i:s.') .$fileType[1];
+                $fileName = 'bg_' . $channel_id. date( ' Y-m-d H:i:s.') .$fileType[1];
                 // Upload a publicly accessible file. File size, file type, and md5 hash are automatically calculated by the SDK
                 $result = $s3->putObject(array(
                     'Bucket' => 'dongshin.channel',
