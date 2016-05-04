@@ -26,8 +26,9 @@ class Content extends CORE_Controller
         }
 
         $users = $this->content_model->gets_pagination($page, $per_page, $sort, $filter);
+        $total_count = $this->content_model->get_total_count();
         $rtv = array(
-            'row_count' => $page,
+            'row_count' => $total_count,
             'items' => $users,
             'sort' => $sort,
             'filter' => $filter
