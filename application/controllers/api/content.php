@@ -59,6 +59,8 @@ class Content extends CORE_Controller
 
     function upload_content_image()
     {
+        error_reporting(E_ALL);
+        ini_set('display_errors','On');
         $content_id = $this->input->get('contentId');
 
         $uploaddir = '/tmp/';
@@ -88,11 +90,10 @@ class Content extends CORE_Controller
                 ));
 
                 $rtv = $this->content_model->update($content_id, $result["ObjectURL"]);
-                if($rtv > 0){
+                if($rtv){
                     $this->session->set_flashdata('message', '썸네일을 성공적으로 변경 했습니다.');
                     redirect('content/detail?contentId=' . $content_id);
                 }
-
 
             } catch (S3Exception $e) {
                 print_r($e);
