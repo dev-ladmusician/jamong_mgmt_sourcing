@@ -167,9 +167,9 @@
                                         <span ng-if="item.state == 'block'">차단</span>
                                     </td>
                                     <td data-title="'관리자'" sortable="'manager'" filter="{manager: 'text'}">
-                                        <a href="<?=site_url('api/channel/delete_manager?channelId='.$channel->channelnum.'&userId=')?>{{item.userNumber}}"
+                                        <a href="<?=site_url('api/channel/delete_manager?channelId='.$channel->channelnum.'&userId={{item.userNumber}}')?>"
                                             style="color: red" ng-if="item.channelnum == <?php echo $channel->channelnum?>">삭제</a>
-                                        <a href="<?=site_url('api/channel/add_manager?channelId='.$channel->channelnum.'&userId=')?>{{item.userNumber}}"
+                                        <a href="<?=site_url('api/channel/add_manager?channelId='.$channel->channelnum.'&userId={{item.userNumber}}')?>"
                                             style="color: #0D65F1" ng-if="item.channelnum != <?php echo $channel->channelnum?>">관리자부여</a>
                                     </td>
                                 </tr>
