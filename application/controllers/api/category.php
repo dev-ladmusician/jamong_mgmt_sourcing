@@ -74,4 +74,23 @@ class Category extends CORE_Controller
         echo json_encode(
             $rtv, JSON_PRETTY_PRINT);
     }
+
+    function create(){
+        $name_kr = $this->input->post('name_kr');
+        $name_en = $this->input->post('name_en');
+
+        if( !strlen($name_kr) || !strlen($name_en)){
+            $this->session->set_flashdata('message', '카테고리 이름을 모두 입력해주세요');
+            redirect('/category/create');
+        }else{
+            $rtv = $this->category_model->create($name_kr,$name_en);
+            if($rtv){
+                $this->session->set_flashdata('message', '카테고리를 추가하는데 성공했습니다.');
+                redirect('/category/detail?categoryId=' . $rtv);
+            }else{
+                $this->session->set_flashdata('message', '카테고리를 추가하는데 오류가 발생했습니다.');
+                redirect('/category/create');
+            }
+        }
+    }
 }

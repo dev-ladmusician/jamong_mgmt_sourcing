@@ -18,4 +18,8 @@ class Category extends CORE_Controller
         $category = $this->category_model->get_by_id($category_id);
         $this->__get_views('_CATEGORY/detail.php', array('category' => $category[0]));
     }
+
+    function create(){
+        $this->__get_views('_CATEGORY/create.php');
+    }
 }

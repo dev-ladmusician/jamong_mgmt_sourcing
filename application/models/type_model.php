@@ -73,4 +73,20 @@ class Type_model extends CI_Model
             return false;
         }
     }
+    function create($type_id, $name_kr){
+        try {
+            $input_data = array(
+                'name_kr' => $name_kr,
+                'type' => $type_id
+            );
+
+            $this->db->insert($this->table, $input_data);
+            $result = $this->db->insert_id();
+
+            return $result;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
 }

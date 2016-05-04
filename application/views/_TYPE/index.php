@@ -29,6 +29,7 @@
                 </div>
             </div>
         </div>
+        <a class="btn btn-success pull-right" href="<?= site_url('type/create')?>">타입 추가</a>
     </section>
 
 </div>

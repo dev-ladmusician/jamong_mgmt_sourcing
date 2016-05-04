@@ -1,4 +1,4 @@
-<div ng-controller="DetailCtrl">
+<div ng-controller="CreateCtrl">
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
@@ -13,23 +13,17 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">타입 정보</h3>
                         </div>
-                        <div class="box-body">
-                            <input type="hidden" id="jamong-type-table-id" value="<?php echo $type->ai?>">
+                        <form class="box-body" method="post" action="<?=site_url('/api/type/create')?>">
                             <div class="form-group">
                                 <label>타입 아이디:</label>
-                                <input id="jamong-type-id" type="number" class="form-control" value="<?php echo $type->type?>" />
+                                <input name="type_id" type="number" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label>타입 이름(한글):</label>
-                                <input id="jamong-type-name-kr" type="text" class="form-control" value="<?php echo $type->name_kr?>" />
+                                <input name="name_kr" type="text" class="form-control"" />
                             </div>
                             <div class="form-group pull-right">
-                                <a class="btn btn-default"
-                                   href=""
-                                   ng-click="changeTypeInfo()"
-                                   style="margin-left: 3px; margin-bottom: 3px;">
-                                    정보 변경
-                                </a>
+                                <input class="btn btn-default" type="submit" style="margin-left: 3px; margin-bottom: 3px;" value="타입 추가">
                             </div>
                         </div>
                     </div>

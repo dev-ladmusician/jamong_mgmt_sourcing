@@ -73,4 +73,23 @@ class Type extends CORE_Controller
         echo json_encode(
             $rtv, JSON_PRETTY_PRINT);
     }
+
+    function create(){
+        $name_kr = $this->input->post('name_kr');
+        $type_id = $this->input->post('type_id');
+
+        if( !strlen($name_kr) || !strlen($type_id)){
+            $this->session->set_flashdata('message', '타입 아디이와 이름을 모두 입력해주세요');
+            redirect('/type/create');
+        }else{
+            $rtv = $this->type_model->create($type_id,$name_kr);
+            if($rtv){
+                $this->session->set_flashdata('message', '타입을 추가하는데 성공했습니다.');
+                redirect('/type/detail?tableId=' . $rtv);
+            }else{
+                $this->session->set_flashdata('message', '타입을 추가하는데 오류가 발생했습니다.');
+                redirect('/type/create');
+            }
+        }
+    }
 }
