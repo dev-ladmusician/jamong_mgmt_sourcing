@@ -34,4 +34,26 @@ class Content extends CORE_Controller
         );
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }
+
+    function change_isdeprecated()
+    {
+        $content_id = $this->input->get('contentId');
+        $isdeprecated = $this->input->get('isdeprecated') == 'true' ? true : false;
+
+        $rtv = $this->content_model->change_isdeprecated($content_id, $isdeprecated);
+        if ($rtv) {
+            if ($isdeprecated) {
+                $this->session->set_flashdata('message', '영상을 성공적으로 삭제하였습니다.');
+            } else {
+                $this->session->set_flashdata('message', '영상을 성공적으로 부활하였습니다.');
+            }
+        } else {
+            if ($isdeprecated) {
+                $this->session->set_flashdata('message', '영상을 삭제하는데 오류가 발생했습니다. 개발자에게 문의하세요.');
+            } else {
+                $this->session->set_flashdata('message', '영상을 부활하는데 오류가 발생했습니다. 개발자에게 문의하세요.');
+            }
+        }
+        redirect('content/index');
+    }
 }

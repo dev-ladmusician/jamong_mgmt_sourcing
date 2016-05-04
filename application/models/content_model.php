@@ -18,12 +18,15 @@ class Content_model extends CI_Model
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
         $this->db->select('jumper_talk.inum, jumper_talk.title, jumper_talk.nickName, jumper_talk.talk, jumper_talk.price,
-                           jumper_talk.view, jumper_talk.likes, jumper_talk.datetime,
+                           jumper_talk.view, jumper_talk.likes, jumper_talk.datetime, jumper_talk.isdeprecated,
                            jumper__type.name_kr as type,
-                           jumper__category.name_kr as category');
+                           jumper__category.name_kr as category,
+                           jumper__channellist.channelnum, jumper__channellist.channelname');
         $this->db->from($this->table);
         $this->db->join('jumper__type', 'jumper__type.ai = jumper_talk.type', 'left');
         $this->db->join('jumper__category', 'jumper__category.catenum = jumper_talk.cate', 'left');
+        $this->db->join('jumper__channels', 'jumper__channels.inum = jumper_talk.inum', 'left');
+        $this->db->join('jumper__channellist', 'jumper__channellist.channelnum = jumper__channels.channelnum', 'left');
 
         // sorting
         if (isset($sort['id'])) $this->db->order_by("inum", $sort['id']);
@@ -36,6 +39,7 @@ class Content_model extends CI_Model
         if (isset($sort['type'])) $this->db->order_by("jumper__type.name_kr", $sort['type']);
         if (isset($sort['category'])) $this->db->order_by("jumper__category.name_kr", $sort['category']);
         if (isset($sort['datetime'])) $this->db->order_by("datetime", $sort['datetime']);
+        if (isset($sort['isdeprecated'])) $this->db->order_by("isdeprecated", $sort['isdeprecated']);
 
         // filter
         if ($filter != null && isset($filter['id'])) $this->db->like('inum', urldecode($filter['id']));
@@ -52,74 +56,24 @@ class Content_model extends CI_Model
         return $this->db->get()->result();
     }
 
-    function get_by_id($channel_id)
-    {
-        $query_str = "SELECT l.*, p.ch_picture, p.bg_picture FROM jumper__channellist l ".
-                     "LEFT OUTER JOIN jumper__channel_profile p ON l.channelnum = p.channelnum ".
-                     "AND l.userNumber = p.userNumber ".
-                     "WHERE l.channelnum=". $channel_id;
-        $query = $this->db->query($query_str);
-        return $query->result();
-    }
-
-    function get_managers($channel_id)
+    function get_by_id($content_id)
     {
         $this->db->select('*');
-        $this->db->from("jumper__managers");
-        $this->db->join('jamong__tb_users', 'jamong__tb_users.userNumber = jumper__managers.userNumber', 'left');
-        $this->db->join('jumper_user', 'jumper_user.userNumber = jumper__managers.userNumber', 'left');
-        $this->db->where('channelnum', $channel_id);
+        $this->db->from($this->table);
+        $this->db->where('inum', $content_id);
         return $this->db->get()->result();
     }
 
-    function change_channel_info($channel_id, $name, $nickname, $content)
-    {
-        $data = array(
-            'channelname' => $name,
-            'nickName' => $nickname,
-            'chdesc' => $content
-        );
-
-        $this->db->where('channelnum', $channel_id);
-        return $this->db->affected_rows();
-    }
-
-    function change_isdeprecated($channel_id, $isdeprecated)
+    function change_isdeprecated($content_id, $isdeprecated)
     {
         try {
             $data = array(
                 'isdeprecated' => $isdeprecated
             );
 
-            $this->db->where('channelnum', $channel_id);
+            $this->db->where('inum', $content_id);
             $this->db->update($this->table, $data);
 
-            return true;
-        } catch (Exception $e) {
-            return false;
-        }
-    }
-
-    function add_manager($channel_id, $user_id)
-    {
-        try {
-            $this->db->insert('jumper__managers', array(
-                'channelnum' => $channel_id,
-                'userNumber' => $user_id
-            ));
-            return true;
-        } catch (Exception $e) {
-            return false;
-        }
-    }
-
-    function delete_manager($channel_id, $user_id)
-    {
-        try {
-            $this->db->delete('jumper__managers', array(
-                'channelnum' => $channel_id,
-                'userNumber' => $user_id
-            ));
             return true;
         } catch (Exception $e) {
             return false;
