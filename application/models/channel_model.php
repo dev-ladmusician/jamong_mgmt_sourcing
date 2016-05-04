@@ -86,4 +86,30 @@ class Channel_model extends CI_Model
             return false;
         }
     }
+
+    function add_manager($channel_id, $user_id)
+    {
+        try {
+            $this->db->insert('jumper__managers', array(
+                'channelnum' => $channel_id,
+                'userNumber' => $user_id
+            ));
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+    function delete_manager($channel_id, $user_id)
+    {
+        try {
+            $this->db->delete('jumper__managers', array(
+                'channelnum' => $channel_id,
+                'userNumber' => $user_id
+            ));
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
 }

@@ -58,6 +58,36 @@ class Channel extends CORE_Controller
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }
 
+    function add_manager()
+    {
+        $channel_id = $this->input->get('channelId');
+        $user_id = $this->input->get('userId');
+
+        $rtv = $this->channel_model->add_manager($channel_id, $user_id);
+
+        if ($rtv) {
+            $this->session->set_flashdata('message', '매니저를 성공적으로 추가하였습니다.');
+        } else {
+            $this->session->set_flashdata('message', '매니저를 추가하는데 오류가 발생했습니다.');
+        }
+        redirect('channel/detail?channelId='.$channel_id);
+    }
+
+    function delete_manager()
+    {
+        $channel_id = $this->input->get('channelId');
+        $user_id = $this->input->get('userId');
+
+        $rtv = $this->channel_model->delete_manager($channel_id, $user_id);
+
+        if ($rtv) {
+            $this->session->set_flashdata('message', '매니저를 삭제하는데 성공하였습니다.');
+        } else {
+            $this->session->set_flashdata('message', '매니저를 삭제하는데 오류가 발생했습니다.');
+        }
+        redirect('channel/detail?channelId='.$channel_id);
+    }
+
     function change_isdeprecated()
     {
         $channel_id = $this->input->get('channelId');

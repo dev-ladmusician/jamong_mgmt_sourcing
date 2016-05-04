@@ -210,8 +210,6 @@ class User_model extends CI_Model
         }
     }
 
-
-
     function change_isdeprecated($user_id, $isdeprecated)
     {
         try {
