@@ -18,4 +18,8 @@ class Type extends CORE_Controller
         $type = $this->type_model->get_by_id($table_id);
         $this->__get_views('_TYPE/detail.php', array('type' => $type[0]));
     }
+
+    function create(){
+        $this->__get_views('_TYPE/create.php');
+    }
 }

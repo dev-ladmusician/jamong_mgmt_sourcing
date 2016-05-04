@@ -73,4 +73,20 @@ class Category_model extends CI_Model
             return false;
         }
     }
+
+    function create($name_kr, $name_en){
+        try {
+            $input_data = array(
+                'name_kr' => $name_kr,
+                'name_en' => $name_en
+            );
+
+            $this->db->insert($this->table, $input_data);
+            $result = $this->db->insert_id();
+
+            return $result;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
 }

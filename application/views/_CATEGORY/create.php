@@ -1,8 +1,8 @@
-<div ng-controller="DetailCtrl">
+<div ng-controller="CreateCtrl">
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                카테고리 상세정보
+                카테고리 추가
             </h1>
         </section>
 
@@ -13,25 +13,21 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">카테고리 정보</h3>
                         </div>
-                        <div class="box-body">
-                            <input type="hidden" id="jamong-category-id" value="<?php echo $category->catenum?>">
+                        <form class="box-body" action="<?=site_url('/api/category/create')?>" method="post">
                             <div class="form-group">
                                 <label>카테고리 이름(한글):</label>
-                                <input id="jamong-category-name-kr" type="text" class="form-control" value="<?php echo $category->name_kr?>" />
+                                <input name="name_kr" type="text" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label>카테고리 이름(영어):</label>
-                                <input id="jamong-category-name-en" type="text" class="form-control" value="<?php echo $category->name_en?>" />
+                                <input name="name_en" type="text" class="form-control" />
                             </div>
                             <div class="form-group pull-right">
-                                <a class="btn btn-default"
-                                   href=""
-                                   ng-click="changeCategoryInfo()"
+                                <input class="btn btn-default" type="submit" value="카테고리 추가"
                                    style="margin-left: 3px; margin-bottom: 3px;">
-                                    정보 변경
-                                </a>
+
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
 
