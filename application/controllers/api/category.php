@@ -35,26 +35,26 @@ class Category extends CORE_Controller
 
     function change_isdeprecated()
     {
-        $channel_id = $this->input->get('channelId');
+        $category_id = $this->input->get('categoryId');
         $isdeprecated = $this->input->get('isdeprecated') == 'true' ? true : false;
 
-        $rtv = $this->channel_model->change_isdeprecated($channel_id, $isdeprecated);
+        $rtv = $this->category_model->change_isdeprecated($category_id, $isdeprecated);
         if ($rtv) {
             if ($isdeprecated) {
-                $this->session->set_flashdata('message', '채널을 성공적으로 삭제하였습니다.');
+                $this->session->set_flashdata('message', '카테고리를 성공적으로 삭제하였습니다.');
             } else {
-                $this->session->set_flashdata('message', '채널을 성공적으로 부활하였습니다.');
+                $this->session->set_flashdata('message', '카테고리를 성공적으로 부활하였습니다.');
             }
 
-            redirect('channel/index');
+            redirect('category/index');
         } else {
             if ($isdeprecated) {
-                $this->session->set_flashdata('message', '채널을 삭제하는데 오류가 발생했습니다. 개발자에게 문의하세요.');
+                $this->session->set_flashdata('message', '카테고리를 삭제하는데 오류가 발생했습니다. 개발자에게 문의하세요.');
             } else {
-                $this->session->set_flashdata('message', '채널을 부활하는데 오류가 발생했습니다. 개발자에게 문의하세요.');
+                $this->session->set_flashdata('message', '카테고리를 부활하는데 오류가 발생했습니다. 개발자에게 문의하세요.');
             }
 
-            redirect('channel/detail?channelNum='.$channel_id);
+            redirect('category/index');
         }
     }
 

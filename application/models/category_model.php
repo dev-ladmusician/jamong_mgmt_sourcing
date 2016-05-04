@@ -52,4 +52,20 @@ class Category_model extends CI_Model
 
         return $this->db->affected_rows();
     }
+
+    function change_isdeprecated($category_id, $isdeprecated)
+    {
+        try {
+            $data = array(
+                'isDeprecated' => $isdeprecated
+            );
+
+            $this->db->where('catenum', $category_id);
+            $this->db->update($this->table, $data);
+
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
 }
