@@ -9,15 +9,6 @@ class User extends CORE_Controller
         $this->load->model('user_model');
     }
 
-    function test() {
-//        $user_num = $this->input->get('userId');
-//        $rtv = $this->user_model->test($user_num);
-//        var_dump($rtv);
-        $users = $this->user_model->gets();
-        var_dump($users);
-        //json_encode($users, JSON_PRETTY_PRINT);
-    }
-
     function index()
     {
         //$users = $this->user_model->gets();
