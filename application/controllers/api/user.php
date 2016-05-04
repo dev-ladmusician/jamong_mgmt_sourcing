@@ -215,8 +215,6 @@ class User extends CORE_Controller
 //                redirect('user/detail?userId=' . $user_id);
 //            }
 //        }
-
-
     }
 }
 

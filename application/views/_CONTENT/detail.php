@@ -97,9 +97,9 @@
                 <div class="col-md-6 jamong-pannel">
                     <div class="box box-info content-info-right">
                         <div class="box-header with-border">
-                            <h3 class="box-title">채널 사진</h3>
+                            <h3 class="box-title">영상 썸네일</h3>
                         </div>
-                        <form class="box-body" action="<?= site_url('api/content/upload_content_picture?contentId=' . $content->inum) ?>"
+                        <form class="box-body" action="<?= site_url('api/content/upload_content_image?contentId=' . $content->inum) ?>"
                               method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>적용중인 사진</label>
@@ -114,7 +114,7 @@
                                    "/>
                             </div>
                             <div class="form-group">
-                                <label>채널 사진</label>
+                                <label>영상 썸네일 사진</label>
                                 <input type="file" accept="image/*" name="jamong-content-image" class="form-control my-colorpicker1" />
                             </div>
                             <div class="form-group pull-right">
