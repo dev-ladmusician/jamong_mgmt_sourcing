@@ -125,29 +125,55 @@
                                 </a>
                             </div>
                             <div class="form-group">
-                                <label for="title" class="col-sm-3 control-label">관리자여부</label>
+                                <label for="title" class="col-sm-3 control-label">채널관리자</label>
 
                                 <div class="col-sm-4 sg-item-content">
-                                    <?php if ($item->isadmin) { ?>
-                                        <span style="color: red">관리자</span>
+                                    <?php if ($item->is_admin) { ?>
+                                        <span style="color: red">채널 관리자</span>
                                     <?php } else { ?>
                                         <span>일반회원</span>
                                     <?php } ?>
                                 </div>
-                                <?php if ($item->isadmin) { ?>
+                                <?php if ($item->is_admin) { ?>
                                     <a class="btn btn-default"
                                        href="<?= site_url('api/user/change_isadmin?userId=' . $item->userNumber . '&isadmin=false') ?>"
                                        style="margin-left: 10px; margin-bottom: 3px; width: 105px;">
-                                        관리자박탈
+                                        채널관리 박탈
                                     </a>
                                 <?php } else { ?>
                                     <a class="btn btn-success"
                                        href="<?= site_url('api/user/change_isadmin?userId=' . $item->userNumber . '&isadmin=true') ?>"
                                        style="margin-left: 10px; margin-bottom: 3px; width: 105px;">
-                                        관리자부여
+                                        채널관리 부여
                                     </a>
                                 <?php } ?>
                             </div>
+                            <?php if($this->session->userdata('issuperadmin')) { ?>
+                                <div class="form-group">
+                                    <label for="title" class="col-sm-3 control-label">전체 관리자</label>
+
+                                    <div class="col-sm-4 sg-item-content">
+                                        <?php if ($item->is_superadmin) { ?>
+                                            <span style="color: red">관리자</span>
+                                        <?php } else { ?>
+                                            <span>관리자x</span>
+                                        <?php } ?>
+                                    </div>
+                                    <?php if ($item->is_superadmin) { ?>
+                                        <a class="btn btn-default"
+                                           href="<?= site_url('api/user/change_is_superadmin?userId=' . $item->userNumber . '&isadmin=false') ?>"
+                                           style="margin-left: 10px; margin-bottom: 3px; width: 105px;">
+                                            관리자박탈
+                                        </a>
+                                    <?php } else { ?>
+                                        <a class="btn btn-success"
+                                           href="<?= site_url('api/user/change_is_superadmin?userId=' . $item->userNumber . '&isadmin=true') ?>"
+                                           style="margin-left: 10px; margin-bottom: 3px; width: 105px;">
+                                            관리자부여
+                                        </a>
+                                    <?php } ?>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

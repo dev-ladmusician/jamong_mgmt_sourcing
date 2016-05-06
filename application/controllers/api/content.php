@@ -34,7 +34,6 @@ class Content extends CORE_Controller
                 if($rtv){
                     $this->session->set_flashdata('message', '영상 정보를 성공적으로 등록하였습니다.');
                     redirect('/content/detail?contentId=' .$rtv);
-//                    redirect('/content/upload_movie?contentId='. $rtv);
                 }else{
                     $this->session->set_flashdata('message', '영상 정보를 등록하는데 실패하였습니다.');
                     redirect('/content/create_info');

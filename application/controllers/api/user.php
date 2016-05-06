@@ -73,6 +73,31 @@ class User extends CORE_Controller
         }
     }
 
+    function change_is_superadmin()
+    {
+        $user_id = $this->input->get('userId');
+        $is_admin = $this->input->get('isadmin') == 'true' ? true : false;
+
+        $rtv = $this->user_model->change_is_superadmin($user_id, $is_admin);
+        if ($rtv) {
+            if ($is_admin) {
+                $this->session->set_flashdata('message', '관리자 권한을 부여하였습니다.');
+            } else {
+                $this->session->set_flashdata('message', '관리자 권한을 박탈하였습니다.');
+            }
+
+            redirect('user/detail?userId=' . $user_id);
+        } else {
+            if ($is_admin) {
+                $this->session->set_flashdata('message', '관리자 권한을 부여하는데 오류가 발생했습니다.');
+            } else {
+                $this->session->set_flashdata('message', '관리자 권한을 박탈하는데 오류가 발생했습니다.');
+            }
+
+            redirect('user/detail?userId=' . $user_id);
+        }
+    }
+
     function change_password()
     {
         $user_id = $this->input->post('userId');

@@ -240,7 +240,23 @@ class User_model extends CI_Model
     {
         try {
             $data = array(
-                'isadmin' => $is_admin
+                'is_admin' => $is_admin
+            );
+
+            $this->db->where('userNumber', $user_id);
+            $this->db->update($this->table, $data);
+
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+    function change_is_superadmin($user_id, $is_admin)
+    {
+        try {
+            $data = array(
+                'is_superadmin' => $is_admin
             );
 
             $this->db->where('userNumber', $user_id);
