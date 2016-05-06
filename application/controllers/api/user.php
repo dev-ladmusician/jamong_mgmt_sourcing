@@ -154,7 +154,7 @@ class User extends CORE_Controller
                 // Upload a publicly accessible file. File size, file type, and md5 hash are automatically calculated by the SDK
                 $result = $s3->putObject(array(
                     'Bucket' => 'dongshin.user',
-                    'Key'    => $fileName,
+                    'Key'    => $fileName. '/' .  $fileName,
                     'Body'   => fopen($uploadfile, 'r'),
                     'ACL'    => 'public-read',
                     'ContentType'=>mime_content_type($uploadfile)

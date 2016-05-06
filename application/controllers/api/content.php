@@ -13,6 +13,43 @@ class Content extends CORE_Controller
         $this->load->model('content_model');
     }
 
+    function create_info(){
+        $price = $this->input->post('jamong-content-price');
+        $title = $this->input->post('jamong-content-title');
+        $content = $this->input->post('jamong-content-content');
+        $channelId = $this->input->post('jamong-content-channel');
+        $typeId = $this->input->post('jamong-content-type');
+        $categoryId = $this->input->post('jamong-content-category');
+
+        if(strlen($title)){
+            if(strlen($content)){
+
+                $rtv = $this->content_model->add_item(array('price' => $price,
+                                                                'title' => $title,
+                                                                'talk' => $content,
+                                                                'ch' =>$channelId,
+                                                                'type' => $typeId,
+                                                                'cate' => $categoryId,
+                                                                'userNumber' => 10537,
+                                                                'nickname' => "goqual"));
+                if($rtv){
+                    $this->session->set_flashdata('message', '영상 정보를 성공적으로 등록하였습니다.');
+                    redirect('/content/detail?contentId=' .$rtv);
+//                    redirect('/content/upload_movie?contentId='. $rtv);
+                }else{
+                    $this->session->set_flashdata('message', '영상 정보를 등록하는데 실패하였습니다.');
+                    redirect('/content/create_info');
+                }
+            }else{
+                $this->session->set_flashdata('message', '내용을 입력해주세요.');
+                redirect('/content/create_info');
+            }
+        }else{
+            $this->session->set_flashdata('message', '제목을 입력해주세요.');
+            redirect('/content/create_info');
+        }
+    }
+
     function get_items()
     {
         $page = $this->input->get('page');
@@ -57,6 +94,68 @@ class Content extends CORE_Controller
             }
         }
         redirect('content/index');
+    }
+
+
+    function change_content_info() {
+
+        $input_data = array("contentId" => $this->input->get('contentId'),
+                            "channelId" => $this->input->post('jamong-content-channel'),
+                            "categoryId" => $this->input->post('jamong-content-category'),
+                            "typeId" => $this->input->post('jamong-content-type'),
+                            "price" => $this->input->post('jamong-content-price'),
+                            "nickname" => $this->input->post('jamong-content-nickname'),
+                            "content" => $this->input->post('jamong-content-content') );
+
+        $this->content_model->change_content_info($input_data);
+    }
+
+    function upload_movie()
+    {
+        error_reporting(E_ALL);
+        ini_set('display_errors','On');
+
+        $content_id = $this->input->get('contentId');
+
+        $uploaddir = '/tmp/';
+        $uploadfile = $uploaddir . basename($_FILES['jamong-content-movie']['name']);
+
+        if (move_uploaded_file($_FILES['jamong-content-movie']['tmp_name'], $uploadfile)) {
+            try {
+                // Instantiate an S3 client
+                $s3 = S3Client::factory([
+                    'version' => 'latest',
+                    'region' => 'ap-northeast-1',
+                    'credentials' => [
+                        'key' => 'AKIAJWWW3TRCBB2ACYBA',
+                        'secret' => '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'
+                    ]
+                ]);
+
+                $fileType = explode(".", $_FILES['jamong-content-movie']['name']);
+                $fileName = $content_id . date(' Y-m-d H:i:s.') . $fileType[1];
+                // Upload a publicly accessible file. File size, file type, and md5 hash are automatically calculated by the SDK
+                $result = $s3->putObject(array(
+                    'Bucket' => 'dongshin.movie',
+                    'Key' =>  'original/' . $fileName,
+                    'Body' => fopen($uploadfile, 'r'),
+                    'ACL' => 'public-read',
+                    'ContentType' => mime_content_type($uploadfile)
+                ));
+
+                $rtv = $this->content_model->update_filename($content_id, $fileName);
+                if($rtv){
+                    $this->session->set_flashdata('message', '컨텐츠를 성공적으로 업로드 했습니다.');
+                    redirect('content/detail?contentId=' . $content_id);
+                }
+
+            } catch (S3Exception $e) {
+                print_r($e);
+            }
+        } else {
+            $this->session->set_flashdata('message', '임시 저장에 실패 햇습니다..');
+            redirect('content/detail?contentId=' . $content_id);
+        }
     }
 
     function upload_content_image()

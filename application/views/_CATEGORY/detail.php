@@ -8,7 +8,7 @@
 
         <section class="content" >
             <div class="row">
-                <div class="col-md-4 jamong-pannel">
+                <div class="col-md-6 jamong-pannel">
                     <div class="box box-danger">
                         <div class="box-header with-border">
                             <h3 class="box-title">카테고리 정보</h3>
