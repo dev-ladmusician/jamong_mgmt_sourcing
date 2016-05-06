@@ -9,6 +9,14 @@ class Category_model extends CI_Model
         $this->table = 'jumper__category';
     }
 
+    function get_items()
+    {
+        $this->db->select('*');
+        $this->db->where('isdeprecated', false);
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
+
     function gets_pagination($page, $per_page, $sort, $filter) {
         if ($page === 1) {
             $this->db->limit($per_page);
@@ -62,7 +70,7 @@ class Category_model extends CI_Model
     {
         try {
             $data = array(
-                'isDeprecated' => $isdeprecated
+                'isdeprecated' => $isdeprecated
             );
 
             $this->db->where('catenum', $category_id);

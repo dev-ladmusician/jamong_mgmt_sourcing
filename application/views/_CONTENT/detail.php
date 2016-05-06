@@ -6,15 +6,17 @@
             </h1>
         </section>
 
-        <section class="content" >
+        <section class="content">
             <div class="row">
                 <div class="col-md-6 jamong-pannel">
                     <div class="box box-danger">
                         <div class="box-header with-border">
                             <h3 class="box-title">영상 정보</h3>
                         </div>
-                        <div class="box-body">
-                            <input id="jamong-content-id" type="hidden" value="<?php echo $content->inum?>" >
+                        <form class="box-body"
+                              action="<?= site_url('api/content/change_content_info?contentId=' . $content->inum) ?>"
+                              method="post" enctype="multipart/form-data">
+
                             <div class="form-group">
                                 <label>업로드:</label>
                                 <small>
@@ -35,90 +37,139 @@
                             </div>
                             <div class="form-group">
                                 <label>가격:</label>
-                                <input id="jamong-content-price" type="text" class="form-control" value="<?php echo $content->price ?>" />
+                                <input id="jamong-content-price" type="text" class="form-control"
+                                       name="jamong-content-price"
+                                       value="<?php echo $content->price ?>"/>
                             </div>
                             <div class="form-group">
                                 <label>닉네임:</label>
-                                <input id="jamong-content-nickname" type="text" class="form-control" value="<?php echo $content->nickName ?>" />
+                                <input id="jamong-content-nickname" type="text" class="form-control"
+                                       name="jamong-content-nickname"
+                                       value="<?php echo $content->nickName ?>"/>
                             </div>
                             <div class="form-group">
                                 <label>설명:</label>
-                                <textarea id="jamong-content-content" class="form-control">
+                                <textarea id="jamong-content-content" class="form-control"
+                                name="jamong-content-content">
                                     <?php echo $content->talk ?>
                                 </textarea>
                             </div>
                             <div class="form-group">
                                 <label>채널:</label>
-                                <select id="jamong-content-channel" class="form-control select2">
-                                    <option value="0" selected="selected">Alabama</option>
-                                    <option value="1">Alaska</option>
-                                    <option value="2">California</option>
-                                    <option value="3">Delaware</option>
-                                    <option>Tennessee</option>
-                                    <option>Texas</option>
-                                    <option>Washington</option>
+                                <select id="jamong-content-channel" class="form-control select2" name="jamong-content-channel">
+                                    <?php
+                                    foreach ($channels as $each) {
+                                        ?>
+                                        <option
+                                            <?php
+                                            if ($content->ch == $each->channelnum) {
+                                                ?>
+                                                selected="selected"
+                                                <?php
+                                            }
+                                            ?>
+                                            value="<?php echo $each->channelnum; ?>"><?php echo $each->channelname; ?></option>
+                                        <?php
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>타입:</label>
-                                <select id="jamong-content-type" class="form-control select2">
-                                    <option selected="selected">Alabama</option>
-                                    <option>Alaska</option>
-                                    <option>California</option>
-                                    <option>Delaware</option>
-                                    <option>Tennessee</option>
-                                    <option>Texas</option>
-                                    <option>Washington</option>
+                                <select id="jamong-content-type" class="form-control select2" name="jamong-content-type">
+                                    <?php
+                                    foreach ($types as $each) {
+                                        ?>
+                                        <option
+                                            <?php
+                                            if ($content->type == $each->type) {
+                                                ?>
+                                                selected="selected"
+                                                <?php
+                                            }
+                                            ?>
+                                            value="<?php echo $each->type; ?>"><?php echo $each->name_kr; ?></option>
+                                        <?php
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>카테고리:</label>
-                                <select id="jamong-content-category" class="form-control select2">
-                                    <option selected="selected">Alabama</option>
-                                    <option>Alaska</option>
-                                    <option>California</option>
-                                    <option>Delaware</option>
-                                    <option>Tennessee</option>
-                                    <option>Texas</option>
-                                    <option>Washington</option>
+                                <select id="jamong-content-category" class="form-control select2" name="jamong-content-category">
+                                    <?php
+                                    foreach ($categories as $each) {
+                                        ?>
+                                        <option
+                                            <?php
+                                            if ($content->cate == $each->catenum) {
+                                                ?>
+                                                selected="selected"
+                                                <?php
+                                            }
+                                            ?>
+                                            value="<?php echo $each->catenum; ?>"><?php echo $each->name_kr . '(' . $each->name_en . ')'; ?></option>
+                                        <?php
+                                    }
+                                    ?>
                                 </select>
                             </div>
+
                             <div class="form-group pull-right">
-                                <a class="btn btn-default"
-                                   href=""
-                                   ng-click="changeContentInfo()"
-                                   style="margin-left: 3px; margin-bottom: 3px;">
-                                    정보 변경
-                                </a>
+                                <input type="submit" value="정보 변경" class="btn btn-default"
+                                       style="margin-left: 3px; margin-bottom: 3px;">
                             </div>
-                        </div>
+                        </form>
+
                     </div>
                 </div>
+
                 <div class="col-md-6 jamong-pannel">
-                    <div class="box box-info content-info-right">
+                    <div class="box box-danger">
                         <div class="box-header with-border">
-                            <h3 class="box-title">영상 썸네일</h3>
+                            <h3 class="box-title">컨텐츠 업로드</h3>
                         </div>
-                        <form class="box-body" action="<?= site_url('api/content/upload_content_image?contentId=' . $content->inum) ?>"
-                              method="post" enctype="multipart/form-data">
+                        <form class="box-body" method="post" enctype="multipart/form-data"
+                              action="<?= site_url('/api/content/upload_movie?contentId=' . $content->inum)?>">
+                            <div class="form-group">
+                                <label>업로드 할 컨텐츠</label>
+                                <input type="file" name="jamong-content-movie"  class="form-control my-colorpicker1"/>
+                            </div>
+                            <div class="form-group pull-right">
+                                <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="동영상 업로드">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-6 jamong-pannel">
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">썸네일 업로드</h3>
+                        </div>
+                        <form class="box-body" method="post" enctype="multipart/form-data"
+                              action="<?= site_url('/api/content/update_change_image?contentId-' . $content->inum)?>">
+
+                            <div class="form-group">
+                                <label>영상 썸네일 사진</label>
+                                <input type="file" accept="image/*" name="jamong-content-image"
+                                       class="form-control my-colorpicker1"/>
+                            </div>
+
                             <div class="form-group">
                                 <label>적용중인 사진</label>
                                 <img style="display: block" class=""
                                      src="<?php
-                                            if(strlen($content->picture) > 0){
-                                                echo $content->picture;
-                                            } else {
-                                                echo '/MGMT/static/img/profile_default.png';
-                                            }
-                                          ?>
+                                     if (strlen($content->picture) > 0) {
+                                         echo $content->picture;
+                                     } else {
+                                         echo '/MGMT/static/img/profile_default.png';
+                                     }
+                                     ?>
                                    "/>
                             </div>
-                            <div class="form-group">
-                                <label>영상 썸네일 사진</label>
-                                <input type="file" accept="image/*" name="jamong-content-image" class="form-control my-colorpicker1" />
-                            </div>
                             <div class="form-group pull-right">
-                                <input type="submit" value="사진 변경" class="btn btn-success" style="margin-left: 3px; margin-bottom: 3px;">
+                                <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="썸네일 업로드">
                             </div>
                         </form>
                     </div>

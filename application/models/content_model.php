@@ -19,11 +19,12 @@ class Content_model extends CI_Model
         }
         $this->db->select('jumper_talk.inum, jumper_talk.title, jumper_talk.nickName, jumper_talk.talk, jumper_talk.price,
                            jumper_talk.view, jumper_talk.likes, jumper_talk.datetime, jumper_talk.isdeprecated,
+                           jumper_talk.type as type_id, jumper_talk.cate as category_id,
                            jumper__type.name_kr as type,
                            jumper__category.name_kr as category,
                            jumper__channellist.channelnum, jumper__channellist.channelname');
         $this->db->from($this->table);
-        $this->db->join('jumper__type', 'jumper__type.ai = jumper_talk.type', 'left');
+        $this->db->join('jumper__type', 'jumper__type.type = jumper_talk.type', 'left');
         $this->db->join('jumper__category', 'jumper__category.catenum = jumper_talk.cate', 'left');
         $this->db->join('jumper__channels', 'jumper__channels.inum = jumper_talk.inum', 'left');
         $this->db->join('jumper__channellist', 'jumper__channellist.channelnum = jumper__channels.channelnum', 'left');
@@ -100,4 +101,47 @@ class Content_model extends CI_Model
             return false;
         }
     }
+
+    function update_filename($content_id,$file_name)
+    {
+        try {
+            $input_data = array(
+                'filename' => $file_name
+            );
+
+            $this->db->where('inum', $content_id);
+            $this->db->update($this->table, $input_data);
+
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+    function add_item($input_data){
+        try {
+            $this->db->insert($this->table, $input_data);
+            $result = $this->db->insert_id();
+
+            return $result;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+//    function change_content_info($input_data){
+//        var_dump($input_data['contentId']);
+//        try {
+//            $data = array(
+//                'picture' => $input
+//            );
+//
+//            $this->db->where('inum', $input_data['contentId']);
+//            $this->db->update($this->table, $data);
+//
+//            return true;
+//        } catch (Exception $e) {
+//            return false;
+//        }
+//    }
 }

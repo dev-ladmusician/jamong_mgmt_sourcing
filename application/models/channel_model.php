@@ -10,6 +10,14 @@ class Channel_model extends CI_Model
         $this->table = 'jumper__channellist';
     }
 
+    function get_items()
+    {
+        $this->db->select('channelnum, channelname');
+        $this->db->where('isdeprecated', false);
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
+
     function gets_pagination($page, $per_page, $sort, $filter) {
         if ($page === 1) {
             $this->db->limit($per_page);
