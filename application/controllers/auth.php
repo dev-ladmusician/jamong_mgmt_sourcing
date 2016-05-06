@@ -103,9 +103,10 @@ class Auth extends CORE_Controller
         $this->session->set_flashdata('message', '로그인에 성공하였습니다.');
         $this->session->set_userdata('userid', $user->userNumber);
         $this->session->set_userdata('email', $user->email);
+        $this->session->set_userdata('nickname', $user->nickName);
         $this->session->set_userdata('isadmin', $user->is_admin);
         $this->session->set_userdata('issuperadmin', $user->is_superadmin);
-        
+
         $returnURL = $this->input->get('returnURL');
 
         if ($returnURL === false || $returnURL === "") {
