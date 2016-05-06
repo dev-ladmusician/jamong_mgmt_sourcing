@@ -5,7 +5,6 @@
                 영상 상세정보
             </h1>
         </section>
-
         <section class="content">
             <div class="row">
                 <div class="col-md-6 jamong-pannel">
@@ -42,17 +41,15 @@
                                        value="<?php echo $content->price ?>"/>
                             </div>
                             <div class="form-group">
-                                <label>닉네임:</label>
-                                <input id="jamong-content-nickname" type="text" class="form-control"
-                                       name="jamong-content-nickname"
-                                       value="<?php echo $content->nickName ?>"/>
+                                <label>제목:</label>
+                                <input id="jamong-content-title" type="text" class="form-control"
+                                       name="jamong-content-title"
+                                       value="<?php echo $content->title ?>"/>
                             </div>
                             <div class="form-group">
                                 <label>설명:</label>
                                 <textarea id="jamong-content-content" class="form-control"
-                                name="jamong-content-content">
-                                    <?php echo $content->talk ?>
-                                </textarea>
+                                name="jamong-content-content"><?php echo $content->talk ?></textarea>
                             </div>
                             <div class="form-group">
                                 <label>채널:</label>

@@ -129,19 +129,19 @@ class Content_model extends CI_Model
         }
     }
 
-//    function change_content_info($input_data){
-//        var_dump($input_data['contentId']);
-//        try {
-//            $data = array(
-//                'picture' => $input
-//            );
-//
-//            $this->db->where('inum', $input_data['contentId']);
-//            $this->db->update($this->table, $data);
-//
-//            return true;
-//        } catch (Exception $e) {
-//            return false;
-//        }
-//    }
+    function change_content_info($input_data){
+        $data = array(
+            'title' => $input_data['title'],
+            'talk' => $input_data['content'],
+            'price' => $input_data['price'],
+            'type' => $input_data['typeId'],
+            'cate' => $input_data['categoryId'],
+            'ch' => $input_data['channelId']
+        );
+
+        $this->db->where('inum', $input_data['contentId']);
+        $this->db->update($this->table, $data);
+
+        return $this->db->affected_rows();
+    }
 }

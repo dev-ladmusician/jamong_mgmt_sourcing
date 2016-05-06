@@ -13,6 +13,9 @@ class Content extends CORE_Controller
         $this->load->model('content_model');
     }
 
+    /**
+     * 영상 정보 업로드
+     */
     function create_info(){
         $price = $this->input->post('jamong-content-price');
         $title = $this->input->post('jamong-content-title');
@@ -47,6 +50,7 @@ class Content extends CORE_Controller
             redirect('/content/create_info');
         }
     }
+
 
     function get_items()
     {
@@ -94,7 +98,6 @@ class Content extends CORE_Controller
         redirect('content/index');
     }
 
-
     function change_content_info() {
 
         $input_data = array("contentId" => $this->input->get('contentId'),
@@ -102,10 +105,17 @@ class Content extends CORE_Controller
                             "categoryId" => $this->input->post('jamong-content-category'),
                             "typeId" => $this->input->post('jamong-content-type'),
                             "price" => $this->input->post('jamong-content-price'),
-                            "nickname" => $this->input->post('jamong-content-nickname'),
+                            "title" => $this->input->post('jamong-content-title'),
                             "content" => $this->input->post('jamong-content-content') );
 
-        $this->content_model->change_content_info($input_data);
+        $rtv = $this->content_model->change_content_info($input_data);
+
+        if ($rtv > 0) {
+            $this->session->set_flashdata('message', '컨텐츠를 성공적으로 수정하였습니다.');
+        } else {
+            $this->session->set_flashdata('message', '변경된 정보가 없거나 컨텐츠를 수정하는데 오류가 발생했습니다.');
+        }
+        redirect('/content/detail?contentId='.$input_data['contentId']);
     }
 
     function upload_movie()

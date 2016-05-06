@@ -6,7 +6,7 @@ controller('UserCtrl', function ($scope, $timeout, ngTableParams) {
         page: 1,            // show first page
         count: 10,          // count per page
         sorting: {
-            inum: 'desc',     // initial sorting
+            id: 'desc',     // initial sorting
         }
     }, {
         total: 0,
