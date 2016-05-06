@@ -23,7 +23,6 @@ class Content extends CORE_Controller
 
         if(strlen($title)){
             if(strlen($content)){
-
                 $rtv = $this->content_model->add_item(array('price' => $price,
                                                                 'title' => $title,
                                                                 'talk' => $content,

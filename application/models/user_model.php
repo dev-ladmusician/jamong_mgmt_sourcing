@@ -147,7 +147,12 @@ class User_model extends CI_Model
 
     function get_user_by_email($option)
     {
-        return $this->db->get_where($this->table, array('email' => $option['email']))->row();
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->join('jumper_user', 'jumper_user.userNumber = jamong__tb_users.userNumber', 'left');
+        $this->db->where('email', $option['email']);
+
+        return $this->db->get()->result();
     }
 
     function get_user_by_id($user_id)
@@ -255,7 +260,8 @@ class User_model extends CI_Model
             'joinday' => date("y-m-d+H:i:s"),
             'accounttype' => 'email',
             'state' => 'active',
-            'isadmin' => FALSE,
+            'is_admin' => FALSE,
+            'is_superadmin' => FALSE,
         );
 
         $this->db->insert($this->table, $input_data);

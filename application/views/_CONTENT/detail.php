@@ -9,7 +9,7 @@
         <section class="content">
             <div class="row">
                 <div class="col-md-6 jamong-pannel">
-                    <div class="box box-danger">
+                    <div class="box box-success">
                         <div class="box-header with-border">
                             <h3 class="box-title">영상 정보</h3>
                         </div>
@@ -123,7 +123,6 @@
 
                     </div>
                 </div>
-
                 <div class="col-md-6 jamong-pannel">
                     <div class="box box-danger">
                         <div class="box-header with-border">
@@ -141,9 +140,8 @@
                         </form>
                     </div>
                 </div>
-
                 <div class="col-md-6 jamong-pannel">
-                    <div class="box box-danger">
+                    <div class="box box-primary">
                         <div class="box-header with-border">
                             <h3 class="box-title">썸네일 업로드</h3>
                         </div>
