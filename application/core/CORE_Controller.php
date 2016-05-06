@@ -105,4 +105,46 @@ class CORE_Controller extends CI_Controller {
         // 2015-08-03 00:00: -> 2015-08-03
         return substr($date, 0, 10);
     }
+
+
+
+
+    /**
+     * jamong source
+     * password decode
+     * password encode
+     */
+    function keyEncrypt ($value)
+    {
+        $Primekey = 'f0u20rj0fjsfjsopfj29rngh3u5hasfn';
+        $padSize = 16 - (strlen ($value) % 16) ;
+        $value = $value . str_repeat (chr ($padSize), $padSize) ;
+        $output = mcrypt_encrypt (MCRYPT_RIJNDAEL_128, $Primekey, $value, MCRYPT_MODE_CBC, str_repeat(chr(0),16)) ;
+        return base64_encode ($output);
+    }
+
+    function keyDecrypt ($value)
+    {
+        $Primekey = 'f0u20rj0fjsfjsopfj29rngh3u5hasfn';
+        $value = base64_decode ($value) ;
+        $output = mcrypt_decrypt (MCRYPT_RIJNDAEL_128, $Primekey, $value, MCRYPT_MODE_CBC, str_repeat(chr(0),16)) ;
+
+        $valueLen = strlen ($output) ;
+        if ( $valueLen % 16 > 0 )
+            $output = "";
+
+        $padSize = ord ($output{$valueLen - 1}) ;
+        if ( ($padSize < 1) or ($padSize > 16) ) {
+            $output = "";                // Check padding.
+        }
+
+        for ($i = 0; $i < $padSize; $i++)
+        {
+            if (ord ($output{$valueLen - $i - 1}) != $padSize )
+                $output = "";
+        }
+        $output = substr ($output, 0, $valueLen - $padSize) ;
+
+        return $output;
+    }
 }

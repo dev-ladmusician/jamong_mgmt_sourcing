@@ -1,6 +1,6 @@
 <div class="login-box">
     <div class="login-logo">
-        <a href="<?=site_url('/home/index')?>"><b>SOMETHING-GOODS</b></a>
+        <a href="<?=site_url('/home/index')?>"><b>JAMONG</b></a>
     </div>
     <div class="login-box-body">
         <p class="login-box-msg">관리자페이지입니다.</p>
@@ -18,7 +18,7 @@
                 <div class="col-xs-12">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">로그인</button>
                 </div>
-                <div class="col-xs-12 btn-join">
+                <div class="col-xs-12 btn-join" style="margin-top: 10px">
                     <a href="<?=site_url('auth/join')?>" class="btn btn-default btn-block btn-flat">회원가입</a>
                 </div>
             </div>

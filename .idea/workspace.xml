@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be2c7192-3826-4bf3-8653-055224971a19" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/content/detail.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/api/auth.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/auth.php" afterPath="$PROJECT_DIR$/application/controllers/auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/CORE_Controller.php" afterPath="$PROJECT_DIR$/application/core/CORE_Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/user_model.php" afterPath="$PROJECT_DIR$/application/models/user_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_AUTH/join.php" afterPath="$PROJECT_DIR$/application/views/_AUTH/join.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_AUTH/login.php" afterPath="$PROJECT_DIR$/application/views/_AUTH/login.php" />
     </list>
     <ignored path="CodeIgniter-2.2.3-MGMT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,18 +29,141 @@
     <favorites_list name="CodeIgniter-2.2.3-MGMT" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="detail.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/css/content/detail.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5922565">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/views/_AUTH/login.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+                  <folding>
+                    <element signature="n#style#0;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="auth.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/controllers/auth.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="282">
+                  <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+                  <folding>
+                    <element signature="n#join#0;n#Auth#0;n#!!top" expanded="false" />
+                    <element signature="n#submit_join#0;n#Auth#0;n#!!top" expanded="false" />
+                    <element signature="n#logout#0;n#Auth#0;n#!!top" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="auth.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/controllers/api/auth.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="615">
+                  <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="join.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/views/_AUTH/join.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="7" column="40" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="40" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="content_model.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/application/models/content_model.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="188">
+                  <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+                  <folding>
+                    <element signature="n#change_isdeprecated#0;n#Content_model#0;n#!!top" expanded="false" />
+                    <element signature="n#update#0;n#Content_model#0;n#!!top" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="user_model.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="301">
+                  <caret line="165" column="5" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
+                  <folding>
+                    <element signature="n#test#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#gets#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#gets_pagination#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#get_total_count#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#gets_manager_pagination#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#gets_admin#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#gets_non_isdeprecated#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#logined#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#get_user_by_id#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#change_admin#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#change_password#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#change_state_block#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#change_isdeprecated#0;n#User_model#0;n#!!top" expanded="false" />
+                    <element signature="n#change_isadmin#0;n#User_model#0;n#!!top" expanded="false" />
+                    <marker date="1462366218000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
+                    <marker date="1462366218000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
+                    <marker date="1462366218000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
+                    <marker date="1462366218000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
+                    <marker date="1462366218000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
+                    <marker date="1462366218000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
+                    <marker date="1462366218000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
+                    <marker date="1462366218000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
+                    <marker date="1462366218000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
+                    <marker date="1462366218000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
+                    <marker date="1462366218000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
+                    <marker date="1462366218000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
+                    <marker date="1462366218000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
+                    <marker date="1462366218000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
+                    <marker date="1462366218000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
+                    <marker date="1462366218000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
+                    <marker date="1462366218000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
+                    <marker date="1462366218000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
+                    <marker date="1462366218000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                    <marker date="1462366218000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                    <marker date="1462366218000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                    <marker date="1462366218000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                    <marker date="1462366218000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
+                    <marker date="1462366218000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                    <marker date="1462366218000" expanded="true" signature="7705:8589" placeholder="Select a.* ,... jamong__tb_users" />
+                    <marker date="1462366218000" expanded="true" signature="7743:7817" placeholder="select pictu... jamong__tb_users_picture" />
+                    <marker date="1462366218000" expanded="true" signature="7858:7909" placeholder="select nickN... jumper_user" />
+                    <marker date="1462366218000" expanded="true" signature="7962:8021" placeholder="select count... jumper__channellist" />
+                    <marker date="1462366218000" expanded="true" signature="8072:8129" placeholder="select count... jumper__favorites" />
+                    <marker date="1462366218000" expanded="true" signature="8183:8240" placeholder="select count... jumper__mychannels" />
+                    <marker date="1462366218000" expanded="true" signature="8290:8346" placeholder="select follo... jumper__channellist" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/config/config.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="299">
+                  <caret line="292" column="1" selection-start-line="292" selection-start-column="1" selection-end-line="292" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -83,7 +211,6 @@
         <option value="$PROJECT_DIR$/application/models/category_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/category.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/type.php" />
-        <option value="$PROJECT_DIR$/application/models/user_model.php" />
         <option value="$PROJECT_DIR$/application/views/_CONTENT/detail.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/user.php" />
         <option value="$PROJECT_DIR$/application/views/_CONTENT/index.php" />
@@ -93,6 +220,12 @@
         <option value="$PROJECT_DIR$/application/controllers/api/content.php" />
         <option value="$PROJECT_DIR$/application/models/content_model.php" />
         <option value="$PROJECT_DIR$/static/css/content/detail.css" />
+        <option value="$PROJECT_DIR$/application/views/_AUTH/join.php" />
+        <option value="$PROJECT_DIR$/application/views/_AUTH/login.php" />
+        <option value="$PROJECT_DIR$/application/models/user_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/auth.php" />
+        <option value="$PROJECT_DIR$/application/core/CORE_Controller.php" />
+        <option value="$PROJECT_DIR$/application/controllers/api/auth.php" />
       </list>
     </option>
   </component>
@@ -107,8 +240,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1053" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -320,7 +453,47 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_AUTH" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CodeIgniter-2.2.3-MGMT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mgmt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CodeIgniter-2.2.3-MGMT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mgmt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -440,23 +613,23 @@
       <workItem from="1461309990189" duration="15849000" />
       <workItem from="1461722141531" duration="10629000" />
       <workItem from="1461919442002" duration="4886000" />
-      <workItem from="1462255860959" duration="19945000" />
+      <workItem from="1462255860959" duration="24461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60655000" />
+    <option name="totallyTimeSpent" value="65171000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11980831" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16094421" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09925293" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12220762" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -500,6 +673,10 @@
           <line>12</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/controllers/api/auth.php</url>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/static/js/user/index.js</url>
           <line>17</line>
@@ -512,102 +689,11 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/_LAYOUT/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_HOME/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="61" column="48" selection-start-line="61" selection-start-column="48" selection-end-line="61" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_USER/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#test#0;n#User_model#0;n#!!top" expanded="false" />
-            <element signature="n#gets#0;n#User_model#0;n#!!top" expanded="false" />
-            <marker date="1462351310000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
-            <marker date="1462351310000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
-            <marker date="1462351310000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
-            <marker date="1462351310000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
-            <marker date="1462351310000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
-            <marker date="1462351310000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1462351310000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1462351310000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
-            <marker date="1462351310000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
-            <marker date="1462351310000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
-            <marker date="1462351310000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
-            <marker date="1462351310000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
-            <marker date="1462351310000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
-            <marker date="1462351310000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
-            <marker date="1462351310000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
-            <marker date="1462351310000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
-            <marker date="1462351310000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
-            <marker date="1462351310000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1462351310000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1462351310000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1462351310000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1462351310000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1462351310000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1462351310000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1462351310000" expanded="true" signature="7705:8589" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1462351310000" expanded="true" signature="7743:7817" placeholder="select pictu... jamong__tb_users_picture" />
-            <marker date="1462351310000" expanded="true" signature="7858:7909" placeholder="select nickN... jumper_user" />
-            <marker date="1462351310000" expanded="true" signature="7962:8021" placeholder="select count... jumper__channellist" />
-            <marker date="1462351310000" expanded="true" signature="8072:8129" placeholder="select count... jumper__favorites" />
-            <marker date="1462351310000" expanded="true" signature="8183:8240" placeholder="select count... jumper__mychannels" />
-            <marker date="1462351310000" expanded="true" signature="8290:8346" placeholder="select follo... jumper__channellist" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_HOME/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="61" column="48" selection-start-line="61" selection-start-column="48" selection-end-line="61" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/home/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -640,13 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/user/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -658,14 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6585">
-          <caret line="439" column="2" selection-start-line="439" selection-start-column="2" selection-end-line="439" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,48 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="79" column="89" selection-start-line="79" selection-start-column="89" selection-end-line="79" selection-end-column="89" />
-          <folding>
-            <element signature="n#test#0;n#User_model#0;n#!!top" expanded="false" />
-            <element signature="n#gets#0;n#User_model#0;n#!!top" expanded="false" />
-            <marker date="1462351310000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
-            <marker date="1462351310000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
-            <marker date="1462351310000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
-            <marker date="1462351310000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
-            <marker date="1462351310000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
-            <marker date="1462351310000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1462351310000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1462351310000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
-            <marker date="1462351310000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
-            <marker date="1462351310000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
-            <marker date="1462351310000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
-            <marker date="1462351310000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
-            <marker date="1462351310000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
-            <marker date="1462351310000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
-            <marker date="1462351310000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
-            <marker date="1462351310000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
-            <marker date="1462351310000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
-            <marker date="1462351310000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1462351310000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1462351310000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1462351310000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1462351310000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1462351310000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
-            <marker date="1462351310000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1462351310000" expanded="true" signature="7705:8589" placeholder="Select a.* ,... jamong__tb_users" />
-            <marker date="1462351310000" expanded="true" signature="7743:7817" placeholder="select pictu... jamong__tb_users_picture" />
-            <marker date="1462351310000" expanded="true" signature="7858:7909" placeholder="select nickN... jumper_user" />
-            <marker date="1462351310000" expanded="true" signature="7962:8021" placeholder="select count... jumper__channellist" />
-            <marker date="1462351310000" expanded="true" signature="8072:8129" placeholder="select count... jumper__favorites" />
-            <marker date="1462351310000" expanded="true" signature="8183:8240" placeholder="select count... jumper__mychannels" />
-            <marker date="1462351310000" expanded="true" signature="8290:8346" placeholder="select follo... jumper__channellist" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/content.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -977,14 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/api/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/content/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -995,22 +1016,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/content_model.php">
+    <entry file="file://$PROJECT_DIR$/static/css/content/detail.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+        <state relative-caret-position="30">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="292" column="1" selection-start-line="292" selection-start-column="1" selection-end-line="292" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="215" column="9" selection-start-line="215" selection-start-column="9" selection-end-line="215" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/mcrypt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="672" column="9" selection-start-line="672" selection-start-column="9" selection-end-line="672" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_AUTH/join.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_AUTH/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
           <folding>
-            <element signature="n#change_isdeprecated#0;n#Content_model#0;n#!!top" expanded="false" />
-            <element signature="n#update#0;n#Content_model#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/content/detail.css">
+    <entry file="file://$PROJECT_DIR$/application/controllers/api/content.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        <state relative-caret-position="255">
+          <caret line="18" column="47" selection-start-line="0" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/core/CORE_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding>
+            <element signature="n#keyEncrypt#0;n#CORE_Controller#0;n#!!top" expanded="false" />
+            <element signature="n#keyDecrypt#0;n#CORE_Controller#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="165" column="5" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
+          <folding>
+            <element signature="n#test#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#gets#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#gets_pagination#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_total_count#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#gets_manager_pagination#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#gets_admin#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#gets_non_isdeprecated#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#logined#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_user_by_id#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_admin#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_password#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_state_block#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_isdeprecated#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_isadmin#0;n#User_model#0;n#!!top" expanded="false" />
+            <marker date="1462366218000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
+            <marker date="1462366218000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
+            <marker date="1462366218000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
+            <marker date="1462366218000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
+            <marker date="1462366218000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
+            <marker date="1462366218000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462366218000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462366218000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
+            <marker date="1462366218000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
+            <marker date="1462366218000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
+            <marker date="1462366218000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
+            <marker date="1462366218000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
+            <marker date="1462366218000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
+            <marker date="1462366218000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
+            <marker date="1462366218000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
+            <marker date="1462366218000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
+            <marker date="1462366218000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
+            <marker date="1462366218000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
+            <marker date="1462366218000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462366218000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462366218000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462366218000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462366218000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
+            <marker date="1462366218000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+            <marker date="1462366218000" expanded="true" signature="7705:8589" placeholder="Select a.* ,... jamong__tb_users" />
+            <marker date="1462366218000" expanded="true" signature="7743:7817" placeholder="select pictu... jamong__tb_users_picture" />
+            <marker date="1462366218000" expanded="true" signature="7858:7909" placeholder="select nickN... jumper_user" />
+            <marker date="1462366218000" expanded="true" signature="7962:8021" placeholder="select count... jumper__channellist" />
+            <marker date="1462366218000" expanded="true" signature="8072:8129" placeholder="select count... jumper__favorites" />
+            <marker date="1462366218000" expanded="true" signature="8183:8240" placeholder="select count... jumper__mychannels" />
+            <marker date="1462366218000" expanded="true" signature="8290:8346" placeholder="select follo... jumper__channellist" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/api/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+          <folding>
+            <element signature="n#join#0;n#Auth#0;n#!!top" expanded="false" />
+            <element signature="n#submit_join#0;n#Auth#0;n#!!top" expanded="false" />
+            <element signature="n#logout#0;n#Auth#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/content_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding>
+            <element signature="n#change_isdeprecated#0;n#Content_model#0;n#!!top" expanded="false" />
+            <element signature="n#update#0;n#Content_model#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

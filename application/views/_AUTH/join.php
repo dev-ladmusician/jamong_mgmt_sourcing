@@ -18,7 +18,7 @@
                 <div class="col-xs-12">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">회원가입</button>
                 </div>
-                <div class="col-xs-12 btn-login">
+                <div class="col-xs-12 btn-login" style="margin-top: 10px;">
                     <a href="/auth/login" class="btn btn-default btn-block btn-flat">로그인</a>
                 </div>
             </div>
