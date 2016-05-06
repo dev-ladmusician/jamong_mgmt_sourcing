@@ -102,10 +102,11 @@ class Content_model extends CI_Model
         }
     }
 
-    function update_filename($content_id, $file_name)
+    function update_filename($content_id, $file_name, $file_format)
     {
         $input_data = array(
-            'filename' => $file_name
+            'filename' => $file_name,
+            'format' => $file_format
         );
 
         $this->db->where('inum', $content_id);

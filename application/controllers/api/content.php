@@ -138,21 +138,21 @@ class Content extends CORE_Controller
             $file_type = explode(".", $_FILES['jamong-content-movie']['name']);
             $file_original_name = $file_type[0];
             $file_original_format = $file_type[1];
-            $file_new_filename = $content_id."_".date('Y-m-d_H:i:s')."_".$file_original_name.".".$file_original_format;
+            $file_new_filename = $content_id."_".date('Y-m-d_H:i:s')."_".$file_original_name;
 
             $result = $s3->putObject(array(
                 'Bucket' => 'dongshin.movie',
-                'Key' => 'original/' . $file_new_filename,
+                'Key' => 'original/' . $file_new_filename.".".$file_original_format,
                 'Body' => fopen($uploadfile, 'r'),
                 'ACL' => 'public-read',
                 'ContentType' => mime_content_type($uploadfile)
             ));
-            
+
             if ($result['@metadata']['statusCode'] == 200) {
                 // removce temp file
                 unlink($uploadfile);
                 // upload db record
-                $rtv = $this->content_model->update_filename($content_id, $file_new_filename);
+                $rtv = $this->content_model->update_filename($content_id, $file_new_filename, $file_original_format);
                 if ($rtv > 0) {
                     $this->session->set_flashdata('message', '영상을 성공적으로 업데이트 하였습니다.');
                 } else {

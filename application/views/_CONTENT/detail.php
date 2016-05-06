@@ -129,10 +129,29 @@
                               action="<?= site_url('/api/content/upload_movie?contentId=' . $content->inum)?>">
                             <div class="form-group">
                                 <label>업로드 할 컨텐츠</label>
+                                <small class="jamong-content-video-title">업로드된 영상: </small>
+                                <small class="jamong-content-video-content">
+                                    <?php
+                                    if ($content->uploadstat == "Complete") {
+                                    echo $content->filename.$content->format;
+                                    }
+                                    ?>
+                                </small>
                                 <input type="file" name="jamong-content-movie"  class="form-control my-colorpicker1"/>
                             </div>
                             <div class="form-group pull-right">
-                                <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="동영상 업로드">
+                                <?php
+                                if ($content->uploadstat == "Complete") {
+                                ?>
+                                    <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="동영상 수정">
+                                <?php
+                                } else {
+                                ?>
+                                    <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="동영상 업로드">
+                                <?php
+                                }
+                                ?>
+
                             </div>
                         </form>
                     </div>
@@ -155,8 +174,8 @@
                                 <label>적용중인 사진</label>
                                 <img style="display: block" class=""
                                      src="<?php
-                                     if (strlen($content->picture) > 0) {
-                                         echo $content->picture;
+                                     if ($content->uploadstat == "Complete") {
+                                         echo "https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/".$content->filename."/high_00001.png";
                                      } else {
                                          echo '/MGMT/static/img/profile_default.png';
                                      }
