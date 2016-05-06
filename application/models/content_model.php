@@ -102,20 +102,16 @@ class Content_model extends CI_Model
         }
     }
 
-    function update_filename($content_id,$file_name)
+    function update_filename($content_id, $file_name)
     {
-        try {
-            $input_data = array(
-                'filename' => $file_name
-            );
+        $input_data = array(
+            'filename' => $file_name
+        );
 
-            $this->db->where('inum', $content_id);
-            $this->db->update($this->table, $input_data);
+        $this->db->where('inum', $content_id);
+        $this->db->update($this->table, $input_data);
 
-            return true;
-        } catch (Exception $e) {
-            return false;
-        }
+        return $this->db->affected_rows();
     }
 
     function add_item($input_data){

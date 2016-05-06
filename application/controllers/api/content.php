@@ -120,50 +120,52 @@ class Content extends CORE_Controller
 
     function upload_movie()
     {
-        error_reporting(E_ALL);
-        ini_set('display_errors','On');
-
         $content_id = $this->input->get('contentId');
-
         $uploaddir = '/tmp/';
-        $uploadfile = $uploaddir . basename($_FILES['jamong-content-movie']['name']);
+        $uploadfile = $uploaddir.basename($_FILES['jamong-content-movie']['name']);
 
         if (move_uploaded_file($_FILES['jamong-content-movie']['tmp_name'], $uploadfile)) {
-            try {
-                // Instantiate an S3 client
-                $s3 = S3Client::factory([
-                    'version' => 'latest',
-                    'region' => 'ap-northeast-1',
-                    'credentials' => [
-                        'key' => 'AKIAJWWW3TRCBB2ACYBA',
-                        'secret' => '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'
-                    ]
-                ]);
+            // Instantiate an S3 client
+            $s3 = S3Client::factory([
+                'version' => 'latest',
+                'region' => 'ap-northeast-1',
+                'credentials' => [
+                    'key' => $this->config->item('S3_CREDENTIAL_KEY'),
+                    'secret' => $this->config->item('S3_CREDENTIAL_SECRET')
+                ]
+            ]);
 
-                $fileType = explode(".", $_FILES['jamong-content-movie']['name']);
-                $fileName = $content_id . date(' Y-m-d H:i:s.') . $fileType[1];
-                // Upload a publicly accessible file. File size, file type, and md5 hash are automatically calculated by the SDK
-                $result = $s3->putObject(array(
-                    'Bucket' => 'dongshin.movie',
-                    'Key' =>  'original/' . $fileName,
-                    'Body' => fopen($uploadfile, 'r'),
-                    'ACL' => 'public-read',
-                    'ContentType' => mime_content_type($uploadfile)
-                ));
+            $file_type = explode(".", $_FILES['jamong-content-movie']['name']);
+            $file_original_name = $file_type[0];
+            $file_original_format = $file_type[1];
+            $file_new_filename = $content_id."_".date('Y-m-d_H:i:s')."_".$file_original_name.".".$file_original_format;
 
-                $rtv = $this->content_model->update_filename($content_id, $fileName);
-                if($rtv){
-                    $this->session->set_flashdata('message', '컨텐츠를 성공적으로 업로드 했습니다.');
-                    redirect('content/detail?contentId=' . $content_id);
+            $result = $s3->putObject(array(
+                'Bucket' => 'dongshin.movie',
+                'Key' => 'original/' . $file_new_filename,
+                'Body' => fopen($uploadfile, 'r'),
+                'ACL' => 'public-read',
+                'ContentType' => mime_content_type($uploadfile)
+            ));
+            
+            if ($result['@metadata']['statusCode'] == 200) {
+                // removce temp file
+                unlink($uploadfile);
+                // upload db record
+                $rtv = $this->content_model->update_filename($content_id, $file_new_filename);
+                if ($rtv > 0) {
+                    $this->session->set_flashdata('message', '영상을 성공적으로 업데이트 하였습니다.');
+                } else {
+                    $this->session->set_flashdata('message', '데이터베이스에 영상정보를 업데이트 하는데 오류가 발생했습니다.');
                 }
-
-            } catch (S3Exception $e) {
-                print_r($e);
+            } else {
+                $this->session->set_flashdata('message', '영상을 파일서버에 업로드하는데 오류가 발생했습니다.');
             }
         } else {
-            $this->session->set_flashdata('message', '임시 저장에 실패 햇습니다..');
-            redirect('content/detail?contentId=' . $content_id);
+            $this->session->set_flashdata('message', '영상을 임시 저장소에 업로드하는데 오류가 발생했습니다.');
         }
+
+        redirect('content/detail?contentId=' . $content_id);
     }
 
     function upload_content_image()
