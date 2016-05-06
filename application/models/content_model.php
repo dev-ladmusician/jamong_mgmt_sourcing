@@ -120,6 +120,12 @@ class Content_model extends CI_Model
             $this->db->insert($this->table, $input_data);
             $result = $this->db->insert_id();
 
+            $insert_data_to_relation_table = array (
+                'channelnum' => $input_data['ch'],
+                'inum' => $result
+            );
+            $this->db->insert('jumper__channels', $insert_data_to_relation_table);
+
             return $result;
         } catch (Exception $e) {
             return false;
@@ -138,6 +144,11 @@ class Content_model extends CI_Model
 
         $this->db->where('inum', $input_data['contentId']);
         $this->db->update($this->table, $data);
+
+        $this->db->where('inum', $input_data['contentId']);
+        $this->db->update('jumper__channels', array(
+            'channelnum' => $input_data['ch']
+        ));
 
         return $this->db->affected_rows();
     }

@@ -51,7 +51,6 @@ class Content extends CORE_Controller
         }
     }
 
-
     function get_items()
     {
         $page = $this->input->get('page');
