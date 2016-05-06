@@ -29,8 +29,8 @@ class Content extends CORE_Controller
                                                                 'ch' =>$channelId,
                                                                 'type' => $typeId,
                                                                 'cate' => $categoryId,
-                                                                'userNumber' => 10537,
-                                                                'nickname' => "goqual"));
+                                                                'userNumber' => $this->session->userdata('userid'),
+                                                                'nickname' => $this->session->userdata('nickname')));
                 if($rtv){
                     $this->session->set_flashdata('message', '영상 정보를 성공적으로 등록하였습니다.');
                     redirect('/content/detail?contentId=' .$rtv);
