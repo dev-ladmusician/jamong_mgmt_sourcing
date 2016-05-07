@@ -1,9 +1,39 @@
-var app = angular.module('myApp', ['']).
+var app = angular.module('myApp', ['ngTable']).
 controller('DetailCtrl', function ($scope, $timeout, ngTableParams) {
-    $scope.changePassword = function () {
-        console.log($scope.password);
-    }
+    $scope.resetCacheData = {};
+    $scope.totalLength = null;
+    $scope.tableParams = new ngTableParams({
+        page: 1,            // show first page
+        count: 11,          // count per page
+        sorting: {
+            channelNum: 'desc',     // initial sorting
+        }
+    }, {
+        total: 0,
+        getData: function ($defer, params) {
+            tableResetPageWhenIfNeeded($scope.resetCacheData, $scope.tableParams, function () {
+                $.ajax({
+                    url: '/MGMT/api/channel/get_items?userId=' + $('#jamong-userId').val(),
+                    type: 'GET',
+                    contentType: 'application/json',
+                    //data: JSON.stringify(params.url()),
+                    data: params.url(),
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data);
+                        $scope.page = $scope.tableParams.page();
+                        $scope.perpage = $scope.tableParams.count();
+                        $scope.totalLength = data.row_count;
+                        params.total(data.row_count);
+                        $defer.resolve(data.items);
+                    }
+                })
+            });
+        }
+    });
 
+    $scope.page = $scope.tableParams.page();
+    $scope.perpage = $scope.tableParams.count();
 }).directive('loadingContainer', function () {
         return {
             restrict: 'A',

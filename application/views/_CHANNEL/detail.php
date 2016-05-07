@@ -105,76 +105,75 @@
             </div>
         </section>
 
-        <section class="content-header">
-            <h1>
-                채널 매니저 관리
-            </h1>
-        </section>
-
-        <section class="content">
-            <div class="row">
-                <div class="col-xs-6 jamong-pannel">
-                    <div class="box">
-                        <div class="box-body table-responsive table-container">
-                            <table class="table table-bordered table-hover">
-                                <tr>
-                                    <td>아이디</td>
-                                    <td>이메일</td>
-                                    <td>닉네임</td>
-                                    <td>관리자</td>
-                                </tr>
-                                <?php
-                                foreach ($managers as $each) {
-                                ?>
+        <?php if($this->session->userdata('issuperadmin')) { ?>
+            <section class="content-header">
+                <h1>채널 매니저 관리</h1>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-xs-6 jamong-pannel">
+                        <div class="box">
+                            <div class="box-body table-responsive table-container">
+                                <table class="table table-bordered table-hover">
                                     <tr>
-                                        <td><?php echo $each->userNumber; ?></td>
-                                        <td><?php echo $each->email; ?></td>
-                                        <td><?php echo $each->nickName; ?></td>
-                                        <td>
-                                            <a style="color: red"
-                                               href="<?=site_url('api/channel/delete_manager?channelId='.$channel->channelnum.'&userId='.$each->userNumber)?>">삭제</a>
+                                        <td>아이디</td>
+                                        <td>이메일</td>
+                                        <td>닉네임</td>
+                                        <td>관리자</td>
+                                    </tr>
+                                    <?php
+                                    foreach ($managers as $each) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $each->userNumber; ?></td>
+                                            <td><?php echo $each->email; ?></td>
+                                            <td><?php echo $each->nickName; ?></td>
+                                            <td>
+                                                <a style="color: red"
+                                                   href="<?=site_url('api/channel/delete_manager?channelId='.$channel->channelnum.'&userId='.$each->userNumber)?>">삭제</a>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                    ?>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 jamong-pannel">
+                        <div class="box">
+                            <div class="box-body table-responsive table-container">
+                                <table ng-table="tableParams" class="table table-bordered table-hover">
+                                    <tr ng-repeat="item in $data">
+                                        <td data-title="'아이디'" sortable="'userNumber'" filter="{userNumber: 'text'}">{{item.userNumber}}</td>
+                                        <td data-title="'이메일'" sortable="'email'" filter="{email: 'text'}">
+                                            <a href="<?=site_url('user/detail?userId={{item.userNumber}}')?>">{{item.email}}</a>
+                                        </td>
+                                        <td data-title="'닉네임'" sortable="'nickname'" filter="{nickname: 'text'}">
+                                            <a href="<?=site_url('user/detail?userId={{item.userNumber}}')?>">{{item.nickname}}</a>
+                                        </td>
+                                        <td data-title="'성인인증'" sortable="'adult'" filter="{adult: 'text'}">
+                                            <span ng-if="item.adult == 'ACTIVE'" style="color: red">인증</span>
+                                            <span ng-if="item.adult != 'ACTIVE'">미인증</span>
+                                        </td>
+                                        <td data-title="'상태'" sortable="'state'" filter="{state: 'text'}">
+                                            <span ng-if="item.state == 'active'">정상</span>
+                                            <span ng-if="item.state == 'out'">탈퇴</span>
+                                            <span ng-if="item.state == 'block'">차단</span>
+                                        </td>
+                                        <td data-title="'관리자'" sortable="'manager'" filter="{manager: 'text'}">
+                                            <a href="<?=site_url('api/channel/delete_manager?channelId='.$channel->channelnum.'&userId={{item.userNumber}}')?>"
+                                               style="color: red" ng-if="item.channelnum == <?php echo $channel->channelnum?>">삭제</a>
+                                            <a href="<?=site_url('api/channel/add_manager?channelId='.$channel->channelnum.'&userId={{item.userNumber}}')?>"
+                                               style="color: #0D65F1" ng-if="item.channelnum != <?php echo $channel->channelnum?>">관리자부여</a>
                                         </td>
                                     </tr>
-                                <?php
-                                }
-                                ?>
-
-                            </table>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xs-6 jamong-pannel">
-                    <div class="box">
-                        <div class="box-body table-responsive table-container">
-                            <table ng-table="tableParams" class="table table-bordered table-hover">
-                                <tr ng-repeat="item in $data">
-                                    <td data-title="'아이디'" sortable="'userNumber'" filter="{userNumber: 'text'}">{{item.userNumber}}</td>
-                                    <td data-title="'이메일'" sortable="'email'" filter="{email: 'text'}">
-                                        <a href="<?=site_url('user/detail?userId={{item.userNumber}}')?>">{{item.email}}</a>
-                                    </td>
-                                    <td data-title="'닉네임'" sortable="'nickname'" filter="{nickname: 'text'}">
-                                        <a href="<?=site_url('user/detail?userId={{item.userNumber}}')?>">{{item.nickname}}</a>
-                                    </td>
-                                    <td data-title="'성인인증'" sortable="'adult'" filter="{adult: 'text'}">
-                                        <span ng-if="item.adult == 'ACTIVE'" style="color: red">인증</span>
-                                        <span ng-if="item.adult != 'ACTIVE'">미인증</span>
-                                    </td>
-                                    <td data-title="'상태'" sortable="'state'" filter="{state: 'text'}">
-                                        <span ng-if="item.state == 'active'">정상</span>
-                                        <span ng-if="item.state == 'out'">탈퇴</span>
-                                        <span ng-if="item.state == 'block'">차단</span>
-                                    </td>
-                                    <td data-title="'관리자'" sortable="'manager'" filter="{manager: 'text'}">
-                                        <a href="<?=site_url('api/channel/delete_manager?channelId='.$channel->channelnum.'&userId={{item.userNumber}}')?>"
-                                            style="color: red" ng-if="item.channelnum == <?php echo $channel->channelnum?>">삭제</a>
-                                        <a href="<?=site_url('api/channel/add_manager?channelId='.$channel->channelnum.'&userId={{item.userNumber}}')?>"
-                                            style="color: #0D65F1" ng-if="item.channelnum != <?php echo $channel->channelnum?>">관리자부여</a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-        </section>
+            </section>
+        <?php } ?>
     </div>
 </div>

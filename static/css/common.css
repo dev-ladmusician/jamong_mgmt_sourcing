@@ -25,6 +25,13 @@ a:hover {
 textarea {
     min-height: 150px;
 }
+.jamong-add-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
 
 .content
 /* mobile */

@@ -282,4 +282,26 @@ class Channel extends CORE_Controller
 //            }
 //        }
     }
+
+    function get_my_channels() {
+        $page = $this->input->get('page');
+        $per_page = $this->input->get('count');
+        $sort = $this->input->get('sorting');
+        $filter = $this->input->get('filter');
+        $user_id = $this->input->get('userId');
+
+        if ($page === false || $per_page === false) {
+            $page = 1;
+            $per_page = 10;
+        }
+
+        $items = $this->channel_model->get_my_channels($page, $per_page, $sort, $filter, $user_id);
+        $total_count = $this->channel_model->get_my_channel_total_count($user_id);
+
+        $rtv = array(
+            'row_count' => $total_count,
+            'items' => $items,
+        );
+        echo json_encode($rtv, JSON_PRETTY_PRINT);
+    }
 }

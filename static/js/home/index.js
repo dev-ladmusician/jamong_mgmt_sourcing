@@ -13,7 +13,7 @@ controller('DetailCtrl', function ($scope, $timeout, ngTableParams) {
         getData: function ($defer, params) {
             tableResetPageWhenIfNeeded($scope.resetCacheData, $scope.tableParams, function () {
                 $.ajax({
-                    url: '/MGMT/api/channel/get_items?userId=' + $('#jamong-userId').val(),
+                    url: '/MGMT/api/channel/get_my_channels?userId=' + $('#jamong-userId').val(),
                     type: 'GET',
                     contentType: 'application/json',
                     //data: JSON.stringify(params.url()),

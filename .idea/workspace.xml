@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be2c7192-3826-4bf3-8653-055224971a19" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/user.php" afterPath="$PROJECT_DIR$/application/controllers/api/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/CORE_Controller.php" afterPath="$PROJECT_DIR$/application/core/CORE_Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/user_model.php" afterPath="$PROJECT_DIR$/application/models/user_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/channel.php" afterPath="$PROJECT_DIR$/application/controllers/api/channel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/channel_model.php" afterPath="$PROJECT_DIR$/application/models/channel_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" afterPath="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_HOME/index.php" afterPath="$PROJECT_DIR$/application/views/_HOME/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_USER/detail.php" afterPath="$PROJECT_DIR$/application/views/_USER/detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="$PROJECT_DIR$/static/css/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/home/index.js" afterPath="$PROJECT_DIR$/static/js/home/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/user/detail.js" afterPath="$PROJECT_DIR$/static/js/user/detail.js" />
     </list>
     <ignored path="CodeIgniter-2.2.3-MGMT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,40 +30,7 @@
     <favorites_list name="CodeIgniter-2.2.3-MGMT" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="36" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CORE_Controller.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/core/CORE_Controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auth.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/auth.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="39" />
-              <folding>
-                <element signature="n#join#0;n#Auth#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -76,7 +46,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/js/channel/index.js" />
         <option value="$PROJECT_DIR$/static/css/channel/detail.css" />
         <option value="$PROJECT_DIR$/application/views/_USER/index.php" />
         <option value="$PROJECT_DIR$/static/js/channel/detail.js" />
@@ -106,27 +75,28 @@
         <option value="$PROJECT_DIR$/application/views/_CONTENT/index.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/content.php" />
         <option value="$PROJECT_DIR$/application/models/content_model.php" />
-        <option value="$PROJECT_DIR$/application/views/_HOME/index.php" />
-        <option value="$PROJECT_DIR$/static/js/home/index.js" />
         <option value="$PROJECT_DIR$/application/controllers/home.php" />
         <option value="$PROJECT_DIR$/application/views/_CATEGORY/create.php" />
         <option value="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
         <option value="$PROJECT_DIR$/application/controllers/channel.php" />
         <option value="$PROJECT_DIR$/application/views/_LAYOUT/footer.php" />
         <option value="$PROJECT_DIR$/application/views/_LAYOUT/header.php" />
-        <option value="$PROJECT_DIR$/static/css/common.css" />
         <option value="$PROJECT_DIR$/application/views/_CHANNEL/create.php" />
-        <option value="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" />
         <option value="$PROJECT_DIR$/static/js/channel/create.js" />
-        <option value="$PROJECT_DIR$/application/controllers/api/channel.php" />
-        <option value="$PROJECT_DIR$/application/models/channel_model.php" />
         <option value="$PROJECT_DIR$/application/views/_CONTENT/create_info.php" />
         <option value="$PROJECT_DIR$/application/views/_CONTENT/detail.php" />
         <option value="$PROJECT_DIR$/application/controllers/auth.php" />
-        <option value="$PROJECT_DIR$/application/views/_USER/detail.php" />
         <option value="$PROJECT_DIR$/application/models/user_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/user.php" />
         <option value="$PROJECT_DIR$/application/core/CORE_Controller.php" />
+        <option value="$PROJECT_DIR$/application/views/_USER/detail.php" />
+        <option value="$PROJECT_DIR$/static/js/user/detail.js" />
+        <option value="$PROJECT_DIR$/static/css/common.css" />
+        <option value="$PROJECT_DIR$/application/views/_HOME/index.php" />
+        <option value="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" />
+        <option value="$PROJECT_DIR$/static/js/home/index.js" />
+        <option value="$PROJECT_DIR$/application/models/channel_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/api/channel.php" />
       </list>
     </option>
   </component>
@@ -732,19 +702,19 @@
       <workItem from="1461309990189" duration="15849000" />
       <workItem from="1461722141531" duration="10629000" />
       <workItem from="1461919442002" duration="4886000" />
-      <workItem from="1462255860959" duration="46457000" />
+      <workItem from="1462255860959" duration="47755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87167000" />
+    <option name="totallyTimeSpent" value="88465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16809729" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16809729" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -833,14 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="40" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/content/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -943,14 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_CONTENT/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/channel/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -959,35 +913,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/home/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="e#1529#1957#0" expanded="false" />
-            <element signature="n#!!block;n#tableResetPageWhenIfNeeded#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_HOME/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="197" column="14" selection-start-line="197" selection-start-column="14" selection-end-line="197" selection-end-column="14" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#section#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#section#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_CATEGORY/create.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1008,14 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1029,16 +952,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/user/detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#tableResetPageWhenIfNeeded#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1086,68 +999,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/content_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
-          <folding>
-            <element signature="n#get_by_id#0;n#Content_model#0;n#!!top" expanded="false" />
-            <element signature="n#get_total_count#0;n#Content_model#0;n#!!top" expanded="false" />
-            <element signature="n#update_filename#0;n#Content_model#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/channel/create.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding>
-            <element signature="n#get_items#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#get_by_id#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#get_managers#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#change_channel_info#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#change_isdeprecated#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <marker date="1462654685000" expanded="true" signature="2283:2503" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462654685000" expanded="true" signature="2283:2529" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462654685000" expanded="true" signature="2283:2548" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462654685000" expanded="true" signature="2283:2549" placeholder="SELECT l.*, jumper__channellist" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/api/channel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
-          <folding>
-            <element signature="e#136#156#0#PHP" expanded="true" />
-            <element signature="n#__construct#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#get_items#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#create_channel#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#get_managers#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#delete_manager#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#change_isdeprecated#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#change_channel_info#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#upload_channel_picture#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#upload_channel_background#0;n#Channel#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1262,6 +1118,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/core/CORE_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="39" />
+          <folding>
+            <element signature="n#join#0;n#Auth#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_USER/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1270,37 +1152,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+    <entry file="file://$PROJECT_DIR$/static/css/content/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="36" />
+        <state relative-caret-position="15">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="6" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/auth.php">
+    <entry file="file://$PROJECT_DIR$/application/views/_HOME/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="39" />
+        <state relative-caret-position="328">
+          <caret line="208" column="53" selection-start-line="208" selection-start-column="53" selection-end-line="208" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_CONTENT/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/user/detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="43" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
           <folding>
-            <element signature="n#join#0;n#Auth#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#tableResetPageWhenIfNeeded#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_USER/detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
-          <caret line="111" column="46" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="46" />
+        <state relative-caret-position="15">
+          <caret line="1" column="54" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="54" />
+          <folding>
+            <element signature="n#section#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#section#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#section#3;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#section#4;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#section#5;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/CORE_Controller.php">
+    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="330">
+          <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#section#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#section#3;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/content_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="82" selection-start-line="39" selection-start-column="82" selection-end-line="39" selection-end-column="82" />
+          <folding>
+            <element signature="n#get_by_id#0;n#Content_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_total_count#0;n#Content_model#0;n#!!top" expanded="false" />
+            <element signature="n#update_filename#0;n#Content_model#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+          <folding>
+            <element signature="n#gets_pagination#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_by_id#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_managers#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_channel_info#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_isdeprecated#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <marker date="1462658025000" expanded="true" signature="4321:4541" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462658025000" expanded="true" signature="4321:4567" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462658025000" expanded="true" signature="4321:4586" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462658025000" expanded="true" signature="4321:4587" placeholder="SELECT l.*, jumper__channellist" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/api/channel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="286" column="42" selection-start-line="286" selection-start-column="42" selection-end-line="286" selection-end-column="42" />
+          <folding>
+            <element signature="e#136#156#0#PHP" expanded="true" />
+            <element signature="n#__construct#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#get_items#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#create_channel#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#get_managers#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#add_manager#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#delete_manager#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#change_isdeprecated#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#change_channel_info#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#upload_channel_picture#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#upload_channel_background#0;n#Channel#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/home/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+          <folding>
+            <element signature="e#1535#1963#0" expanded="false" />
+            <element signature="n#!!block;n#tableResetPageWhenIfNeeded#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
