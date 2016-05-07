@@ -93,6 +93,16 @@ class Channel_model extends CI_Model
         return count($this->db->get()->result());
     }
 
+    function check_manager($user_id, $channel_num) {
+        $this->db->select('mnum');
+        $this->db->from('jumper__managers');
+        $this->db->where(array(
+            'userNumber' => $user_id,
+            'channelnum' => $channel_num
+        ));
+        return $this->db->get()->result();
+    }
+
     function get_by_id($channel_id)
     {
         $query_str = "SELECT l.*, p.ch_picture, p.bg_picture FROM jumper__channellist l ".

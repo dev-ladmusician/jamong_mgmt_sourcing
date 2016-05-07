@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be2c7192-3826-4bf3-8653-055224971a19" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/channel.php" afterPath="$PROJECT_DIR$/application/controllers/api/channel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/channel.php" afterPath="$PROJECT_DIR$/application/controllers/channel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/channel_model.php" afterPath="$PROJECT_DIR$/application/models/channel_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" afterPath="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_HOME/index.php" afterPath="$PROJECT_DIR$/application/views/_HOME/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_USER/detail.php" afterPath="$PROJECT_DIR$/application/views/_USER/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="$PROJECT_DIR$/static/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/home/index.js" afterPath="$PROJECT_DIR$/static/js/home/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/user/detail.js" afterPath="$PROJECT_DIR$/static/js/user/detail.js" />
     </list>
     <ignored path="CodeIgniter-2.2.3-MGMT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +24,38 @@
     <favorites_list name="CodeIgniter-2.2.3-MGMT" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="channel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="channel_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="95" column="26" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="26" />
+              <folding>
+                <element signature="n#gets_pagination#0;n#Channel_model#0;n#!!top" expanded="false" />
+                <element signature="n#get_by_id#0;n#Channel_model#0;n#!!top" expanded="false" />
+                <element signature="n#get_managers#0;n#Channel_model#0;n#!!top" expanded="false" />
+                <element signature="n#change_channel_info#0;n#Channel_model#0;n#!!top" expanded="false" />
+                <element signature="n#change_isdeprecated#0;n#Channel_model#0;n#!!top" expanded="false" />
+                <marker date="1462658371000" expanded="true" signature="4627:4847" placeholder="SELECT l.*, jumper__channellist" />
+                <marker date="1462658371000" expanded="true" signature="4627:4873" placeholder="SELECT l.*, jumper__channellist" />
+                <marker date="1462658371000" expanded="true" signature="4627:4892" placeholder="SELECT l.*, jumper__channellist" />
+                <marker date="1462658371000" expanded="true" signature="4627:4893" placeholder="SELECT l.*, jumper__channellist" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,7 +103,6 @@
         <option value="$PROJECT_DIR$/application/controllers/home.php" />
         <option value="$PROJECT_DIR$/application/views/_CATEGORY/create.php" />
         <option value="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
-        <option value="$PROJECT_DIR$/application/controllers/channel.php" />
         <option value="$PROJECT_DIR$/application/views/_LAYOUT/footer.php" />
         <option value="$PROJECT_DIR$/application/views/_LAYOUT/header.php" />
         <option value="$PROJECT_DIR$/application/views/_CHANNEL/create.php" />
@@ -95,8 +119,9 @@
         <option value="$PROJECT_DIR$/application/views/_HOME/index.php" />
         <option value="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" />
         <option value="$PROJECT_DIR$/static/js/home/index.js" />
-        <option value="$PROJECT_DIR$/application/models/channel_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/channel.php" />
+        <option value="$PROJECT_DIR$/application/controllers/channel.php" />
+        <option value="$PROJECT_DIR$/application/models/channel_model.php" />
       </list>
     </option>
   </component>
@@ -702,19 +727,19 @@
       <workItem from="1461309990189" duration="15849000" />
       <workItem from="1461722141531" duration="10629000" />
       <workItem from="1461919442002" duration="4886000" />
-      <workItem from="1462255860959" duration="47755000" />
+      <workItem from="1462255860959" duration="48069000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88465000" />
+    <option name="totallyTimeSpent" value="88779000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16809729" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16809729" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1055,24 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/api/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-          <folding>
-            <element signature="e#226#246#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -1234,24 +1241,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
-          <folding>
-            <element signature="n#gets_pagination#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#get_by_id#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#get_managers#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#change_channel_info#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#change_isdeprecated#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <marker date="1462658025000" expanded="true" signature="4321:4541" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462658025000" expanded="true" signature="4321:4567" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462658025000" expanded="true" signature="4321:4586" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462658025000" expanded="true" signature="4321:4587" placeholder="SELECT l.*, jumper__channellist" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/api/channel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1280,6 +1269,42 @@
             <element signature="e#1535#1963#0" expanded="false" />
             <element signature="n#!!block;n#tableResetPageWhenIfNeeded#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/api/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="112" column="16" selection-start-line="112" selection-start-column="16" selection-end-line="112" selection-end-column="82" />
+          <folding>
+            <element signature="e#226#246#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="95" column="26" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="26" />
+          <folding>
+            <element signature="n#gets_pagination#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_by_id#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_managers#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_channel_info#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_isdeprecated#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <marker date="1462658371000" expanded="true" signature="4627:4847" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462658371000" expanded="true" signature="4627:4873" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462658371000" expanded="true" signature="4627:4892" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462658371000" expanded="true" signature="4627:4893" placeholder="SELECT l.*, jumper__channellist" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
