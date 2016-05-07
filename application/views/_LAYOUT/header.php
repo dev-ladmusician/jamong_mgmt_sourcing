@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-    <title>GAPU</title>
+    <title>동신대학교</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="shortcut icon" href="/static/img/tab_01.png" />
     <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -75,7 +75,7 @@
     ?>
     <header class="main-header">
         <a href="<?= site_url('/home/index') ?>" class="logo">
-            <span class="logo-lg"><b>GAPU</b></span>
+            <span class="logo-lg"><b>동신대학교</b></span>
         </a>
         <nav class="navbar navbar-static-top" role="navigation">
             <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">

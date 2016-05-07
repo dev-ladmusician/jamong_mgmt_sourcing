@@ -9,6 +9,16 @@
                 </a>
             </li>
             <li>
+                <a href="<?= site_url('channel/index') ?>">
+                    <i class="fa fa-table"></i> <span>CHANNEL</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= site_url('content/index') ?>">
+                    <i class="fa fa-camera"></i> <span>CONTENT</span>
+                </a>
+            </li>
+            <li>
                 <a href="<?= site_url('category/index') ?>">
                     <i class="fa fa-book"></i> <span>CATEGORY</span>
                 </a>
@@ -16,16 +26,6 @@
             <li>
                 <a href="<?= site_url('type/index') ?>">
                     <i class="fa fa-book"></i> <span>TYPE</span>
-                </a>
-            </li>
-            <li>
-                <a href="<?= site_url('channel/index') ?>">
-                    <i class="fa fa-book"></i> <span>CHANNEL</span>
-                </a>
-            </li>
-            <li>
-                <a href="<?= site_url('content/index') ?>">
-                    <i class="fa fa-camera"></i> <span>CONTENT</span>
                 </a>
             </li>
         </ul>

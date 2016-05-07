@@ -2,7 +2,7 @@
     <div class="pull-right hidden-xs">
         <b>Management</b>
     </div>
-    <strong>Copyright &copy; <a href="http://goqual.com/GAPU">GAPU</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; <a href="http://jamong360.com">동신대학교</a>.</strong> All rights reserved.
 </footer>
 
 </div>
