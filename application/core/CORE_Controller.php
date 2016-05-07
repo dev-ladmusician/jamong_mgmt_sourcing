@@ -60,10 +60,12 @@ class CORE_Controller extends CI_Controller {
             $user = $rtv[0];
             if (!$user->is_superadmin) {
                 $this->session->set_flashdata('message', '권한이 없습니다. 관리자에게 문의하세요.');
+                $this->session->sess_destroy();
                 redirect('/auth/login');
             } else {
                 if ($user->state != "active") {
                     $this->session->set_flashdata('message', '사용 정지된 유저입니다.');
+                    $this->session->sess_destroy();
                     redirect('/auth/login');
                 }
             }
@@ -83,7 +85,7 @@ class CORE_Controller extends CI_Controller {
         // 로그인이 되어 있지 않다면 로그인 페이지로 리다이렉션
         if($this->session->userdata('is_login')){
             if ($return_url == "") {
-                redirect('/Home/index');
+                redirect('/home/index');
             }
             redirect($return_url);
         }

@@ -123,36 +123,29 @@ class User extends CORE_Controller
     {
         $user_id = $this->input->get('userId');
         $state = $this->input->get('state');
-
+        $flast_str = "";
         //state가 active 이면 block 가능
         if (strcmp($state, 'active') == 0) {
-
             $rtv = $this->user_model->change_state_block($user_id);
-
             if ($rtv) {
-                $this->session->set_flashdata('message', '계정이 이용정지 되었습니다.');
-
-                redirect('user/detail?userId=' . $user_id);
+                $flast_str = "계정이 이용정지 되었습니다.";
             } else {
-                $this->session->set_flashdata('message', '오류가 발생했습니다.');
-
-                redirect('user/detail?userId=' . $user_id);
+                $flast_str = "오류가 발생했습니다.";
             }
         } else {
-
             if (strcmp($state, 'block') == 0) {
-
-                $this->session->set_flashdata('message', '이미 이용정지 된 계정 입니다.');
-                redirect('user/detail?userId=' . $user_id);
-
+                $rtv = $this->user_model->resolve_state_block($user_id);
+                if ($rtv > 0) {
+                    $flast_str = "계정이 활성화 되었습니다.";
+                } else {
+                    $flast_str = "오류가 발생했습니다.";
+                }
             } else if (strcmp($state, 'out') == 0) {
-
-                $this->session->set_flashdata('message', '이미 탈퇴한 계정 입니다.');
-                redirect('user/detail?userId=' . $user_id);
-
+                $flast_str = "탈퇴한 회원입니다.";
             }
-
         }
+        $this->session->set_flashdata('message', $flast_str);
+        redirect('user/detail?userId=' . $user_id);
     }
 
     function upload_profile_image()

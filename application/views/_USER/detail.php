@@ -118,11 +118,19 @@
                                 <div class="col-sm-4 sg-item-content">
                                     <?php if ($item->blockdate != 0) echo $item->blockdate ?>
                                 </div>
-                                <a class="btn btn-danger"
-                                   href="<?= site_url('api/user/block_user?userId=' . $item->userNumber . '&state=' . $item->state) ?>"
-                                   style="margin-left: 10px; margin-bottom: 3px; width: 105px;">
-                                    계정 정지 설정
-                                </a>
+                                <?php if ($item->state == "active") { ?>
+                                    <a class="btn btn-danger"
+                                       href="<?= site_url('api/user/block_user?userId=' . $item->userNumber . '&state=' . $item->state) ?>"
+                                       style="margin-left: 10px; margin-bottom: 3px; width: 105px;">
+                                        계정 정지 설정
+                                    </a>
+                                <?php } else { ?>
+                                    <a class="btn btn-success"
+                                       href="<?= site_url('api/user/block_user?userId=' . $item->userNumber . '&state=' . $item->state) ?>"
+                                       style="margin-left: 10px; margin-bottom: 3px; width: 105px;">
+                                        계정 정지 풀기
+                                    </a>
+                                <?php } ?>
                             </div>
                             <div class="form-group">
                                 <label for="title" class="col-sm-3 control-label">채널관리자</label>

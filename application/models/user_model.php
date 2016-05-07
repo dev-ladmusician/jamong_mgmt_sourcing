@@ -224,6 +224,22 @@ class User_model extends CI_Model
         }
     }
 
+    function resolve_state_block($user_id)
+    {
+        try {
+            $data = array(
+                'state' => 'active'
+            );
+
+            $this->db->where('userNumber', $user_id);
+            $this->db->update($this->table, $data);
+
+            return $this->db->affected_rows();
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
     function change_isdeprecated($user_id, $isdeprecated)
     {
         try {
