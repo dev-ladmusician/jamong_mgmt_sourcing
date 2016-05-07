@@ -9,3 +9,8 @@ img {
 .jamong-content-video-content {
     color: #999999;
 }
+.jamong-no-video-upload {
+    padding: 15px;
+    font-weight: bold;
+    color: red;
+}

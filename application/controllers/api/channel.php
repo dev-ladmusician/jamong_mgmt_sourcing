@@ -149,8 +149,8 @@ class Channel extends CORE_Controller
                     'version'     => 'latest',
                     'region'      => 'ap-northeast-1',
                     'credentials' => [
-                        'key'    => 'AKIAJWWW3TRCBB2ACYBA',
-                        'secret' => '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'
+                        'key'    => $this->config->item('S3_CREDENTIAL_KEY'),
+                        'secret' => $this->config->item('S3_CREDENTIAL_SECRET')
                     ]
                 ]);
 
@@ -202,8 +202,8 @@ class Channel extends CORE_Controller
                     'version'     => 'latest',
                     'region'      => 'ap-northeast-1',
                     'credentials' => [
-                        'key'    => 'AKIAJWWW3TRCBB2ACYBA',
-                        'secret' => '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'
+                        'key'    => $this->config->item('S3_CREDENTIAL_KEY'),
+                        'secret' => $this->config->item('S3_CREDENTIAL_SECRET')
                     ]
                 ]);
 

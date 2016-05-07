@@ -157,36 +157,40 @@
                     </div>
                 </div>
                 <div class="col-md-6 jamong-pannel">
-                    <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">썸네일 업로드</h3>
-                        </div>
-                        <form class="box-body" method="post" enctype="multipart/form-data"
-                              action="<?= site_url('/api/content/update_change_image?contentId-' . $content->inum)?>">
 
-                            <div class="form-group">
-                                <label>영상 썸네일 사진</label>
-                                <input type="file" accept="image/*" name="jamong-content-image"
-                                       class="form-control my-colorpicker1"/>
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">썸네일 업로드</h3>
                             </div>
+                            <?php if ($content->uploadstat == "Complete") { ?>
+                                <form class="box-body" method="post" enctype="multipart/form-data"
+                                      action="<?= site_url('/api/content/upload_content_image?contentId='.$content->inum.'&contentFileName='.$content->filename)?>">
+                                    <div class="form-group">
+                                        <label>영상 썸네일 사진</label>
+                                        <input type="file" accept="image/*" name="jamong-content-image"
+                                               class="form-control my-colorpicker1"/>
+                                    </div>
 
-                            <div class="form-group">
-                                <label>적용중인 사진</label>
-                                <img style="display: block" class=""
-                                     src="<?php
-                                     if ($content->uploadstat == "Complete") {
-                                         echo "https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/".$content->filename."/high_00001.png";
-                                     } else {
-                                         echo '/MGMT/static/img/profile_default.png';
-                                     }
-                                     ?>
+                                    <div class="form-group">
+                                        <label>적용중인 사진</label>
+                                        <img style="display: block" class=""
+                                             src="<?php
+                                             if ($content->uploadstat == "Complete") {
+                                                 echo "https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/".$content->filename."/high_00001.png";
+                                             } else {
+                                                 echo '/MGMT/static/img/profile_default.png';
+                                             }
+                                             ?>
                                    "/>
-                            </div>
-                            <div class="form-group pull-right">
-                                <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="썸네일 업로드">
-                            </div>
-                        </form>
-                    </div>
+                                    </div>
+                                    <div class="form-group pull-right">
+                                        <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="썸네일 업로드">
+                                    </div>
+                                </form>
+                            <?php } else { ?>
+                                <div class="jamong-no-video-upload">영상을 먼저 업로드 해주세요.</div>
+                            <?php } ?>
+                        </div>
                 </div>
             </div>
         </section>

@@ -14,11 +14,11 @@
                         <table ng-table="tableParams" class="table table-bordered table-hover">
                             <tr ng-repeat="item in $data">
                                 <td data-title="'아이디'" sortable="'id'" filter="{id: 'text'}">{{item.inum}}</td>
-                                <td data-title="'채널명'" sortable="'title'" filter="{title: 'text'}">
-                                    <a href="<?= site_url('channel/detail?channelId={{item.channelnum}}') ?>">{{item.channelname}}</a>
-                                </td>
                                 <td data-title="'닉네임'" sortable="'nickname'" filter="{nickname: 'text'}">
                                     <a href="<?= site_url('content/detail?contentId={{item.inum}}') ?>">{{item.nickName}}</a>
+                                </td>
+                                <td data-title="'채널명'" sortable="'title'" filter="{title: 'text'}">
+                                    <a href="<?= site_url('channel/detail?channelId={{item.channelnum}}') ?>">{{item.channelname}}</a>
                                 </td>
                                 <td data-title="'설명'" sortable="'content'" filter="{content: 'text'}">{{item.talk}}</td>
                                 <td data-title="'가격'" sortable="'price'" filter="{price: 'text'}">{{item.price}}</td>
