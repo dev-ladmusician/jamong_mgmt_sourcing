@@ -5,7 +5,7 @@ class Type extends CORE_Controller
     function __construct()
     {
         parent::__construct();
-        //$this->__require_admin_login();
+        $this->__require_admin_login();
         $this->load->model('type_model');
     }
 

@@ -14,3 +14,8 @@ img {
     font-weight: bold;
     color: red;
 }
+.jamong-video-not-complete {
+    font-weight: bold;
+    color: red;
+    margin-left: 10px;
+}

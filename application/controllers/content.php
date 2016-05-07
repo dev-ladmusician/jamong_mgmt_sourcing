@@ -5,7 +5,7 @@ class Content extends CORE_Controller
     function __construct()
     {
         parent::__construct();
-        //$this->__require_admin_login();
+        $this->__require_admin_login();
         $this->load->model('content_model');
         $this->load->model('category_model');
         $this->load->model('type_model');
@@ -19,7 +19,7 @@ class Content extends CORE_Controller
     function detail() {
         $content_id = $this->input->get('contentId');
         $content = $this->content_model->get_by_id($content_id);
-
+        
         $channels = $this->channel_model->get_items();
         $types = $this->type_model->get_items();
         $categories = $this->category_model->get_items();

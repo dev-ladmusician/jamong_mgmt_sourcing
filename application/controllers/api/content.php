@@ -120,6 +120,8 @@ class Content extends CORE_Controller
     function upload_movie()
     {
         $content_id = $this->input->get('contentId');
+        $content = $this->content_model->get_by_id($content_id)[0];
+
         $uploaddir = '/tmp/';
         $uploadfile = $uploaddir.basename($_FILES['jamong-content-movie']['name']);
 
@@ -138,6 +140,12 @@ class Content extends CORE_Controller
             $file_original_name = $file_type[0];
             $file_original_format = $file_type[1];
             $file_new_filename = $content_id."_".date('Y-m-d_H:i:s')."_".$file_original_name;
+
+//            if (strlen($content->filename) > 0) {
+//                $file_new_filename = $content->filename;
+//            } else {
+//                $file_new_filename = $content_id."_".date('Y-m-d_H:i:s')."_".$file_original_name;
+//            }
 
             $result = $s3->putObject(array(
                 'Bucket' => 'dongshin.movie',
@@ -160,10 +168,10 @@ class Content extends CORE_Controller
             } else {
                 $this->session->set_flashdata('message', '영상을 파일서버에 업로드하는데 오류가 발생했습니다.');
             }
+
         } else {
             $this->session->set_flashdata('message', '영상을 임시 저장소에 업로드하는데 오류가 발생했습니다.');
         }
-
         redirect('content/detail?contentId=' . $content_id);
     }
 
@@ -219,5 +227,9 @@ class Content extends CORE_Controller
             $this->session->set_flashdata('message', '썸네일을 임시 저장소에 업로드하는데 오류가 발생했습니다.');
         }
         redirect('content/detail?contentId=' . $content_id);
+    }
+
+    function delet_movie() {
+
     }
 }

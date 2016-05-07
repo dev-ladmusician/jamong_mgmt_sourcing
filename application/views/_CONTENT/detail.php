@@ -127,13 +127,21 @@
                         </div>
                         <form class="box-body" method="post" enctype="multipart/form-data"
                               action="<?= site_url('/api/content/upload_movie?contentId=' . $content->inum)?>">
+                            <?php if (strlen($content->filename) > 0) { ?>
+                                <div class="form-group">
+                                    <label>영상 업로드 상태:</label>
+                                    <small style="color: red">
+                                        <?php echo $content->uploadstat; ?>
+                                    </small>
+                                </div>
+                            <?php } ?>
                             <div class="form-group">
                                 <label>업로드 할 컨텐츠</label>
                                 <small class="jamong-content-video-title">업로드된 영상: </small>
                                 <small class="jamong-content-video-content">
                                     <?php
-                                    if ($content->uploadstat == "Complete") {
-                                    echo $content->filename.$content->format;
+                                    if (strlen($content->filename) > 0) {
+                                    echo $content->filename.".".$content->format;
                                     }
                                     ?>
                                 </small>
@@ -141,7 +149,7 @@
                             </div>
                             <div class="form-group pull-right">
                                 <?php
-                                if ($content->uploadstat == "Complete") {
+                                if (strlen($content->filename) > 0) {
                                 ?>
                                     <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="동영상 수정">
                                 <?php
@@ -160,8 +168,11 @@
                         <div class="box box-primary">
                             <div class="box-header with-border">
                                 <h3 class="box-title">썸네일 업로드</h3>
+                                <?php if ($content->uploadstat != "Progressing") { ?>
+                                    <small class="jamong-video-not-complete">람다가 동작중입니다. 동작이 완료되면 미리보기가 가능합니다.</small>
+                                <?php } ?>
                             </div>
-                            <?php if ($content->uploadstat == "Complete") { ?>
+                            <?php if (strlen($content->filename) > 0) { ?>
                                 <form class="box-body" method="post" enctype="multipart/form-data"
                                       action="<?= site_url('/api/content/upload_content_image?contentId='.$content->inum.'&contentFileName='.$content->filename)?>">
                                     <div class="form-group">
@@ -174,7 +185,7 @@
                                         <label>적용중인 사진</label>
                                         <img style="display: block" class=""
                                              src="<?php
-                                             if ($content->uploadstat == "Complete") {
+                                             if (strlen($content->filename) > 0) {
                                                  if (strlen($content->picture) > 0) {
                                                      echo $content->picture;
                                                  } else {

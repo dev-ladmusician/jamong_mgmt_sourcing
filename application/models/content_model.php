@@ -17,8 +17,8 @@ class Content_model extends CI_Model
         } else {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
-        $this->db->select('jumper_talk.inum, jumper_talk.title, jumper_talk.nickName, jumper_talk.talk, jumper_talk.price,
-                           jumper_talk.view, jumper_talk.likes, jumper_talk.datetime, jumper_talk.isdeprecated,
+        $this->db->select('jumper_talk.inum, jumper_talk.title, jumper_talk.nickName, jumper_talk.userNumber, jumper_talk.talk, jumper_talk.price,
+                           jumper_talk.view, jumper_talk.likes, jumper_talk.datetime, jumper_talk.isdeprecated, jumper_talk.filename, 
                            jumper_talk.type as type_id, jumper_talk.cate as category_id,
                            jumper__type.name_kr as type,
                            jumper__category.name_kr as category,

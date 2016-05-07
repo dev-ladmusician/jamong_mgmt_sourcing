@@ -107,7 +107,7 @@ class User extends CORE_Controller
             $this->session->set_flashdata('message', '비밀 번호 길이가 짧습니다.');
             redirect('user/detail?userId=' . $user_id);
         } else {
-            $rtv = $this->user_model->change_password($user_id, $password);
+            $rtv = $this->user_model->change_password($user_id, $this->keyEncrypt($password));
 
             if ($rtv) {
                 $this->session->set_flashdata('message', '비밀 번호를 변경하는데 성공 했습니다.');

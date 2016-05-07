@@ -18,9 +18,9 @@
                 <div class="col-xs-12">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">로그인</button>
                 </div>
-                <div class="col-xs-12 btn-join" style="margin-top: 10px">
-                    <a href="<?=site_url('auth/join')?>" class="btn btn-default btn-block btn-flat">회원가입</a>
-                </div>
+<!--                <div class="col-xs-12 btn-join" style="margin-top: 10px">-->
+<!--                    <a href="--><?//=site_url('auth/join')?><!--" class="btn btn-default btn-block btn-flat">회원가입</a>-->
+<!--                </div>-->
             </div>
         </form>
     </div>

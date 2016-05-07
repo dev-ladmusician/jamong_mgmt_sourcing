@@ -50,19 +50,38 @@ class CORE_Controller extends CI_Controller {
 
     function __require_admin_login($return_url = "") {
         // 로그인이 되어 있지 않다면 로그인 페이지로 리다이렉션
-        if(!$this->session->userdata('is_login')){
-            if ($return_url == "") {
+        $this->load->model('user_model');
+        $user_id = $this->session->userdata('userid');
+
+        $rtv = $this->user_model->get_user_by_id($user_id);
+
+        if (count($rtv) > 0) {
+            $user = $rtv[0];
+            if ($user->is_superadmin) {
+                //redirect('/Home/index');
+            } else {
+                $this->session->set_flashdata('message', '권한이 없습니다. 관리자에게 문의하세요.');
+                //$this->session->sess_destroy();
                 redirect('/auth/login');
             }
-            redirect('/auth/login?returnURL='.rawurlencode($return_url));
+        } else {
+            $this->session->sess_destroy();
+            redirect('/auth/login');
         }
 
-        if (!$this->session->userdata('is_admin')) {
-            if ($return_url == "") {
-                redirect('/Home/index');
-            }
-            redirect(rawurlencode($return_url));
-        }
+//        if(!$this->session->userdata('is_login')){
+//            if ($return_url == "") {
+//                redirect('/auth/login');
+//            }
+//            redirect('/auth/login?returnURL='.rawurlencode($return_url));
+//        }
+//
+//        if (!$this->session->userdata('is_admin')) {
+//            if ($return_url == "") {
+//                redirect('/Home/index');
+//            }
+//            redirect(rawurlencode($return_url));
+//        }
     }
 
     function __is_logined($return_url = "") {

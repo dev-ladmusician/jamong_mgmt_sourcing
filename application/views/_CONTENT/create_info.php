@@ -63,7 +63,7 @@
                                 </select>
                             </div>
                             <div class="form-group pull-right">
-                                <input class="btn btn-default" type="submit" style="margin-left: 3px; margin-bottom: 3px;" value="다음 단계>">
+                                <input class="btn btn-default" type="submit" style="margin-left: 3px; margin-bottom: 3px;" value="다음 단계">
                             </div>
                         </form>
                     </div>
