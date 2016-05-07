@@ -22,13 +22,16 @@ class Channel extends CORE_Controller
         $sort = $this->input->get('sorting');
         $filter = $this->input->get('filter');
 
+        $user_id = $this->input->get('userId');
+
         if ($page === false || $per_page === false) {
             $page = 1;
             $per_page = 10;
         }
 
-        $users = $this->channel_model->gets_pagination($page, $per_page, $sort, $filter);
+        $users = $this->channel_model->gets_pagination($page, $per_page, $sort, $filter, $user_id);
         $total_count = $this->channel_model->get_total_count();
+
         $rtv = array(
             'row_count' => $total_count,
             'items' => $users,
@@ -36,6 +39,19 @@ class Channel extends CORE_Controller
             'filter' => $filter
         );
         echo json_encode($rtv, JSON_PRETTY_PRINT);
+    }
+
+    function create_channel() {
+        $title = $this->input->post('title');
+        $content = $this->input->post('content');
+
+        $rtv = $this->channel_model->add($title, $content);
+
+        echo json_encode($rtv, JSON_PRETTY_PRINT);
+    }
+
+    function test() {
+        var_dump('test');
     }
 
     function get_managers()

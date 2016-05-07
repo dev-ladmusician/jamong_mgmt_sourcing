@@ -5,6 +5,7 @@ class Home extends CORE_Controller {
     function __construct () {
         parent::__construct();
         $this->load->model('user_model');
+        $this->require_logined();
     }
 
     function index()

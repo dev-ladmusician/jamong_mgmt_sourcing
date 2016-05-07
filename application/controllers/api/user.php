@@ -206,35 +206,6 @@ class User extends CORE_Controller
             $this->session->set_flashdata('message', '임시 저장에 실패 햇습니다..');
             redirect('user/detail?userId=' . $user_id);
         }
-
-
-//        if ($file["error"] == UPLOAD_ERR_OK) {
-//                  $this->session->set_flashdata('message', '파일이 성공적으로 업로드 되었습니다.');
-//                redirect('user/detail?userId=' . $user_id);
-//        } else {
-//            if ($file["error"] == UPLOAD_ERR_INI_SIZE) {
-//                $this->session->set_flashdata('message', '업로드한 파일이 php.ini upload_max_filesize 지시어보다 큽니다.');
-//                redirect('user/detail?userId=' . $user_id);
-//            } elseif ($file["error"] == UPLOAD_ERR_FORM_SIZE) {
-//                $this->session->set_flashdata('message', '업로드한 파일이 HTML 폼에서 지정한 MAX_FILE_SIZE 지시어보다 큽니다.');
-//                redirect('user/detail?userId=' . $user_id);
-//            } elseif ($file["error"] == UPLOAD_ERR_PARTIAL) {
-//                $this->session->set_flashdata('message', '파일이 일부분만 전송되었습니다.');
-//                redirect('user/detail?userId=' . $user_id);
-//            } elseif ($file["error"] == UPLOAD_ERR_NO_FILE) {
-//                $this->session->set_flashdata('message', '파일이 전송되지 않았습니다.');
-//                redirect('user/detail?userId=' . $user_id);
-//            } elseif ($file["error"] == UPLOAD_ERR_NO_TMP_DIR) {
-//                $this->session->set_flashdata('message', '임시 폴더가 없습니다.');
-//                redirect('user/detail?userId=' . $user_id);
-//            } elseif ($file["error"] == UPLOAD_ERR_CANT_WRITE) {
-//                $this->session->set_flashdata('message', '디스크에 파일 쓰기를 실패했습니다.');
-//                redirect('user/detail?userId=' . $user_id);
-//            } elseif ($file["error"] == UPLOAD_ERR_EXTENSION) {
-//                $this->session->set_flashdata('message', '확장에 의해 파일 업로드가 중지되었습니다.');
-//                redirect('user/detail?userId=' . $user_id);
-//            }
-//        }
     }
 }
 

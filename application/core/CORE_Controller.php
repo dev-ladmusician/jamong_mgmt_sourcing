@@ -49,11 +49,12 @@ class CORE_Controller extends CI_Controller {
     }
 
     function __require_admin_login($return_url = "") {
+        $this->require_logined();
         // 로그인이 되어 있지 않다면 로그인 페이지로 리다이렉션
         $this->load->model('user_model');
         $user_id = $this->session->userdata('userid');
 
-        $rtv = $this->user_model->get_user_by_id($user_id);
+        $rtv = $this->user_model->check_user_admin($user_id);
 
         if (count($rtv) > 0) {
             $user = $rtv[0];
@@ -82,6 +83,12 @@ class CORE_Controller extends CI_Controller {
 //            }
 //            redirect(rawurlencode($return_url));
 //        }
+    }
+
+    function require_logined() {
+        if(!$this->session->userdata('is_login')){
+            redirect('auth/login');
+        }
     }
 
     function __is_logined($return_url = "") {

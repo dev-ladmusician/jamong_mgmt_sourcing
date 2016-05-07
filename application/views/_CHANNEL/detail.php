@@ -43,9 +43,7 @@
                             </div>
                             <div class="form-group">
                                 <label>채널 내용:</label>
-                                <textarea id="jamong-channel-desc" class="form-control">
-                                    <?php echo $channel->chdesc ?>
-                                </textarea>
+                                <textarea id="jamong-channel-desc" class="form-control"><?php echo $channel->chdesc ?></textarea>
                             </div>
                             <div class="form-group pull-right">
                                 <a class="btn btn-default"

@@ -10,7 +10,7 @@ class Content_model extends CI_Model
         $this->table = 'jumper_talk';
     }
 
-    function gets_pagination($page, $per_page, $sort, $filter) {
+    function gets_pagination($page, $per_page, $sort, $filter, $user_id) {
         if ($page === 1) {
             $this->db->limit($per_page);
 
@@ -28,6 +28,10 @@ class Content_model extends CI_Model
         $this->db->join('jumper__category', 'jumper__category.catenum = jumper_talk.cate', 'left');
         $this->db->join('jumper__channels', 'jumper__channels.inum = jumper_talk.inum', 'left');
         $this->db->join('jumper__channellist', 'jumper__channellist.channelnum = jumper__channels.channelnum', 'left');
+
+        if ($user_id) {
+            $this->db->where('jumper_talk.userNumber', $user_id);
+        }
 
         // sorting
         if (isset($sort['id'])) $this->db->order_by("inum", $sort['id']);

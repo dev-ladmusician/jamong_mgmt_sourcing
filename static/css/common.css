@@ -19,7 +19,14 @@ a:hover {
 .jamong-pannel {
     padding-left: 0px;
 }
+.content {
+    min-height: 150px !important;
+}
+textarea {
+    min-height: 150px;
+}
 
+.content
 /* mobile */
 @media only screen and (max-width: 480px){
 

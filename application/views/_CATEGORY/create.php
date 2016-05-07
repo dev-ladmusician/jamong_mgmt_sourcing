@@ -25,7 +25,6 @@
                             <div class="form-group pull-right">
                                 <input class="btn btn-default" type="submit" value="카테고리 추가"
                                    style="margin-left: 3px; margin-bottom: 3px;">
-
                             </div>
                         </form>
                     </div>

@@ -45,7 +45,6 @@ if (file_exists($filename)) {
 
 if (strpos($filename, 'create') || strpos($filename, 'submit') || strpos($filename, 'update')) {
     ?>
-    <script src="<?php echo base_url()?>static/lib/summernote/summernote.js"></script>
     <?php
 }
 ?>

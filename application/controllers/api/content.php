@@ -58,19 +58,22 @@ class Content extends CORE_Controller
         $sort = $this->input->get('sorting');
         $filter = $this->input->get('filter');
 
+        $user_id = $this->input->get('userId');
+
         if ($page === false || $per_page === false) {
             $page = 1;
             $per_page = 10;
         }
 
-        $users = $this->content_model->gets_pagination($page, $per_page, $sort, $filter);
+        $users = $this->content_model->gets_pagination($page, $per_page, $sort, $filter, $user_id);
         $total_count = $this->content_model->get_total_count();
 
         $rtv = array(
             'row_count' => $total_count,
             'items' => $users,
             'sort' => $sort,
-            'filter' => $filter
+            'filter' => $filter,
+            'userId' => $user_id
         );
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }

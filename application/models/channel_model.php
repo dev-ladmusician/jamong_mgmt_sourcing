@@ -18,7 +18,7 @@ class Channel_model extends CI_Model
         return $this->db->get()->result();
     }
 
-    function gets_pagination($page, $per_page, $sort, $filter) {
+    function gets_pagination($page, $per_page, $sort, $filter, $user_id) {
         if ($page === 1) {
             $this->db->limit($per_page);
 
@@ -27,6 +27,10 @@ class Channel_model extends CI_Model
         }
         $this->db->select('*');
         $this->db->from($this->table);
+
+        if ($user_id) {
+            $this->db->where('userNumber', $user_id);
+        }
 
         // sorting
         if (isset($sort['channelnum'])) $this->db->order_by("channelnum", $sort['channelnum']);
@@ -126,5 +130,20 @@ class Channel_model extends CI_Model
         } catch (Exception $e) {
             return false;
         }
+    }
+
+    function add($title, $content) {
+        $input_data = array(
+            'channelname' => $title,
+            'chdesc' => $content,
+            'userNumber' => $this->session->userdata('userid'),
+            'nickname' => $this->session->userdata('nickname'),
+            'datetime' => date("y-m-d+H:i:s"),
+        );
+
+        $this->db->insert($this->table, $input_data);
+        $result = $this->db->insert_id();
+
+        return $result;
     }
 }

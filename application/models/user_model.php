@@ -170,6 +170,14 @@ class User_model extends CI_Model
         return $query->result();
     }
 
+    function check_user_admin($user_id) {
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->where('userNumber', $user_id);
+
+        return $this->db->get()->result();
+    }
+
     function change_admin($user_id, $is_admin)
     {
         try {

@@ -30,8 +30,8 @@
                         </table>
                     </div>
                 </div>
+                <a class="btn btn-success pull-right" href="<?= site_url('channel/create')?>">채널 추가</a>
             </div>
         </div>
     </section>
-
 </div>

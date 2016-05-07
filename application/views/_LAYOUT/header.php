@@ -41,7 +41,6 @@
 
     if (strpos($filename, 'create') || strpos($filename, 'submit') || strpos($filename, 'update')) {
         ?>
-        <link href="<?php echo base_url()?>static/lib/summernote/summernote.css" rel="stylesheet">
         <?php
     }
 

@@ -27,4 +27,8 @@ class Channel extends CORE_Controller
         $this->__get_views('_CHANNEL/detail.php', array('channel' => $channel[0], 'managers' => $managers ,
             'profile' => $profile));
     }
+
+    function create() {
+        $this->__get_views('_CHANNEL/create.php');
+    }
 }
