@@ -20,7 +20,7 @@
                             </div>
                             <div class="form-group">
                                 <label>제목:</label>
-                                <textarea id="jamong-content-title" class="form-control" name="jamong-content-title"></textarea>
+                                <input id="jamong-content-title" class="form-control" name="jamong-content-title" type="text" />
                             </div>
                             <div class="form-group">
                                 <label>설명:</label>

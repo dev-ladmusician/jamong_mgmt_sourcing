@@ -168,7 +168,7 @@
                         <div class="box box-primary">
                             <div class="box-header with-border">
                                 <h3 class="box-title">썸네일 업로드</h3>
-                                <?php if ($content->uploadstat != "Progressing") { ?>
+                                <?php if ($content->uploadstat == "Progressing") { ?>
                                     <small class="jamong-video-not-complete">람다가 동작중입니다. 동작이 완료되면 미리보기가 가능합니다.</small>
                                 <?php } ?>
                             </div>

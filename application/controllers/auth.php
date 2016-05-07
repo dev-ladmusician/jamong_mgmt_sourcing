@@ -37,10 +37,15 @@ class Auth extends CORE_Controller
             if ($rtv != null && count($rtv) > 0) {
                 $user = $rtv[0];
                 if ($user->email == $input_data['email'] && $this->keyEncrypt($password) == $user->password) {
-                    if ($user->is_admin || $user->is_superadmin) {
-                        $this->handle_login($user);
+                    if ($user->state == "active") {
+                        if ($user->is_admin || $user->is_superadmin) {
+                            $this->handle_login($user);
+                        } else {
+                            $this->session->set_flashdata('message', '관리자만 접근할 수 있습니다.');
+                            redirect('auth/login');
+                        }
                     } else {
-                        $this->session->set_flashdata('message', '관리자만 접근할 수 있습니다.');
+                        $this->session->set_flashdata('message', '이용정지된 사용자 입니다.');
                         redirect('auth/login');
                     }
                 } else {

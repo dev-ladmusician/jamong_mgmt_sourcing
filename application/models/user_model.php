@@ -160,10 +160,6 @@ class User_model extends CI_Model
         $query_str = "Select a.*".
                      ", (select  picture from jamong__tb_users_picture where userNumber=".$user_id.") as picture".
                      ", (select  nickName from jumper_user where userNumber=".$user_id.") as nickName".
-                     ", (select  count(*) from jumper__channellist where userNumber=".$user_id.") as Ch_Cnt".
-                     ", (select  count(*) from jumper__favorites where userNumber=".$user_id.") as Favor_Cnt".
-                     ", (select count(*) from jumper__mychannels where userNumber=".$user_id.") as S_Cnt".
-                     ", (select follow from jumper__channellist where userNumber=".$user_id.") as Follow_Cnt".
                      ", (select count(ainum) from jamong__tb_purchasehistory where userNumber=".$user_id.") as Purchase_Cnt".
                      " from jamong__tb_users a Where userNumber = ".$user_id;
         $query = $this->db->query($query_str);
