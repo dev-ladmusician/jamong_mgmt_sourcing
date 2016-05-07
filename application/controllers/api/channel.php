@@ -50,10 +50,6 @@ class Channel extends CORE_Controller
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }
 
-    function test() {
-        var_dump('test');
-    }
-
     function get_managers()
     {
         $page = $this->input->get('page');

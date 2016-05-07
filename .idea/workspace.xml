@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be2c7192-3826-4bf3-8653-055224971a19" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/_CHANNEL/create.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/channel/create.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/channel.php" afterPath="$PROJECT_DIR$/application/controllers/api/channel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/content.php" afterPath="$PROJECT_DIR$/application/controllers/api/content.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/user.php" afterPath="$PROJECT_DIR$/application/controllers/api/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/auth.php" afterPath="$PROJECT_DIR$/application/controllers/auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/channel.php" afterPath="$PROJECT_DIR$/application/controllers/channel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/home.php" afterPath="$PROJECT_DIR$/application/controllers/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/CORE_Controller.php" afterPath="$PROJECT_DIR$/application/core/CORE_Controller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/channel_model.php" afterPath="$PROJECT_DIR$/application/models/channel_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/content_model.php" afterPath="$PROJECT_DIR$/application/models/content_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/user_model.php" afterPath="$PROJECT_DIR$/application/models/user_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_CATEGORY/create.php" afterPath="$PROJECT_DIR$/application/views/_CATEGORY/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" afterPath="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_CHANNEL/index.php" afterPath="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_HOME/index.php" afterPath="$PROJECT_DIR$/application/views/_HOME/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_LAYOUT/footer.php" afterPath="$PROJECT_DIR$/application/views/_LAYOUT/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_LAYOUT/header.php" afterPath="$PROJECT_DIR$/application/views/_LAYOUT/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="$PROJECT_DIR$/static/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/home/index.js" afterPath="$PROJECT_DIR$/static/js/home/index.js" />
     </list>
     <ignored path="CodeIgniter-2.2.3-MGMT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,22 +25,94 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="create.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/js/channel/create.js">
+      <file leaf-file-name="user_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="84" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
-              <folding />
+            <state relative-caret-position="195">
+              <caret line="180" column="25" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="25" />
+              <folding>
+                <element signature="n#test#0;n#User_model#0;n#!!top" expanded="false" />
+                <element signature="n#gets#0;n#User_model#0;n#!!top" expanded="false" />
+                <element signature="n#gets_pagination#0;n#User_model#0;n#!!top" expanded="false" />
+                <element signature="n#get_total_count#0;n#User_model#0;n#!!top" expanded="false" />
+                <element signature="n#gets_manager_pagination#0;n#User_model#0;n#!!top" expanded="false" />
+                <element signature="n#gets_admin#0;n#User_model#0;n#!!top" expanded="false" />
+                <element signature="n#gets_non_isdeprecated#0;n#User_model#0;n#!!top" expanded="false" />
+                <element signature="n#logined#0;n#User_model#0;n#!!top" expanded="false" />
+                <element signature="n#change_isdeprecated#0;n#User_model#0;n#!!top" expanded="false" />
+                <marker date="1462653855000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
+                <marker date="1462653855000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
+                <marker date="1462653855000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
+                <marker date="1462653855000" expanded="true" signature="232:678" placeholder="Select a.* ,... " />
+                <marker date="1462653855000" expanded="true" signature="232:790" placeholder="Select a.* ,... " />
+                <marker date="1462653855000" expanded="true" signature="232:839" placeholder="Select a.* ,... jamong__tb_users" />
+                <marker date="1462653855000" expanded="true" signature="232:858" placeholder="Select a.* ,... jamong__tb_users" />
+                <marker date="1462653855000" expanded="true" signature="270:303" placeholder="select nickN... jumper_user" />
+                <marker date="1462653855000" expanded="true" signature="270:321" placeholder="select nickN... jumper_user" />
+                <marker date="1462653855000" expanded="true" signature="375:416" placeholder="select count... jumper__channellist" />
+                <marker date="1462653855000" expanded="true" signature="375:434" placeholder="select count... jumper__channellist" />
+                <marker date="1462653855000" expanded="true" signature="486:525" placeholder="select count... jumper__favorites" />
+                <marker date="1462653855000" expanded="true" signature="486:543" placeholder="select count... jumper__favorites" />
+                <marker date="1462653855000" expanded="true" signature="598:637" placeholder="select count... jumper__mychannels" />
+                <marker date="1462653855000" expanded="true" signature="598:655" placeholder="select count... jumper__mychannels" />
+                <marker date="1462653855000" expanded="true" signature="706:744" placeholder="select follo... jumper__channellist" />
+                <marker date="1462653855000" expanded="true" signature="706:762" placeholder="select follo... jumper__channellist" />
+                <marker date="1462653855000" expanded="true" signature="1015:1107" placeholder="SELECT jamon... jamong__tb_users" />
+                <marker date="1462653855000" expanded="true" signature="1015:1169" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                <marker date="1462653855000" expanded="true" signature="1015:1265" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                <marker date="1462653855000" expanded="true" signature="1015:1322" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                <marker date="1462653855000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                <marker date="1462653855000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
+                <marker date="1462653855000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
+                <marker date="1462653855000" expanded="true" signature="7883:8767" placeholder="Select a.* ,... jamong__tb_users" />
+                <marker date="1462653855000" expanded="true" signature="7921:7995" placeholder="select pictu... jamong__tb_users_picture" />
+                <marker date="1462653855000" expanded="true" signature="8036:8087" placeholder="select nickN... jumper_user" />
+                <marker date="1462653855000" expanded="true" signature="8140:8199" placeholder="select count... jumper__channellist" />
+                <marker date="1462653855000" expanded="true" signature="8250:8307" placeholder="select count... jumper__favorites" />
+                <marker date="1462653855000" expanded="true" signature="8361:8418" placeholder="select count... jumper__mychannels" />
+                <marker date="1462653855000" expanded="true" signature="8468:8524" placeholder="select follo... jumper__channellist" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/detail.php">
+      <file leaf-file-name="channel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/api/channel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
-              <folding />
+            <state relative-caret-position="327">
+              <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
+              <folding>
+                <element signature="e#136#156#0#PHP" expanded="true" />
+                <element signature="n#__construct#0;n#Channel#0;n#!!top" expanded="false" />
+                <element signature="n#get_items#0;n#Channel#0;n#!!top" expanded="false" />
+                <element signature="n#create_channel#0;n#Channel#0;n#!!top" expanded="false" />
+                <element signature="n#get_managers#0;n#Channel#0;n#!!top" expanded="false" />
+                <element signature="n#delete_manager#0;n#Channel#0;n#!!top" expanded="false" />
+                <element signature="n#change_isdeprecated#0;n#Channel#0;n#!!top" expanded="false" />
+                <element signature="n#change_channel_info#0;n#Channel#0;n#!!top" expanded="false" />
+                <element signature="n#upload_channel_picture#0;n#Channel#0;n#!!top" expanded="false" />
+                <element signature="n#upload_channel_background#0;n#Channel#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="channel_model.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="136" column="60" selection-start-line="136" selection-start-column="60" selection-end-line="136" selection-end-column="60" />
+              <folding>
+                <element signature="n#get_items#0;n#Channel_model#0;n#!!top" expanded="false" />
+                <element signature="n#get_by_id#0;n#Channel_model#0;n#!!top" expanded="false" />
+                <element signature="n#get_managers#0;n#Channel_model#0;n#!!top" expanded="false" />
+                <element signature="n#change_channel_info#0;n#Channel_model#0;n#!!top" expanded="false" />
+                <element signature="n#change_isdeprecated#0;n#Channel_model#0;n#!!top" expanded="false" />
+                <marker date="1462654685000" expanded="true" signature="2283:2503" placeholder="SELECT l.*, jumper__channellist" />
+                <marker date="1462654685000" expanded="true" signature="2283:2529" placeholder="SELECT l.*, jumper__channellist" />
+                <marker date="1462654685000" expanded="true" signature="2283:2548" placeholder="SELECT l.*, jumper__channellist" />
+                <marker date="1462654685000" expanded="true" signature="2283:2549" placeholder="SELECT l.*, jumper__channellist" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,12 +178,12 @@
         <option value="$PROJECT_DIR$/static/css/common.css" />
         <option value="$PROJECT_DIR$/application/views/_CHANNEL/create.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/user.php" />
-        <option value="$PROJECT_DIR$/application/models/channel_model.php" />
         <option value="$PROJECT_DIR$/application/models/user_model.php" />
         <option value="$PROJECT_DIR$/application/core/CORE_Controller.php" />
-        <option value="$PROJECT_DIR$/application/controllers/api/channel.php" />
         <option value="$PROJECT_DIR$/application/views/_CHANNEL/detail.php" />
         <option value="$PROJECT_DIR$/static/js/channel/create.js" />
+        <option value="$PROJECT_DIR$/application/controllers/api/channel.php" />
+        <option value="$PROJECT_DIR$/application/models/channel_model.php" />
       </list>
     </option>
   </component>
@@ -734,12 +787,12 @@
       <workItem from="1461309990189" duration="15849000" />
       <workItem from="1461722141531" duration="10629000" />
       <workItem from="1461919442002" duration="4886000" />
-      <workItem from="1462255860959" duration="44234000" />
+      <workItem from="1462255860959" duration="44794000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84944000" />
+    <option name="totallyTimeSpent" value="85504000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -969,14 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/category.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1190,44 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-          <folding>
-            <element signature="n#get_items#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#get_by_id#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#get_managers#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#change_channel_info#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#change_isdeprecated#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#add_manager#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <element signature="n#delete_manager#0;n#Channel_model#0;n#!!top" expanded="false" />
-            <marker date="1462653628000" expanded="true" signature="2283:2503" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462653628000" expanded="true" signature="2283:2529" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462653628000" expanded="true" signature="2283:2548" placeholder="SELECT l.*, jumper__channellist" />
-            <marker date="1462653628000" expanded="true" signature="2283:2549" placeholder="SELECT l.*, jumper__channellist" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/api/channel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="32" column="60" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="60" />
-          <folding>
-            <element signature="e#136#156#0#PHP" expanded="true" />
-            <element signature="n#__construct#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#get_managers#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#add_manager#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#delete_manager#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#change_isdeprecated#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#change_channel_info#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#upload_channel_picture#0;n#Channel#0;n#!!top" expanded="false" />
-            <element signature="n#upload_channel_background#0;n#Channel#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/api/user.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1246,10 +1253,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/channel/create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/api/channel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
+          <folding>
+            <element signature="e#136#156#0#PHP" expanded="true" />
+            <element signature="n#__construct#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#get_items#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#create_channel#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#get_managers#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#delete_manager#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#change_isdeprecated#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#change_channel_info#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#upload_channel_picture#0;n#Channel#0;n#!!top" expanded="false" />
+            <element signature="n#upload_channel_background#0;n#Channel#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="172" column="29" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="29" />
+        <state relative-caret-position="195">
+          <caret line="180" column="25" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="25" />
           <folding>
             <element signature="n#test#0;n#User_model#0;n#!!top" expanded="false" />
             <element signature="n#gets#0;n#User_model#0;n#!!top" expanded="false" />
@@ -1257,6 +1307,9 @@
             <element signature="n#get_total_count#0;n#User_model#0;n#!!top" expanded="false" />
             <element signature="n#gets_manager_pagination#0;n#User_model#0;n#!!top" expanded="false" />
             <element signature="n#gets_admin#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#gets_non_isdeprecated#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#logined#0;n#User_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_isdeprecated#0;n#User_model#0;n#!!top" expanded="false" />
             <marker date="1462653855000" expanded="true" signature="232:242" placeholder="Select a.* ,... " />
             <marker date="1462653855000" expanded="true" signature="232:347" placeholder="Select a.* ,... " />
             <marker date="1462653855000" expanded="true" signature="232:458" placeholder="Select a.* ,... " />
@@ -1281,8 +1334,6 @@
             <marker date="1462653855000" expanded="true" signature="1015:1413" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
             <marker date="1462653855000" expanded="true" signature="1015:1415" placeholder="SELECT jamon... jamong__tb_users" />
             <marker date="1462653855000" expanded="true" signature="1015:1474" placeholder="SELECT jamon... jamong__tb_usersLEFT" />
-            <marker date="1462653855000" expanded="false" signature="7134:7318" placeholder="{...}" />
-            <marker date="1462653855000" expanded="false" signature="7347:7490" placeholder="{...}" />
             <marker date="1462653855000" expanded="true" signature="7883:8767" placeholder="Select a.* ,... jamong__tb_users" />
             <marker date="1462653855000" expanded="true" signature="7921:7995" placeholder="select pictu... jamong__tb_users_picture" />
             <marker date="1462653855000" expanded="true" signature="8036:8087" placeholder="select nickN... jumper_user" />
@@ -1290,24 +1341,25 @@
             <marker date="1462653855000" expanded="true" signature="8250:8307" placeholder="select count... jumper__favorites" />
             <marker date="1462653855000" expanded="true" signature="8361:8418" placeholder="select count... jumper__mychannels" />
             <marker date="1462653855000" expanded="true" signature="8468:8524" placeholder="select follo... jumper__channellist" />
-            <marker date="1462653855000" expanded="false" signature="10343:10661" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/detail.php">
+    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/channel/create.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="84" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
-          <folding />
+        <state relative-caret-position="364">
+          <caret line="136" column="60" selection-start-line="136" selection-start-column="60" selection-end-line="136" selection-end-column="60" />
+          <folding>
+            <element signature="n#get_items#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_by_id#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#get_managers#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_channel_info#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <element signature="n#change_isdeprecated#0;n#Channel_model#0;n#!!top" expanded="false" />
+            <marker date="1462654685000" expanded="true" signature="2283:2503" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462654685000" expanded="true" signature="2283:2529" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462654685000" expanded="true" signature="2283:2548" placeholder="SELECT l.*, jumper__channellist" />
+            <marker date="1462654685000" expanded="true" signature="2283:2549" placeholder="SELECT l.*, jumper__channellist" />
+          </folding>
         </state>
       </provider>
     </entry>

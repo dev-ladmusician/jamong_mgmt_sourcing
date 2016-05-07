@@ -113,6 +113,10 @@ class Channel_model extends CI_Model
                 'channelnum' => $channel_id,
                 'userNumber' => $user_id
             ));
+
+            // change isadmin in user table
+            $this->load->model('user_model');
+            $this->user_model->change_admin($user_id, true);
             return true;
         } catch (Exception $e) {
             return false;
@@ -126,10 +130,24 @@ class Channel_model extends CI_Model
                 'channelnum' => $channel_id,
                 'userNumber' => $user_id
             ));
+
+            // change isadmin in user table
+            $this->load->model('user_model');
+            if(count($this->check_any_manager($user_id)) == 0) {
+                $this->user_model->change_admin($user_id, false);
+            }
+
             return true;
         } catch (Exception $e) {
             return false;
         }
+    }
+
+    function check_any_manager($user_id) {
+        $this->db->select('*');
+        $this->db->from('jumper__managers');
+        $this->db->where('userNumber', $user_id);
+        return $this->db->get()->result();
     }
 
     function add($title, $content) {
