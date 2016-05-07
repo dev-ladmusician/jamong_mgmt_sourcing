@@ -37,6 +37,36 @@ controller('DetailCtrl', function ($scope, $timeout, ngTableParams) {
     $scope.page = $scope.tableParams.page();
     $scope.perpage = $scope.tableParams.count();
 
+
+    $scope.contentResetCacheData = {};
+    $scope.contentTableParams = new ngTableParams({
+        page: 1,            // show first page
+        count: 10,          // count per page
+        sorting: {
+            userNumber: 'desc',     // initial sorting
+        }
+    }, {
+        total: 0,
+        getData: function ($defer, params) {
+            tableResetPageWhenIfNeeded($scope.contentResetCacheData, $scope.contentTableParams, function () {
+                $.ajax({
+                    url: '/MGMT/api/content/get_items_in_channel?channelId=' + $('#jamong-channelId').val(),
+                    type: "GET",
+                    contentType: 'application/json',
+                    data: params.url(),
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data);
+                        params.total(data.row_count);
+                        $defer.resolve(data.items);
+                    }
+                })
+            });
+        }
+    });
+    
+    
+
     // 정보 업데이트
     $scope.changeChannelInfo = function () {
         var id = $('#jamong-channel-id').val();

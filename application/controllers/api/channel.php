@@ -64,7 +64,7 @@ class Channel extends CORE_Controller
 
         $users = $this->user_model->gets_manager_pagination($page, $per_page, $sort, $filter);
         $rtv = array(
-            'row_count' => $per_page,
+            'row_count' => $this->user_model->get_total_count(),
             'items' => $users,
             'sorting' => $sort
         );

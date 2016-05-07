@@ -5,7 +5,6 @@ class Content extends CORE_Controller
     function __construct()
     {
         parent::__construct();
-        $this->__require_admin_login();
         $this->load->model('content_model');
         $this->load->model('category_model');
         $this->load->model('type_model');
@@ -13,6 +12,7 @@ class Content extends CORE_Controller
     }
 
     function index() {
+        $this->__require_admin_login();
         $this->__get_views('_CONTENT/index.php');
     }
 

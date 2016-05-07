@@ -78,6 +78,29 @@ class Content extends CORE_Controller
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }
 
+    function get_items_in_channel()
+    {
+        $page = $this->input->get('page');
+        $per_page = $this->input->get('count');
+        $sort = $this->input->get('sorting');
+        $filter = $this->input->get('filter');
+        $channelnum = $this->input->get('channelId');
+
+        if ($page === false || $per_page === false) {
+            $page = 1;
+            $per_page = 10;
+        }
+
+        $users = $this->content_model->get_items_in_channel($page, $per_page, $sort, $filter, $channelnum);
+        $total_count = $this->content_model->get_total_items_in_channel($channelnum);
+
+        $rtv = array(
+            'row_count' => $total_count,
+            'items' => $users
+        );
+        echo json_encode($rtv, JSON_PRETTY_PRINT);
+    }
+
     function change_isdeprecated()
     {
         $content_id = $this->input->get('contentId');

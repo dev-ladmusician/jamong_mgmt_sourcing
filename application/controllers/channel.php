@@ -6,6 +6,7 @@ class Channel extends CORE_Controller
     {
         parent::__construct();
         $this->load->model('channel_model');
+        $this->load->model('user_model');
         $this->load->model('channel_profile_model');
     }
 
@@ -16,11 +17,11 @@ class Channel extends CORE_Controller
 
     function detail() {
         $user_id = $this->session->userdata('userid');
+        $is_superadmin = $this->session->userdata('issuperadmin');
         $channel_num = $this->input->get('channelId');
-
         $check = $this->channel_model->check_manager($user_id, $channel_num);
 
-        if (count($check) > 0) {
+        if (count($check) > 0 || $is_superadmin) {
             $channel = $this->channel_model->get_by_id($channel_num);
             $profiles = $this->channel_profile_model->get_by_id($channel_num);
             $profile = null;
