@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be2c7192-3826-4bf3-8653-055224971a19" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/channel.php" afterPath="$PROJECT_DIR$/application/controllers/api/channel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/content.php" afterPath="$PROJECT_DIR$/application/controllers/api/content.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/content_model.php" afterPath="$PROJECT_DIR$/application/models/content_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_CONTENT/detail.php" afterPath="$PROJECT_DIR$/application/views/_CONTENT/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_CONTENT/index.php" afterPath="$PROJECT_DIR$/application/views/_CONTENT/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/content/detail.css" afterPath="$PROJECT_DIR$/static/css/content/detail.css" />
     </list>
     <ignored path="CodeIgniter-2.2.3-MGMT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,21 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="detail.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="detail.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/_CONTENT/detail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+            <state relative-caret-position="301">
+              <caret line="179" column="57" selection-start-line="179" selection-start-column="57" selection-end-line="179" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="content.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/api/content.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="193" column="50" selection-start-line="193" selection-start-column="50" selection-end-line="193" selection-end-column="50" />
+            <state relative-caret-position="199">
+              <caret line="183" column="38" selection-start-line="183" selection-start-column="38" selection-end-line="183" selection-end-column="38" />
               <folding>
                 <element signature="e#136#156#0#PHP" expanded="true" />
                 <element signature="n#get_items#0;n#Content#0;n#!!top" expanded="false" />
@@ -133,8 +127,8 @@
         <option value="$PROJECT_DIR$/application/models/content_model.php" />
         <option value="$PROJECT_DIR$/application/views/_CONTENT/index.php" />
         <option value="$PROJECT_DIR$/static/css/content/detail.css" />
-        <option value="$PROJECT_DIR$/application/views/_CONTENT/detail.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/content.php" />
+        <option value="$PROJECT_DIR$/application/views/_CONTENT/detail.php" />
       </list>
     </option>
   </component>
@@ -562,12 +556,12 @@
       <workItem from="1461309990189" duration="15849000" />
       <workItem from="1461722141531" duration="10629000" />
       <workItem from="1461919442002" duration="4886000" />
-      <workItem from="1462255860959" duration="35238000" />
+      <workItem from="1462255860959" duration="35540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75948000" />
+    <option name="totallyTimeSpent" value="76250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1122,23 +1116,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_CONTENT/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/api/content.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="193" column="50" selection-start-line="193" selection-start-column="50" selection-end-line="193" selection-end-column="50" />
+        <state relative-caret-position="199">
+          <caret line="183" column="38" selection-start-line="183" selection-start-column="38" selection-end-line="183" selection-end-column="38" />
           <folding>
             <element signature="e#136#156#0#PHP" expanded="true" />
             <element signature="n#get_items#0;n#Content#0;n#!!top" expanded="false" />
             <element signature="n#change_isdeprecated#0;n#Content#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_CONTENT/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="179" column="57" selection-start-line="179" selection-start-column="57" selection-end-line="179" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>

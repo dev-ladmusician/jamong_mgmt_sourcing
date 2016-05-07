@@ -157,7 +157,6 @@
                     </div>
                 </div>
                 <div class="col-md-6 jamong-pannel">
-
                         <div class="box box-primary">
                             <div class="box-header with-border">
                                 <h3 class="box-title">썸네일 업로드</h3>
@@ -176,7 +175,11 @@
                                         <img style="display: block" class=""
                                              src="<?php
                                              if ($content->uploadstat == "Complete") {
-                                                 echo "https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/".$content->filename."/high_00001.png";
+                                                 if (strlen($content->picture) > 0) {
+                                                     echo $content->picture;
+                                                 } else {
+                                                     echo "https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/".$content->filename."/high_00001.png";
+                                                 }
                                              } else {
                                                  echo '/MGMT/static/img/profile_default.png';
                                              }
