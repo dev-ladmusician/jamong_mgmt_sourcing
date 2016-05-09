@@ -1,8 +1,28 @@
 $(document).ready(function () {
+    var contentTypeInfo = $('#jamong-content-info-type').val();
+    var typeSelector = $('#jamong-content-type');
+    var xmlCreator = $('.jamong-content-for-vr');
+
+    if (contentTypeInfo == 1) {
+        xmlCreator.show();
+    } else {
+        xmlCreator.hide();
+    }
+
+    // typeSelector.change(function () {
+    //     console.log(typeSelector.val());
+    //    if(typeSelector.val() == 1) {
+    //        console.log(typeSelector.val());
+    //        xmlCreator.show();
+    //    } else {
+    //        xmlCreator.hide();
+    //    }
+    // });
 });
 
 var app = angular.module('myApp', []).
 controller('DetailCtrl', function ($scope) {
+
     // 정보 업데이트
     $scope.changeContentInfo = function () {
         var id = $('#jamong-content-id').val();

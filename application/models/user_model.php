@@ -162,7 +162,13 @@ class User_model extends CI_Model
                      ", (select  nickName from jumper_user where userNumber=".$user_id.") as nickName".
                      ", (select count(ainum) from jamong__tb_purchasehistory where userNumber=".$user_id.") as Purchase_Cnt".
                      " from jamong__tb_users a Where userNumber = ".$user_id;
+        $query = $this->db->query($query_str = "Select a.*".
+            ", (select  picture from jamong__tb_users_picture where userNumber=".$user_id.") as picture".
+            ", (select  nickName from jumper_user where userNumber=".$user_id.") as nickName".
+            ", (select count(ainum) from jamong__tb_purchasehistory where userNumber=".$user_id.") as Purchase_Cnt".
+            " from jamong__tb_users a Where userNumber = ".$user_id;
         $query = $this->db->query($query_str);
+        return $query->result();$query_str);
         return $query->result();
     }
 

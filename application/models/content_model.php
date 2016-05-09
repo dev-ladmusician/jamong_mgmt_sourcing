@@ -186,6 +186,21 @@ class Content_model extends CI_Model
 
         return $this->db->affected_rows();
     }
+    function update_xml($content_id, $file_name)
+    {
+        try {
+            $input_data = array(
+                'xml' => $file_name,
+            );
+
+            $this->db->where('inum', $content_id);
+            $this->db->update($this->table, $input_data);
+
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
 
     function add_item($input_data){
         try {

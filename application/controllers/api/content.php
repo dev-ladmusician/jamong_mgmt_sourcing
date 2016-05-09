@@ -12,6 +12,59 @@ class Content extends CORE_Controller
         parent::__construct();
         $this->load->model('content_model');
     }
+    function create_xml() {
+        $content_id = $this->input->get('contentId');
+        $content = $this->content_model->get_by_id($content_id)[0];
+
+        $uploaddir = '/tmp/';
+        $uploadfile = $uploaddir.basename($_FILES['jamong-content-xml']['name']);
+        $flash_str = "";
+
+        if (move_uploaded_file($_FILES['jamong-content-xml']['tmp_name'], $uploadfile)) {
+            try {
+                // Instantiate an S3 client
+                $s3 = S3Client::factory([
+                    'version' => 'latest',
+                    'region' => 'ap-northeast-1',
+                    'credentials' => [
+                        'key' => $this->config->item('S3_CREDENTIAL_KEY'),
+                        'secret' => $this->config->item('S3_CREDENTIAL_SECRET'),
+                        'debug' => true
+                    ]
+                ]);
+
+                $xml_file_name = $content->filename.'.xml';
+                $result = $s3->putObject(array(
+                    'Bucket' => 'dongshin.movie',
+                    'Key' => 'playlist/'.$content->filename.'/'.$xml_file_name,
+                    'Body' => fopen($uploadfile, 'r'),
+                    'ACL' => 'public-read',
+                    'ContentType' => mime_content_type($uploadfile)
+                ));
+
+                if ($result['@metadata']['statusCode'] == 200) {
+                    // removce temp file
+                    unlink($uploadfile);
+                    // upload db record
+                    $rtv = $this->content_model->update_xml($content_id, $xml_file_name);
+
+                    if ($rtv) {
+                        $flash_str = "xml정보를 데이터베이스에 저장하는데 성공했습니다..";
+                    } else {
+                        $flash_str = "xml정보를 데이터베이스에 저장하는데 실패하였습니다.";
+                    }
+                } else {
+                    $flash_str = "xml을 파일서버에 저장하는데 실패하였습니다.";
+                }
+            } catch (S3Exception $e) {
+                $flash_str = "xml을 임시저장하는데 실패하였습니다.";
+            }
+        } else {
+            $flash_str = "xml을 임시저장하는데 실패하였습니다.";
+        }
+        $this->session->set_flashdata('message', $flash_str);
+        redirect('/content/detail?contentId='.$content->inum);
+    }
 
     /**
      * 영상 정보 업로드
@@ -188,6 +241,9 @@ class Content extends CORE_Controller
                 $rtv = $this->content_model->update_filename($content_id, $file_new_filename, $file_original_format);
                 if ($rtv > 0) {
                     $this->session->set_flashdata('message', '영상을 성공적으로 업데이트 하였습니다.');
+                    if ($content->type == 1) {
+                        redirect('content/create_xml?contentId='.$content_id);
+                    }
                 } else {
                     $this->session->set_flashdata('message', '데이터베이스에 영상정보를 업데이트 하는데 오류가 발생했습니다.');
                 }

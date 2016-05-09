@@ -3,10 +3,11 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="f6cbfe2c-387f-457a-a075-207e39776f91" name="jamong_mgmt" url="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com">
-        <fileTransfer host="ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com" port="22" privateKey="C:\Users\SangBeom\Documents\JAMONG_EC2_TOKYO" rootFolder="/var/www/html/MGMT" accessType="SFTP" username="ubuntu" keyPair="true">
+        <fileTransfer host="ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com" port="22" privateKey="$USER_HOME$/.ssh/JAMONG_EC2_TOKYO.pem" rootFolder="/var/www/html/MGMT" accessType="SFTP" username="ubuntu" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

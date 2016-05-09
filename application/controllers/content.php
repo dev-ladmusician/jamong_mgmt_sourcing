@@ -39,6 +39,12 @@ class Content extends CORE_Controller
         $this->__get_views('_CONTENT/create_info.php', array( 'types' => $types, 'categories' => $categories , 'channels' =>$channels));
     }
 
+    function create_xml() {
+        $content_id = $this->input->get('contentId');
+        $content = $this->content_model->get_by_id($content_id)[0];
+        $this->__get_views('_CONTENT/create_xml.php', array('content' => $content));
+    }
+
     function upload_movie(){
         $contentId = $this->input->get('contentId');
 

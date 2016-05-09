@@ -32,6 +32,26 @@ textarea {
     font-size: 14px;
     font-weight: bold;
 }
+img {
+    max-width: 100%;
+}
+label {
+    font-size: 11px;
+    text-align: left !important;
+}
+.jamong-password-input {
+    width: 50% !important;
+    display: inline-block !important;
+}
+.jamong_profile {
+    width: 200px;
+}
+.jamong-pannel:first-child {
+    padding-left: 15px;
+}
+.jamong-pannel {
+    padding-left: 0px;
+}
 
 .content
 /* mobile */
