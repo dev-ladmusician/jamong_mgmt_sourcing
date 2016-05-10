@@ -178,11 +178,14 @@
                                             <small style="color: red">업로드 되지 않음</small>
                                         <?php } ?>
                                     </div>
-                                    <div class="form-group">
-                                        <label>미리보기</label>
-                                        <iframe style="width: 100%;"
-                                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.movie/playlist/<?php echo $content->filename.'/'.$content->filename.'.xml'?>"></iframe>
-                                    </div>
+                                    <?php if (strlen($content->xml) > 0) { ?>
+                                        <div class="form-group">
+                                            <label>미리보기</label>
+                                            <iframe style="width: 100%;"
+                                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.movie/playlist/<?php echo $content->filename.'/'.$content->filename.'.xml'?>"></iframe>
+                                        </div>
+                                    <?php } ?>
+                                    
                                     <div class="form-group">
                                         <label>xml 파일</label>
                                         <input type="file" name="jamong-content-xml"  class="form-control my-colorpicker1"/>
