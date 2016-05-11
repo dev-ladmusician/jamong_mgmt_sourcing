@@ -18,8 +18,8 @@
                                 <td data-title="'닉네임'" sortable="'nickname'" filter="{nickname: 'text'}">
                                     <a href="<?=site_url('channel/detail?channelId={{item.channelnum}}')?>">{{item.nickName}}</a>
                                 </td>
-                                <td data-title="'구독자'" sortable="'follow'" filter="{follow: 'text'}">{{item.follow}}명</td>
-                                <td data-title="'콘텐츠'" sortable="'contents'" filter="{contents: 'text'}">{{item.contents}}개</td>
+                                <td data-title="'구독자'" sortable="'follow'">{{item.follow}}명</td>
+                                <td data-title="'콘텐츠'" sortable="'contents'">{{item.contentCount}}개</td>
                                 <td data-title="'생성일'" sortable="'created'" filter="{created: 'text'}">{{item.datetime}}</td>
                                 <td data-title="'관리'">
                                     <a ng-if="item.isdeprecated == 0" style="color: red"

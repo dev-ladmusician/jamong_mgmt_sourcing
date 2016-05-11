@@ -25,8 +25,11 @@ class Channel_model extends CI_Model
         } else {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
-        $this->db->select('*');
+        $this->db->select($this->table.'.*, count(jumper__channels.inum) as contentCount');
         $this->db->from($this->table);
+        $this->db->join('jumper__channels', 'jumper__channels.channelnum = '.$this->table.'.channelnum', 'left');
+        //$this->db->join('jumper__mychannels', 'jumper__mychannels.channelnum = '.$this->table.'.channelnum', 'left');
+        $this->db->group_by($this->table.'.channelnum');
 
         if ($user_id) {
             $this->db->where('userNumber', $user_id);
@@ -37,15 +40,15 @@ class Channel_model extends CI_Model
         if (isset($sort['channelname'])) $this->db->order_by("channelname", $sort['channelname']);
         if (isset($sort['nickname'])) $this->db->order_by("nickName", $sort['nickname']);
         if (isset($sort['follow'])) $this->db->order_by("follow", $sort['follow']);
-        if (isset($sort['contents'])) $this->db->order_by("contents", $sort['contents']);
+        if (isset($sort['contents'])) $this->db->order_by("contentCount", $sort['contents']);
         if (isset($sort['created'])) $this->db->order_by("datetime", $sort['created']);
 
         // filter
         if ($filter != null && isset($filter['channelnum'])) $this->db->like('channelnum', $filter['channelnum']);
         if ($filter != null && isset($filter['channelname'])) $this->db->like('channelname', urldecode($filter['channelname']));
         if ($filter != null && isset($filter['nickname'])) $this->db->like('nickName', urldecode($filter['nickname']));
-        if ($filter != null && isset($filter['follow'])) $this->db->like('follow', $filter['follow']);
-        if ($filter != null && isset($filter['contents'])) $this->db->like('contents', $filter['contents']);
+        //if ($filter != null && isset($filter['follow'])) $this->db->like('follow', $filter['follow']);
+        //if ($filter != null && isset($filter['contents'])) $this->db->like('contentCount', $filter['contents']);
         if ($filter != null && isset($filter['created'])) $this->db->like('datetime', $filter['created']);
 
         return $this->db->get()->result();

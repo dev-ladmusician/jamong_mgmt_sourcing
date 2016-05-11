@@ -12,6 +12,7 @@ class Content extends CORE_Controller
         parent::__construct();
         $this->load->model('content_model');
     }
+    
     function create_xml() {
         $content_id = $this->input->get('contentId');
         $content = $this->content_model->get_by_id($content_id)[0];
