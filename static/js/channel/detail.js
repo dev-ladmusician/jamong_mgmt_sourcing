@@ -64,8 +64,6 @@ controller('DetailCtrl', function ($scope, $timeout, ngTableParams) {
             });
         }
     });
-    
-    
 
     // 정보 업데이트
     $scope.changeChannelInfo = function () {

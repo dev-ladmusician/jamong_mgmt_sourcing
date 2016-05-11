@@ -170,6 +170,27 @@ class Channel_model extends CI_Model
         }
     }
 
+    function add_manager_bulk($data) {
+        try {
+            foreach($data as $each) {
+                if ($this->check_exist_manager($each) == 0) {
+                    $this->db->insert('jumper__managers', $each);
+                }
+            }
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+    function check_exist_manager($data) {
+        $this->db->select('*');
+        $this->db->from('jumper__managers');
+        $this->db->where('channelnum', $data['channelnum']);
+        $this->db->where('userNumber', $data['userNumber']);
+        return count($this->db->get()->result());
+    }
+
     function delete_manager($channel_id, $user_id)
     {
         try {

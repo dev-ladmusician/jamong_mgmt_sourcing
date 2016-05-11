@@ -7,14 +7,40 @@ require('/var/www/html/MGMT/static/aws/aws-autoloader.php');
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 
-class User extends CORE_Controller
-{
-
+class User extends CORE_Controller {
     function __construct()
     {
         parent::__construct();
         $this->load->model('user_model');
         $this->load->model('user_picture_model');
+    }
+
+    function add_manager_bulk() {
+        $this->load->model('channel_model');
+        $channel_ids = $this->input->post('channels');
+        $user_id = $this->input->post('userId');
+
+        $insert_data = array();
+
+        foreach ($channel_ids as $each) {
+            $tmp = array(
+                'channelnum' => $each,
+                'userNumber' => $user_id
+            );
+            array_push($insert_data, $tmp);
+        }
+
+        $rtv = $this->channel_model->add_manager_bulk($insert_data, $user_id);
+
+        echo json_encode($rtv, JSON_PRETTY_PRINT);
+    }
+
+    function test() {
+        $rtv = array(
+            'channels' => $this->input->post('channels'),
+            'userId' => $this->input->post('userId')
+        );
+        echo json_encode($rtv, JSON_PRETTY_PRINT);
     }
 
     function get_users()
