@@ -66,6 +66,76 @@ class Content extends CORE_Controller
         redirect('/content/detail?contentId='.$content->inum);
     }
 
+    function upload_xml_file_auto($file_name, $file_format) {
+        try {
+            $video_path = 'https://s3-ap-northeast-1.amazonaws.com/dongshin.movie/original/'.$file_name.".".$file_format;
+            $file_path = '/var/www/html/MGMT/static/xml/sample.php';
+            file_put_contents($file_path, "");
+            $fp = fopen($file_path, "a") or die('open error'); //test.txt 파일을 a모드로 불러옴(a모드는 기존데이터에 추가로 덧붙임)
+            fwrite($fp, "<krpano version=\"1.18\" bgcolor=\"0x000000\">
+                            <include url=\"http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/static/jamongplayer/skin/videointerface.xml\" />
+                            <!-- include the videoplayer plugin and load the video (use a low res video for iOS) -->
+                            <plugin name=\"video\"
+                                    url.flash=\"%SWFPATH%/plugins/videoplayer.swf\"
+                                    url.html5=\"%SWFPATH%/plugins/videoplayer.js\"
+                                    videourl=\"".$video_path."\"
+                                    pausedonstart=\"false\"
+                                    loop=\"true\"
+                                    volume=\"1.0\"
+                                    buffertime=\"0\"
+                                    onvideoplay=\"\"
+                                    onvideopaused=\"\"
+                                    onvideocomplete=\"\"
+                                    onerror=\"\"
+                                    onloaded=\"videointerface_setup_interface(get(name)); setup_video_controls();\"
+                                    onvideoready=\"videointerface_videoready();\"
+                            />
+                            <!-- set the default view - a light fisheye projection -->
+                            <view hlookat=\"0\" vlookat=\"0\" fovtype=\"DFOV\" fov=\"130\" fovmin=\"75\" fovmax=\"150\" fisheye=\"0.35\" />
+                            <!-- custom control setup - add items for selecting videos with a different resolution/quality -->
+                            <action name=\"setup_video_controls\">
+                                <!-- add  items to the control menu of the videointerface skin -->
+                                <!-- select/mark the current video (see the initial videourl attribute) -->
+                            </action>
+                            <!-- change the video file, but try keeping the same playback position -->
+                            <action name=\"change_video_file\">
+                                plugin[video].playvideo('%CURRENTXML%/%2', null, get(plugin[video].ispaused), get(plugin[video].time));
+                                videointerface_selectmenuitem(configmenu, %1);
+                            </action>
+                            <!-- the panoramic video image -->
+                            <image hfov=\"360\" vfov=\"180\">
+                                <sphere url=\"plugin:video\" />
+                            </image>
+                        
+                        
+                        </krpano>
+            ");
+            fclose($fp);
+
+            $s3 = S3Client::factory([
+                'version' => 'latest',
+                'region' => 'ap-northeast-1',
+                'credentials' => [
+                    'key' => $this->config->item('S3_CREDENTIAL_KEY'),
+                    'secret' => $this->config->item('S3_CREDENTIAL_SECRET')
+                ]
+            ]);
+
+            $result = $s3->putObject(array(
+                'Bucket' => 'dongshin.movie',
+                'Key' => 'playlist/'.$file_name.'/'.$file_name.'.xml',
+                'SourceFile' => '/var/www/html/MGMT/static/xml/sample.php',
+                'ACL' => 'public-read',
+                'ContentType' => 'text/plain'
+            ));
+
+            return $result['ObjectURL'];
+        } catch (Exception $e) {
+            return "";
+            //print_r($e);
+        }
+    }
+
     /**
      * 영상 정보 업로드
      */
@@ -104,8 +174,7 @@ class Content extends CORE_Controller
         }
     }
 
-    function get_items()
-    {
+    function get_items() {
         $page = $this->input->get('page');
         $per_page = $this->input->get('count');
         $sort = $this->input->get('sorting');
@@ -131,8 +200,7 @@ class Content extends CORE_Controller
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }
 
-    function get_items_in_channel()
-    {
+    function get_items_in_channel() {
         $page = $this->input->get('page');
         $per_page = $this->input->get('count');
         $sort = $this->input->get('sorting');
@@ -154,8 +222,7 @@ class Content extends CORE_Controller
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }
 
-    function change_isdeprecated()
-    {
+    function change_isdeprecated() {
         $content_id = $this->input->get('contentId');
         $isdeprecated = $this->input->get('isdeprecated') == 'true' ? true : false;
 
@@ -177,7 +244,6 @@ class Content extends CORE_Controller
     }
 
     function change_content_info() {
-
         $input_data = array("contentId" => $this->input->get('contentId'),
                             "channelId" => $this->input->post('jamong-content-channel'),
                             "categoryId" => $this->input->post('jamong-content-category'),
@@ -196,8 +262,7 @@ class Content extends CORE_Controller
         redirect('/content/detail?contentId='.$input_data['contentId']);
     }
 
-    function upload_movie()
-    {
+    function upload_movie() {
         $content_id = $this->input->get('contentId');
         $content = $this->content_model->get_by_id($content_id)[0];
 
@@ -220,12 +285,6 @@ class Content extends CORE_Controller
             $file_original_format = $file_type[1];
             $file_new_filename = $content_id."_".date('Y-m-d_H:i:s')."_".$file_original_name;
 
-//            if (strlen($content->filename) > 0) {
-//                $file_new_filename = $content->filename;
-//            } else {
-//                $file_new_filename = $content_id."_".date('Y-m-d_H:i:s')."_".$file_original_name;
-//            }
-
             $result = $s3->putObject(array(
                 'Bucket' => 'dongshin.movie',
                 'Key' => 'original/' . $file_new_filename.".".$file_original_format,
@@ -239,18 +298,18 @@ class Content extends CORE_Controller
                 unlink($uploadfile);
                 // upload db record
                 $rtv = $this->content_model->update_filename($content_id, $file_new_filename, $file_original_format);
+                $this->upload_xml_file_auto($file_new_filename, $file_original_format);
                 if ($rtv > 0) {
                     $this->session->set_flashdata('message', '영상을 성공적으로 업데이트 하였습니다.');
-                    if ($content->type == 1) {
-                        redirect('content/create_xml?contentId='.$content_id);
-                    }
+//                    if ($content->type == 1) {
+//                        redirect('content/create_xml?contentId='.$content_id);
+//                    }
                 } else {
                     $this->session->set_flashdata('message', '데이터베이스에 영상정보를 업데이트 하는데 오류가 발생했습니다.');
                 }
             } else {
                 $this->session->set_flashdata('message', '영상을 파일서버에 업로드하는데 오류가 발생했습니다.');
             }
-
         } else {
             $this->session->set_flashdata('message', '영상을 임시 저장소에 업로드하는데 오류가 발생했습니다.');
         }
@@ -312,6 +371,5 @@ class Content extends CORE_Controller
     }
 
     function delet_movie() {
-
     }
 }

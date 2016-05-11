@@ -9,15 +9,10 @@ $(document).ready(function () {
         xmlCreator.hide();
     }
 
-    // typeSelector.change(function () {
-    //     console.log(typeSelector.val());
-    //    if(typeSelector.val() == 1) {
-    //        console.log(typeSelector.val());
-    //        xmlCreator.show();
-    //    } else {
-    //        xmlCreator.hide();
-    //    }
-    // });
+    $('.jamong-content-submit').click(function () {
+        $('.jamong-content-upload-container').show();
+        $('#jamong-content-submit-container').submit();
+    });
 });
 
 var app = angular.module('myApp', []).

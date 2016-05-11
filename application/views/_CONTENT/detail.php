@@ -1,4 +1,5 @@
 <input type="hidden" id="jamong-content-info-type" value="<?php echo $content->type; ?>">
+<input type="hidden" id="jamong-content-info-id" value="<?php echo $content->inum; ?>">
 <div ng-controller="DetailCtrl">
     <div class="content-wrapper">
         <section class="content-header">
@@ -126,7 +127,7 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">컨텐츠 업로드</h3>
                         </div>
-                        <form class="box-body" method="post" enctype="multipart/form-data"
+                        <form id="jamong-content-submit-container" class="box-body" method="post" enctype="multipart/form-data"
                               action="<?= site_url('/api/content/upload_movie?contentId=' . $content->inum)?>">
                             <?php if (strlen($content->filename) > 0) { ?>
                                 <div class="form-group">
@@ -152,11 +153,13 @@
                                 <?php
                                 if (strlen($content->filename) > 0) {
                                 ?>
-                                    <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="동영상 수정">
+                                    <a class="btn btn-default jamong-content-submit" style="margin-left: 3px; margin-bottom: 3px;">동영상 수정</a>
+<!--                                    <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="동영상 수정">-->
                                 <?php
                                 } else {
                                 ?>
-                                    <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="동영상 업로드">
+                                    <a class="btn btn-default jamong-content-submit" style="margin-left: 3px; margin-bottom: 3px;">동영상 업로드</a>
+<!--                                    <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="동영상 업로드">-->
                                 <?php
                                 }
                                 ?>
@@ -255,3 +258,8 @@
         </section>
     </div>
 </div>
+<div class="jamong-content-upload-container">
+    <div class="upload-loader"></div>
+    <img class="jm-ajax-loader" src="<?= site_url('/static/img/loading.gif')?>" />
+</div>
+
