@@ -15,7 +15,6 @@
                             <h3 class="box-title">기본정보</h3>
                         </div>
                         <div class="box-body">
-
                             <div class="form-group">
                                 <label for="title" class="col-sm-3 control-label">id</label>
 
@@ -83,7 +82,6 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="title" class="col-sm-3 control-label">계정상태</label>
-
                                 <div class="col-sm-9 sg-item-content">
                                     <?php if ($item->state == "active") { ?>
                                         정상
@@ -96,14 +94,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="title" class="col-sm-3 control-label">승인일자</label>
-
                                 <div class="col-sm-9 sg-item-content">
-
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="title" class="col-sm-3 control-label">성인인증</label>
-
                                 <div class="col-sm-9 sg-item-content">
                                     <?php if ($item->adult == "ACTIVE") { ?>
                                         <span style="color: red">인증</span>
@@ -114,7 +109,6 @@
                             </div>
                             <div class="form-group">
                                 <label for="title" class="col-sm-3 control-label">정지/탈퇴일자</label>
-
                                 <div class="col-sm-4 sg-item-content">
                                     <?php if ($item->blockdate != 0) echo $item->blockdate ?>
                                 </div>
@@ -134,7 +128,6 @@
                             </div>
                             <div class="form-group">
                                 <label for="title" class="col-sm-3 control-label">채널관리자</label>
-
                                 <div class="col-sm-4 sg-item-content">
                                     <?php if ($item->is_admin) { ?>
                                         <span style="color: red">채널 관리자</span>

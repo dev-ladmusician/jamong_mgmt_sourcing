@@ -19,9 +19,9 @@
                                     <a href="<?=site_url('type/detail?tableId={{item.ai}}')?>">{{item.name_kr}}</a>
                                 </td>
                                 <td data-title="'관리'">
-                                    <a ng-if="item.isDeprecated == 0" style="color: red"
+                                    <a ng-if="item.isdeprecated == 0" style="color: red"
                                        href="<?=site_url('api/type/change_isdeprecated?tableId={{item.ai}}&isdeprecated=true')?>">삭제</a>
-                                    <a ng-if="item.isDeprecated == 1" href="<?=site_url('api/type/change_isdeprecated?tableId={{item.ai}}&isdeprecated=false')?>">복구</a>
+                                    <a ng-if="item.isdeprecated == 1" href="<?=site_url('api/type/change_isdeprecated?tableId={{item.ai}}&isdeprecated=false')?>">복구</a>
                                 </td>
                             </tr>
                         </table>
