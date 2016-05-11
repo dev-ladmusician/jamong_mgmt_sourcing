@@ -53,10 +53,8 @@ class Auth extends CORE_Controller
                     redirect('auth/login');
                 }
             } else {
-                $this->session->set_flashdata('message', '로그인에 실패하였습니다.');
-                if ($this->input->get('returnURL') === "") {
-                    $this->__get_views('_AUTH/login');
-                }
+                $this->session->set_flashdata('message', '잘못된 이메일 정보 입니다.');
+                $this->__get_views('_AUTH/login');
             }
         }else {
             $this->__get_views('_AUTH/login', array('returnURL' => $this->input->get('returnURL')));

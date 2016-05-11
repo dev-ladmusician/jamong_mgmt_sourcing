@@ -71,8 +71,7 @@ class Channel extends CORE_Controller
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }
 
-    function add_manager()
-    {
+    function add_manager() {
         $channel_id = $this->input->get('channelId');
         $user_id = $this->input->get('userId');
 
