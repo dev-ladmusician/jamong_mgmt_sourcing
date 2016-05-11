@@ -55,12 +55,12 @@ class User extends CORE_Controller
 
         $rtv = $this->user_model->change_isadmin($user_id, $is_admin);
         if ($rtv) {
+            $this->user_model->delete_manager($user_id);
             if ($is_admin) {
                 $this->session->set_flashdata('message', '관리자 권한을 부여하였습니다.');
             } else {
                 $this->session->set_flashdata('message', '관리자 권한을 박탈하였습니다.');
             }
-
             redirect('user/detail?userId=' . $user_id);
         } else {
             if ($is_admin) {

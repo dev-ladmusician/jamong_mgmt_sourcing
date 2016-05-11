@@ -5,8 +5,7 @@ class User_model extends CI_Model
 
     private $table;
 
-    function __construct()
-    {
+    function __construct() {
         parent::__construct();
         $this->table = 'jamong__tb_users';
     }
@@ -24,24 +23,7 @@ class User_model extends CI_Model
         return $query->result();
     }
 
-    function gets()
-    {
-//        $query_str = "SELECT jamong__tb_users.userNumber, picture, count(channelnum) as channelNum FROM jamong__tb_users ".
-//                     "LEFT JOIN jamong__tb_users_picture ".
-//                     "ON jamong__tb_users.userNumber = jamong__tb_users_picture.userNumber ".
-//                     "LEFT JOIN jumper__channellist ".
-//                     "ON jamong__tb_users.userNumber = jumper__channellist.userNumber ".
-//                     "GROUP BY userNumber";
-//        $query = $this->db->query($query_str);
-//        return $query->result();
-
-//        $this->db->select('jamong__tb_users.userNumber, jamong__tb_users_picture.picture');
-//        $this->db->from($this->table);
-//        $this->db->join('jamong__tb_users_picture', 'jamong__tb_users_picture.userNumber = jamong__tb_users.userNumber', 'left');
-//        $this->db->join('jumper__channellist', 'jumper__channellist.userNumber = jamong__tb_users.userNumber', 'left');
-//        $this->db->group_by('jamong__tb_users.userNumber');
-//        return $this->db->get()->result();
-
+    function gets() {
         $this->db->select('*');
         $this->db->from('jamong__tb_users_picture');
         return $this->db->get()->result();
@@ -266,6 +248,15 @@ class User_model extends CI_Model
             $this->db->where('userNumber', $user_id);
             $this->db->update($this->table, $data);
 
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+    function delete_manager($user_id) {
+        try {
+            $this->db->delete('jumper__managers', array('userNumber' => $user_id));
             return true;
         } catch (Exception $e) {
             return false;
