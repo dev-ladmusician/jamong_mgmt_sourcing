@@ -32,6 +32,9 @@ class User extends CORE_Controller {
 
         $rtv = $this->channel_model->add_manager_bulk($insert_data, $user_id);
 
+        if ($rtv) {
+            $rtv = $this->user_model->change_isadmin($user_id, true);
+        }
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }
 

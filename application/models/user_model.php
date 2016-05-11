@@ -254,9 +254,9 @@ class User_model extends CI_Model
         }
     }
 
-    function delete_maanger($user_id) {
+    function delete_manager($user_id) {
         try {
-            $this->db->delete('jumper__managers', array('userNumber' => $usr_id));
+            $this->db->delete('jumper__managers', array('userNumber' => $user_id));
             return true;
         } catch (Exception $e) {
             return false;

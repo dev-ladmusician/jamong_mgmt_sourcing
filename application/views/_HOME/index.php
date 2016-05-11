@@ -126,7 +126,7 @@
                                     <?php if ($item->is_admin) { ?>
                                         <span style="color: red">채널 관리자</span>
                                     <?php } else { ?>
-                                        <span>일반회원</span>
+                                        <span>채널 관리자 X</span>
                                     <?php } ?>
                                 </div>
                                 <?php if ($item->is_admin) { ?>

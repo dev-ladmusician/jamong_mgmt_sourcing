@@ -13,6 +13,33 @@ class Auth extends CORE_Controller
         $this->load->model('user_model');
     }
 
+    function test() {
+        $longURL = "https://s3-ap-northeast-1.amazonaws.com/dongshin.movie/original/37_2016-05-11_14:49:11_test_video.mp4";
+        $api_key = "AIzaSyDwWcpxM-X9fmtbspybET9QaAUwwC2XNJ0";
+        $curlopt_url = "https://www.googleapis.com/urlshortener/v1/url?key=".$api_key;
+
+        $ch = curl_init();
+        //$timeout = 10;
+        curl_setopt($ch, CURLOPT_URL, $curlopt_url);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        //curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        $jsonArray = array('longUrl' => $longURL);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($jsonArray));
+        $shortURL = curl_exec($ch);    curl_close($ch);
+        $result_array = json_decode($shortURL, true);
+
+
+        //return $result_array['id']; // goo.gl
+
+        $shortURL = curl_exec($ch);
+        curl_close($ch);
+        var_dump($shortURL);
+    }
     /**
      * 로그인
      * email, password

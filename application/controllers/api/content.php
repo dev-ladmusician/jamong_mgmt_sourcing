@@ -154,7 +154,7 @@ class Content extends CORE_Controller
                                                                 'talk' => $content,
                                                                 'ch' =>$channelId,
                                                                 'type' => $typeId,
-                                                                'cate' => $categoryId,
+                                                                'cate' => -($categoryId + 100),
                                                                 'userNumber' => $this->session->userdata('userid'),
                                                                 'nickname' => $this->session->userdata('nickname')));
                 if($rtv){
