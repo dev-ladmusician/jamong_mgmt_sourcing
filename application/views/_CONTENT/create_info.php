@@ -32,7 +32,13 @@
                                     <?php
                                     foreach ($channels as $each) {
                                         ?>
-                                        <option value="<?php echo $each->channelnum; ?>"><?php echo $each->channelname; ?></option>
+                                        <option
+                                            <?php if ($channel_id) {
+                                                if ($channel_id == $each->channelnum) { ?>
+                                                    selected
+                                            <?php }
+                                            } ?>
+                                            value="<?php echo $each->channelnum; ?>"><?php echo $each->channelname; ?></option>
                                         <?php
                                     }
                                     ?>

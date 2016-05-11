@@ -105,7 +105,7 @@
 
         <section class="content-header">
             <h1>영상관리</h1>
-            <a class="btn btn-success pull-right jamong-add-content" href="<?= site_url('content/create_info') ?>">영상 추가</a>
+            <a class="btn btn-success pull-right jamong-add-content" href="<?= site_url('content/create_info?channelId='.$channel->channelnum) ?>">영상 추가</a>
         </section>
         <section class="content">
             <div class="row">

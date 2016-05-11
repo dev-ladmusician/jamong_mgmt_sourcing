@@ -32,11 +32,12 @@ class Content extends CORE_Controller
     }
 
     function create_info(){
+        $channel_id = $this->input->get('channelId');
         $channels = $this->channel_model->get_items();
         $types = $this->type_model->get_items();
         $categories = $this->category_model->get_items();
 
-        $this->__get_views('_CONTENT/create_info.php', array( 'types' => $types, 'categories' => $categories , 'channels' =>$channels));
+        $this->__get_views('_CONTENT/create_info.php', array( 'types' => $types, 'categories' => $categories , 'channels' =>$channels, 'channel_id' => $channel_id));
     }
 
     function create_xml() {
