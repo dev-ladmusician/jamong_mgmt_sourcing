@@ -1,13 +1,12 @@
 $(document).ready(function () {
-    var contentTypeInfo = $('#jamong-content-info-type').val();
-    var typeSelector = $('#jamong-content-type');
-    var xmlCreator = $('.jamong-content-for-vr');
-
-    if (contentTypeInfo == 1) {
-        xmlCreator.show();
-    } else {
-        xmlCreator.hide();
-    }
+    // var contentTypeInfo = $('#jamong-content-info-type').val();
+    // var typeSelector = $('#jamong-content-type');
+    // var xmlCreator = $('.jamong-content-for-vr');
+    // if (contentTypeInfo == 1) {
+    //     xmlCreator.show();
+    // } else {
+    //     xmlCreator.hide();
+    // }
 
     $('.jamong-content-submit').click(function () {
         $('.jamong-content-upload-container').show();
@@ -17,7 +16,6 @@ $(document).ready(function () {
 
 var app = angular.module('myApp', []).
 controller('DetailCtrl', function ($scope) {
-
     // 정보 업데이트
     $scope.changeContentInfo = function () {
         var id = $('#jamong-content-id').val();

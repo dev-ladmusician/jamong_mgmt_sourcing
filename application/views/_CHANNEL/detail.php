@@ -64,7 +64,7 @@
                             <div class="form-group">
                                 <label>적용중인 사진</label>
                                 <img class="" src="<?php if(isset($profile->ch_picture)){
-                                    echo $profile->ch_picture; }else{ echo 'http://14.49.36.93/jdisk/jamong/ch_rep/2016042617416.jpg';}?>
+                                    echo $profile->ch_picture; }else{ echo 'http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/static/img/default_thumbnail.jpg';}?>
                                    "/>
                             </div>
                             <div class="form-group">
@@ -87,7 +87,7 @@
                             <div class="form-group">
                                 <label>적용중인 사진</label>
                                 <img class="" src="<?php if(isset($profile->bg_picture)){
-                                    echo $profile->bg_picture; }else{ echo 'http://14.49.36.93/jdisk/jamong/ch_rep/2016040113526.jpg';}?>
+                                    echo $profile->bg_picture; }else{ echo 'http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/static/img/default_thumbnail.jpg';}?>
                                    "/>
                             </div>
                             <div class="form-group">

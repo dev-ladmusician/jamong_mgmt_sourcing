@@ -170,7 +170,7 @@
                         <div class="box box-primary">
                             <div class="box-header with-border">
                                 <h3 class="box-title">썸네일 업로드</h3>
-                                <?php if ($content->uploadstat == "Progressing") { ?>
+                                <?php if (strlen($content->filename) > 0 && $content->uploadstat == "Progressing") { ?>
                                     <small class="jamong-video-not-complete">람다가 동작중입니다. 동작이 완료되면 미리보기가 가능합니다.</small>
                                 <?php } ?>
                             </div>
@@ -185,19 +185,21 @@
 
                                     <div class="form-group">
                                         <label>적용중인 사진</label>
-                                        <img style="display: block" class=""
-                                             src="<?php
-                                             if (strlen($content->filename) > 0) {
-                                                 if (strlen($content->picture) > 0) {
-                                                     echo $content->picture;
+                                        <?php if(strlen($content->filename) > 0 && $content->uploadstat == "Complete") { ?>
+                                            <img style="display: block" class=""
+                                                 src="<?php
+                                                 if (strlen($content->filename) > 0) {
+                                                     if (strlen($content->picture) > 0) {
+                                                         echo $content->picture;
+                                                     } else {
+                                                         echo "https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/".$content->filename."/high_00001.png";
+                                                     }
                                                  } else {
-                                                     echo "https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/".$content->filename."/high_00001.png";
+                                                     echo '/MGMT/static/img/profile_default.png';
                                                  }
-                                             } else {
-                                                 echo '/MGMT/static/img/profile_default.png';
-                                             }
-                                             ?>
+                                                 ?>
                                    "/>
+                                        <?php } ?>
                                     </div>
                                     <div class="form-group pull-right">
                                         <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="썸네일 업로드">
