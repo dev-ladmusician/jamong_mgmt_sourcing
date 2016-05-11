@@ -154,62 +154,16 @@
                                 if (strlen($content->filename) > 0) {
                                 ?>
                                     <a class="btn btn-default jamong-content-submit" style="margin-left: 3px; margin-bottom: 3px;">동영상 수정</a>
-<!--                                    <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="동영상 수정">-->
                                 <?php
                                 } else {
                                 ?>
                                     <a class="btn btn-default jamong-content-submit" style="margin-left: 3px; margin-bottom: 3px;">동영상 업로드</a>
-<!--                                    <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="동영상 업로드">-->
                                 <?php
                                 }
                                 ?>
 
                             </div>
                         </form>
-                        <?php if (strlen($content->filename) > 0) { ?>
-                            <div class="jamong-content-for-vr">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">컨텐츠 XML 업로드</h3>
-                                </div>
-                                <form class="box-body" method="post" enctype="multipart/form-data"
-                                      action="<?= site_url('/api/content/create_xml?contentId=' . $content->inum)?>">
-                                    <div class="form-group">
-                                        <label>현재 xml 업로드:</label>
-                                        <?php if (strlen($content->xml) > 0) { ?>
-                                            <small style="color: red">완료</small>
-                                        <?php } else { ?>
-                                            <small style="color: red">업로드 되지 않음</small>
-                                        <?php } ?>
-                                    </div>
-                                    <?php if (strlen($content->xml) > 0) { ?>
-                                        <div class="form-group">
-                                            <label>미리보기</label>
-                                            <iframe style="width: 100%;"
-                                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.movie/playlist/<?php echo $content->filename.'/'.$content->filename.'.xml'?>"></iframe>
-                                        </div>
-                                    <?php } ?>
-                                    
-                                    <div class="form-group">
-                                        <label>xml 파일</label>
-                                        <input type="file" name="jamong-content-xml"  class="form-control my-colorpicker1"/>
-                                    </div>
-                                    <div class="form-group pull-right">
-                                        <?php
-                                        if (strlen($content->xml) > 0) {
-                                            ?>
-                                            <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="xml 수정">
-                                            <?php
-                                        } else {
-                                            ?>
-                                            <input class="btn btn-default" type="submit"  style="margin-left: 3px; margin-bottom: 3px;" value="xml 업로드">
-                                            <?php
-                                        }
-                                        ?>
-
-                                    </div>
-                                </form>
-                            </div>
-                        <?php } ?>
                     </div>
                 </div>
                 <div class="col-md-6 jamong-pannel">
