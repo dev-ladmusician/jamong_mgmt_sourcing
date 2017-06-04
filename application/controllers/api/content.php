@@ -1,6 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 require('/var/www/html/MGMT/static/aws/aws-autoloader.php');
+require('/var/www/html/MGMT/static/img/class.Images.php');
+//require('/var/www/html/MGMT/static/img/SimpleImage.php');
 
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
@@ -12,7 +14,7 @@ class Content extends CORE_Controller
         parent::__construct();
         $this->load->model('content_model');
     }
-    
+
     function create_xml() {
         $content_id = $this->input->get('contentId');
         $content = $this->content_model->get_by_id($content_id)[0];
@@ -317,8 +319,7 @@ class Content extends CORE_Controller
         redirect('content/detail?contentId=' . $content_id);
     }
 
-    function upload_content_image()
-    {
+    function upload_content_image() {
         $content_id = $this->input->get('contentId');
         $content_filename = $this->input->get('contentFileName');
 
@@ -349,12 +350,15 @@ class Content extends CORE_Controller
                 ));
 
                 if ($result['@metadata']['statusCode'] == 200) {
+                    // upload low thumb
+                    $this->upload_content_low_thumb_image($uploadfile, $content_filename, $file_original_format);
+
                     // remove temp image
                     unlink($uploadfile);
 
                     // update database info
                     $rtv = $this->content_model->update_thumbnail($content_id, $result["ObjectURL"]);
-                    if($rtv > 0){
+                    if($rtv){
                         $this->session->set_flashdata('message', '썸네일을 성공적으로 변경 했습니다.');
                     } else {
                         $this->session->set_flashdata('message', '썸네일 정보를 데이터베이스에서 업로드 하는데 오류가 발생했습니다.');
@@ -369,6 +373,52 @@ class Content extends CORE_Controller
             $this->session->set_flashdata('message', '썸네일을 임시 저장소에 업로드하는데 오류가 발생했습니다.');
         }
         redirect('content/detail?contentId=' . $content_id);
+    }
+
+    function upload_content_low_thumb_image($uploadfile, $filename, $file_format) {
+        //$new_file_name = $this->image_resize_low_thumb($up)
+        try {
+            $s3 = S3Client::factory([
+                'version' => 'latest',
+                'region' => 'ap-northeast-1',
+                'credentials' => [
+                    'key' => $this->config->item('S3_CREDENTIAL_KEY'),
+                    'secret' => $this->config->item('S3_CREDENTIAL_SECRET')
+                ]
+            ]);
+
+            $result = $s3->putObject(array(
+                'Bucket' => 'dongshin.images',
+                'Key' => 'playlist/'.$filename.'/low_thumb.'.$file_format,
+                'Body' => fopen($uploadfile, 'r'),
+                'ACL' => 'public-read',
+                'ContentType' => mime_content_type($uploadfile)
+            ));
+        } catch (Exception $e) {
+
+        }
+    }
+
+    function image_resize_low_thumb() {
+        //$this->load->library('image_lib');
+        try {
+            $filename = '/var/www/html/MGMT/static/img/test_thumbnail.jpg';
+            $config['image_library'] = 'gd2';
+            $config['source_image']	= $filename;
+            $config['create_thumb'] = TRUE;
+            $config['maintain_ratio'] = TRUE;
+            $config['width']	= 256;
+            $config['height']	= 128;
+            //$config['new_image'] = '/tmp/low.jpg';
+            $this->load->library('image_lib', $config);
+            if ($this->image_lib->resize()) {
+                var_dump('done');
+            } else {
+                echo $this->image_lib->display_errors();
+            }
+        } catch (Exception $e) {
+            print_r($e->getMessage());
+        }
     }
 
     function delet_movie() {

@@ -9,6 +9,55 @@ class User extends CORE_Controller
         $this->load->model('user_model');
     }
 
+    function test() {
+        $this->__get_views('_USER/test.php', array());
+    }
+    function test1() {
+        $rtv_str = "/upload/test1";
+        $dir_path = $_SERVER["DOCUMENT_ROOT"].$rtv_str;
+        mkdir($dir_path, 0777, true);
+    }
+    function test_upload() {
+        $file = $_FILES['test'];
+        $rtv = array('state' => FALSE, 'content' => "");
+        $rtv_str = "/upload/test1";
+        $dir_path = $_SERVER["DOCUMENT_ROOT"].$rtv_str;
+        if (!is_dir($dir_path)) {
+            mkdir($dir_path, 0777, true);
+        }
+        $file_error = $file['error'];
+        if ($file_error === 0) {
+            $file_name = "/".date("Y-m-d_h:i:sa").'_'.basename($file['name']);
+            $upload_file = $dir_path.$file_name;
+            $rtv_str = $rtv_str.$file_name;
+            if (is_dir($dir_path)) {
+                if (file_exists($upload_file)) {
+                    $rtv['state'] = TRUE;
+                    $rtv['content'] = $rtv_str;
+                } else {
+                    if (move_uploaded_file($file['tmp_name'], $upload_file)) {
+                        $rtv['state'] = TRUE;
+                        $rtv['content'] = $rtv_str;
+                    } else {
+                        $rtv['content'] = "사진을 저장하는데 오류가 발생했습니다. 010-6233-8509 개발자에게 연락주세요.";
+                    }
+                }
+            } else {
+                $rtv['content'] = "폴더가 존재하지 않습니다. 010-6233-8509 개발자에게 연락주세요.";
+            }
+
+        } else if ($file_error === 2) {
+            $rtv['content'] = "사진이 너무 큽니다.";
+        } else if ($file_error === 3) {
+            $rtv['content'] = "사진 중 일부만 전송되었습니다.";
+        } else if ($file_error === 4) {
+            $rtv['content'] = "사진을 설정해주세요.";
+        } else {
+            $rtv['content'] = "사진을 저장하는데 예상하지 못한 오류가 발생했습니다. 010-6233-8509 개발자에게 연락주세요.";
+        }
+        return $rtv;
+    }
+
     function index()
     {
         //$users = $this->user_model->gets();

@@ -162,16 +162,19 @@ class Content_model extends CI_Model
         }
     }
 
-    function update_thumbnail($content_id, $file_name)
-    {
-        $input_data = array(
-            'picture' => $file_name
-        );
+    function update_thumbnail($content_id, $file_name) {
+        try {
+            $input_data = array(
+                'picture' => $file_name
+            );
 
-        $this->db->where('inum', $content_id);
-        $this->db->update($this->table, $input_data);
+            $this->db->where('inum', $content_id);
+            $this->db->update($this->table, $input_data);
 
-        return $this->db->affected_rows();
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
     }
 
     function update_filename($content_id, $file_name, $file_format)
